@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: #FFFFFF;
+    color: #0F172A;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #0B1528;
+    color: #FFFFFF;
+  }
+
+  /* Form and interactive focus indicator */
+  :focus-visible {
+    outline: 2px solid #1D4ED8;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  /* Architectural rule lines common in premium research reports */
+  .border-editorial {
+    border-color: #E2E8F0;
+  }
+
+  .hairline-b {
+    border-bottom: 1px solid #E2E8F0;
+  }
+
+  .hairline-t {
+    border-top: 1px solid #E2E8F0;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────
+   Topographic Contour Map Texture
+   Pure CSS contour lines evoking geographic research maps
+   ───────────────────────────────────────────────────────── */
+
+.bg-topo {
+  background-color: #FAF8F5;
+  background-image:
+    /* Large contour rings */
+    radial-gradient(ellipse 600px 400px at 15% 30%, transparent 58%, #d4c9b8 58.5%, transparent 59%),
+    radial-gradient(ellipse 500px 350px at 15% 30%, transparent 58%, #d4c9b8 58.5%, transparent 59%),
+    radial-gradient(ellipse 400px 280px at 15% 30%, transparent 58%, #d4c9b8 58.5%, transparent 59%),
+    radial-gradient(ellipse 300px 210px at 15% 30%, transparent 58%, #d4c9b8 58.5%, transparent 59%),
+    /* Mid contour cluster */
+    radial-gradient(ellipse 450px 320px at 75% 25%, transparent 55%, #d4c9b8 55.5%, transparent 56%),
+    radial-gradient(ellipse 350px 250px at 75% 25%, transparent 55%, #d4c9b8 55.5%, transparent 56%),
+    radial-gradient(ellipse 250px 180px at 75% 25%, transparent 55%, #d4c9b8 55.5%, transparent 56%),
+    /* Bottom-left cluster */
+    radial-gradient(ellipse 380px 260px at 30% 80%, transparent 52%, #d4c9b8 52.5%, transparent 53%),
+    radial-gradient(ellipse 280px 190px at 30% 80%, transparent 52%, #d4c9b8 52.5%, transparent 53%),
+    radial-gradient(ellipse 180px 120px at 30% 80%, transparent 52%, #d4c9b8 52.5%, transparent 53%),
+    /* Right-edge cluster */
+    radial-gradient(ellipse 320px 500px at 95% 60%, transparent 50%, #d4c9b8 50.5%, transparent 51%),
+    radial-gradient(ellipse 240px 380px at 95% 60%, transparent 50%, #d4c9b8 50.5%, transparent 51%),
+    radial-gradient(ellipse 160px 260px at 95% 60%, transparent 50%, #d4c9b8 50.5%, transparent 51%),
+    /* Scattered small contours */
+    radial-gradient(ellipse 120px 90px at 55% 55%, transparent 50%, #d4c9b8 50.5%, transparent 51%),
+    radial-gradient(ellipse 80px 60px at 55% 55%, transparent 50%, #d4c9b8 50.5%, transparent 51%),
+    radial-gradient(ellipse 200px 140px at 45% 15%, transparent 50%, #d4c9b8 50.5%, transparent 51%),
+    radial-gradient(ellipse 140px 100px at 45% 15%, transparent 50%, #d4c9b8 50.5%, transparent 51%);
+}
+
+/* ─────────────────────────────────────────────────────────
+   Animation System
+   ───────────────────────────────────────────────────────── */
+
+/* Fade-up reveal (used on sections and cards via IntersectionObserver) */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Toast slide-up */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Drawer slide-in from right */
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Backdrop fade-in */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.2s ease-out forwards;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out both;
+}
+
+/* Stagger delays for card grids */
+.stagger-1 { animation-delay: 0ms; }
+.stagger-2 { animation-delay: 80ms; }
+.stagger-3 { animation-delay: 160ms; }
+.stagger-4 { animation-delay: 240ms; }
+.stagger-5 { animation-delay: 320ms; }
+.stagger-6 { animation-delay: 400ms; }
+.stagger-7 { animation-delay: 480ms; }
+
+/* Reveal: starts hidden, shown by JS IntersectionObserver */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reveal stagger children: each child gets a progressively longer delay */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-stagger.revealed > *:nth-child(1) { transition-delay: 0ms; opacity: 1; transform: translateY(0); }
+.reveal-stagger.revealed > *:nth-child(2) { transition-delay: 70ms; opacity: 1; transform: translateY(0); }
+.reveal-stagger.revealed > *:nth-child(3) { transition-delay: 140ms; opacity: 1; transform: translateY(0); }
+.reveal-stagger.revealed > *:nth-child(4) { transition-delay: 210ms; opacity: 1; transform: translateY(0); }
+.reveal-stagger.revealed > *:nth-child(5) { transition-delay: 280ms; opacity: 1; transform: translateY(0); }
+.reveal-stagger.revealed > *:nth-child(6) { transition-delay: 350ms; opacity: 1; transform: translateY(0); }
+.reveal-stagger.revealed > *:nth-child(7) { transition-delay: 420ms; opacity: 1; transform: translateY(0); }
+.reveal-stagger.revealed > *:nth-child(8) { transition-delay: 490ms; opacity: 1; transform: translateY(0); }
