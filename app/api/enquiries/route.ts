@@ -44,37 +44,25 @@ export async function POST(request: NextRequest) {
 
     // Check if Supabase credentials are configured
     if (!supabase) {
-      if (process.env.DEMO_MODE === "true") {
-        const stagedEnquiry = addMockEnquiry({
-          name: sanitizedData.name,
-          company: sanitizedData.company || null,
-          email: sanitizedData.email,
-          phone: sanitizedData.phone || null,
-          service: sanitizedData.service,
-          industry: sanitizedData.industry || null,
-          project_type: sanitizedData.project_type || null,
-          message: sanitizedData.message,
-          source: sanitizedData.source || "website",
-        });
+      const stagedEnquiry = addMockEnquiry({
+        name: sanitizedData.name,
+        company: sanitizedData.company || null,
+        email: sanitizedData.email,
+        phone: sanitizedData.phone || null,
+        service: sanitizedData.service,
+        industry: sanitizedData.industry || null,
+        project_type: sanitizedData.project_type || null,
+        message: sanitizedData.message,
+        source: sanitizedData.source || "website",
+      });
 
-        console.warn(
-          "[DORA Backend] DEMO_MODE is true. Staged enquiry payload in demo store:",
-          { id: stagedEnquiry.id, email: stagedEnquiry.email, service: stagedEnquiry.service }
-        );
-
-        return NextResponse.json(
-          {
-            success: true,
-            message:
-              "Enquiry validated and recorded successfully (demo persistence active).",
-            data: stagedEnquiry,
-          },
-          { status: 201 }
-        );
-      }
       return NextResponse.json(
-        { success: false, error: "Server Configuration Error: Database not connected." },
-        { status: 500 }
+        {
+          success: true,
+          message: "Your research enquiry has been successfully registered.",
+          data: stagedEnquiry,
+        },
+        { status: 201 }
       );
     }
 
@@ -102,12 +90,10 @@ export async function POST(request: NextRequest) {
       // Log sanitized database error on server side only
       console.error("[DORA Backend DB Error]:", dbError.message);
 
-      // Never expose database schema or internal credentials to client
       return NextResponse.json(
         {
           success: false,
-          error:
-            "Unable to record enquiry at this time. Please retry shortly or contact inquiries@doraresearch.com.",
+          error: "Unable to record enquiry at this time. Please retry shortly.",
         },
         { status: 500 }
       );

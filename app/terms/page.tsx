@@ -42,8 +42,7 @@ export default function TermsPage() {
             <div>
               <h2 className="text-lg font-bold text-brand-navy-900 mb-3">2. Services</h2>
               <p className="text-slate-600">
-                DORA Global Research provides international market research, qualitative and quantitative fieldwork, 
-                and domain-certified language solutions. Information on this website is for general informational purposes 
+                DORA Global Research provides international market research, qualitative moderation, and quantitative studies. Information on this website is for general informational purposes 
                 and does not constitute a binding offer or contract.
               </p>
             </div>

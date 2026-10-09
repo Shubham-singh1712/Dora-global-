@@ -85,8 +85,8 @@ export const SERVICES_DATA: Record<string, ServiceDetail> = {
         description: "Multi-step screening to ensure all respondents strictly match target professional and demographic profiles.",
       },
       {
-        title: "Global Reach & Local Execution",
-        description: "Seamless fieldwork execution across global hubs with native-language understanding.",
+        title: "Cross-Market Execution",
+        description: "Seamless fieldwork execution across international markets with localized understanding.",
       },
       {
         title: "Actionable Strategic Output",

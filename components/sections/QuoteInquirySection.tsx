@@ -8,7 +8,7 @@ import { Input, Textarea } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { enquirySchema } from "@/lib/validations/enquiry";
-import { CheckCircle2, Send, ShieldCheck, Lock, AlertCircle, Loader2 } from "lucide-react";
+import { CheckCircle2, Send, Compass, Layers, AlertCircle, Loader2 } from "lucide-react";
 
 interface FormErrors {
   name?: string;
@@ -23,7 +23,7 @@ export function QuoteInquirySection() {
     fullName: "",
     workEmail: "",
     organization: "",
-    serviceType: "Translation",
+    serviceType: "Primary Research",
     targetMarkets: "",
     projectBrief: "",
   });
@@ -104,7 +104,7 @@ export function QuoteInquirySection() {
         fullName: "",
         workEmail: "",
         organization: "",
-        serviceType: "Translation",
+        serviceType: "Primary Research",
         targetMarkets: "",
         projectBrief: "",
       });
@@ -128,71 +128,55 @@ export function QuoteInquirySection() {
           {/* Context and Scope Guidelines */}
           <div className="lg:col-span-5 space-y-6">
             <SectionHeading
-              eyebrow="Formal RFP & Quote Request"
+              eyebrow="Research Inquiry"
               title="Initiate Project Scoping"
-              description="Connect with our practice leads to evaluate field methodology, sample feasibility, and multi-territory delivery timelines."
+              description="Connect with our research team to evaluate methodology fit, sample feasibility, and multi-market delivery timelines."
               className="mb-8"
             />
 
             <div className="space-y-4">
               <div className="p-5 bg-white border border-slate-200/90 rounded-lg shadow-subtle hover:border-slate-300 transition-all duration-200">
                 <div className="flex items-center gap-2 mb-2 text-brand-navy-900 font-semibold text-sm">
-                  <Lock className="w-4 h-4 text-brand-blue-600" />
-                  Institutional Confidentiality
+                  <Compass className="w-4 h-4 text-brand-blue-600" />
+                  Structured Methodology Review
                 </div>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  All shared project briefs, respondent profiles, and scope documentation are protected under strict non-disclosure terms prior to formal engagement.
+                  We review your business questions to recommend the optimal primary, qualitative, or quantitative approach.
                 </p>
               </div>
 
               <div className="p-5 bg-white border border-slate-200/90 rounded-lg shadow-subtle hover:border-slate-300 transition-all duration-200">
                 <div className="flex items-center gap-2 mb-2 text-brand-navy-900 font-semibold text-sm">
-                  <ShieldCheck className="w-4 h-4 text-brand-blue-600" />
-                  What You Receive
+                  <Layers className="w-4 h-4 text-brand-blue-600" />
+                  Cross-Market Feasibility
                 </div>
-                <ul className="space-y-2 text-xs text-slate-600">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-brand-blue-600 shrink-0" />
-                    <span>Detailed methodological specification & feasibility audit</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-brand-blue-600 shrink-0" />
-                    <span>Itemized pricing schedule and milestone timeline</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-brand-blue-600 shrink-0" />
-                    <span>Assigned senior director and linguistic quality lead</span>
-                  </li>
-                </ul>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Clear sample size estimates, screening feasibility, and realistic timelines across your target geographies.
+                </p>
               </div>
             </div>
           </div>
 
           {/* Form Card */}
           <div className="lg:col-span-7">
-            <Card variant="default" padding="lg" className="bg-white border-slate-200 shadow-card">
+            <Card variant="default" padding="lg" className="bg-white border-slate-200/90 shadow-elevated">
               {submitted ? (
                 <div className="py-12 text-center space-y-5">
-                  <div className="w-14 h-14 bg-blue-50 text-brand-blue-700 rounded-full flex items-center justify-center mx-auto border border-blue-200">
-                    <CheckCircle2 className="w-8 h-8" />
+                  <div className="w-12 h-12 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto border border-emerald-200">
+                    <CheckCircle2 className="w-6 h-6" />
                   </div>
-                  <div className="space-y-2 max-w-md mx-auto">
-                    <Badge variant="blue" size="sm" dot>
-                      Enquiry Confirmed
-                    </Badge>
-                    <h3 className="text-2xl font-semibold text-brand-navy-900 tracking-tight">
-                      Thank you for reaching out.
-                    </h3>
-                    <p className="text-sm text-slate-600 leading-relaxed">
-                      Your enquiry has been received. Our team will review your requirements and get back to you.
+                  <h3 className="text-2xl font-bold text-brand-navy-900">
+                    Enquiry Registered
+                  </h3>
+                  <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
+                    Thank you. Your research scoping inquiry has been received. A senior research lead will review your requirements and respond shortly.
+                  </p>
+                  {confirmedId && (
+                    <p className="text-xs font-mono text-slate-500 bg-slate-50 py-1.5 px-3 rounded inline-block border border-slate-200">
+                      Tracking Reference: {confirmedId}
                     </p>
-                    {confirmedId && (
-                      <p className="text-xs text-slate-500 font-mono pt-1">
-                        Reference ID: {confirmedId}
-                      </p>
-                    )}
-                  </div>
-                  <div className="pt-2">
+                  )}
+                  <div className="pt-4">
                     <Button
                       variant="outline"
                       size="sm"
@@ -206,10 +190,10 @@ export function QuoteInquirySection() {
                 <form onSubmit={handleSubmit} noValidate className="space-y-5">
                   <div className="flex items-center justify-between pb-3 border-b border-slate-100">
                     <h3 className="text-base font-semibold text-brand-navy-900">
-                      Project Specification Form
+                      Research Scoping Form
                     </h3>
                     <Badge variant="blue" size="sm">
-                      Direct RFQ
+                      Direct Research Desk
                     </Badge>
                   </div>
 
@@ -223,7 +207,7 @@ export function QuoteInquirySection() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <Input
                       label="Full Name"
-                      placeholder="e.g. Dr. Alistair Vance"
+                      placeholder="e.g. Eleanor Vance"
                       required
                       value={formData.fullName}
                       error={errors.name}
@@ -235,7 +219,7 @@ export function QuoteInquirySection() {
                     <Input
                       label="Corporate Email"
                       type="email"
-                      placeholder="name@enterprise.com"
+                      placeholder="e.vance@company.com"
                       required
                       value={formData.workEmail}
                       error={errors.email}
@@ -248,8 +232,8 @@ export function QuoteInquirySection() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <Input
-                      label="Organization / Practice"
-                      placeholder="e.g. Vanguard Strategy Partners"
+                      label="Organization"
+                      placeholder="e.g. Apex Global Strategy"
                       value={formData.organization}
                       onChange={(e) =>
                         setFormData({ ...formData, organization: e.target.value })
@@ -258,7 +242,7 @@ export function QuoteInquirySection() {
 
                     <div>
                       <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5">
-                        Primary Capability Needed <span className="text-red-500">*</span>
+                        Research Service <span className="text-red-500">*</span>
                       </label>
                       <select
                         className={`w-full px-3.5 py-2.5 bg-white text-slate-900 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue-600 focus:border-brand-blue-600 transition-colors ${
@@ -270,15 +254,10 @@ export function QuoteInquirySection() {
                           if (errors.service) setErrors({ ...errors, service: undefined });
                         }}
                       >
-                        <option value="Translation">Translation</option>
-                        <option value="Remote Interpretation">Remote Interpretation</option>
-                        <option value="On-Site Interpretation">On-Site Interpretation</option>
-                        <option value="Sign Language Interpretation">Sign Language Interpretation</option>
-                        <option value="Transcription">Transcription</option>
-                        <option value="In-Language Coding">In-Language Coding</option>
-                        <option value="Website Globalization">Website Globalization</option>
-                        <option value="Multi-Market Qualitative Research">Multi-Market Qualitative Research</option>
-                        <option value="Cross-Border Quantitative Fieldwork">Cross-Border Quantitative Fieldwork</option>
+                        <option value="Primary Research">Primary Research</option>
+                        <option value="Qualitative Research">Qualitative Research</option>
+                        <option value="Quantitative Research">Quantitative Research</option>
+                        <option value="Custom Market Advisory">Custom Market Advisory</option>
                       </select>
                       {errors.service && (
                         <p className="mt-1 text-xs text-red-600 font-medium">{errors.service}</p>
@@ -287,18 +266,18 @@ export function QuoteInquirySection() {
                   </div>
 
                   <Input
-                    label="Target Countries / Language Markets"
-                    placeholder="e.g. Germany, Japan, Brazil, UK"
+                    label="Target Market / Geography"
+                    placeholder="e.g. North America, DACH, Japan, Pan-European"
                     value={formData.targetMarkets}
                     onChange={(e) =>
                       setFormData({ ...formData, targetMarkets: e.target.value })
                     }
-                    helperText="Specify regions, languages, or regulatory jurisdictions required."
+                    helperText="Specify key countries, regions, or audience segments."
                   />
 
                   <Textarea
-                    label="Project Scope / Methodology Requirements"
-                    placeholder="Describe your research objectives, sample criteria, timeline, or translation volume..."
+                    label="Project Scope / Research Objectives"
+                    placeholder="Describe your research questions, target audience profile, estimated sample size, or timeline expectations..."
                     required
                     rows={4}
                     value={formData.projectBrief}
@@ -324,11 +303,8 @@ export function QuoteInquirySection() {
                         )
                       }
                     >
-                      {isSubmitting ? "Submitting Enquiry..." : "Request Methodological Quote"}
+                      {isSubmitting ? "Submitting Inquiry..." : "Submit Research Enquiry"}
                     </Button>
-                    <p className="mt-2 text-[11px] text-slate-500 text-center">
-                      Protected by 256-bit encryption. Strict corporate non-disclosure protocols apply.
-                    </p>
                   </div>
                 </form>
               )}

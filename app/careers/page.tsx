@@ -8,27 +8,23 @@ import { Button } from "@/components/ui/Button";
 import { CTASection } from "@/components/sections/CTASection";
 import { CAREER_AREAS } from "@/lib/constants";
 import {
-  Briefcase,
   MapPin,
   Clock,
   ArrowRight,
   CheckCircle2,
-  Globe2,
-  GraduationCap,
-  Sparkles,
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Careers & Linguistic Specialist Network",
+  title: "Careers & Research Opportunities",
   description:
-    "Explore practice leadership positions and accredited freelance linguistic network opportunities with DORA Global Research.",
+    "Explore career opportunities, practice leadership roles, and research specialist positions with DORA Global Research.",
   alternates: {
     canonical: "/careers",
   },
   openGraph: {
-    title: "Careers & Linguistic Network | DORA Global Research",
+    title: "Careers at DORA Global Research",
     description:
-      "Join a disciplined international team dedicated to cross-border research integrity, rigorous localization, and multilingual excellence.",
+      "Join an international team dedicated to methodological rigor, qualitative depth, and empirical market intelligence.",
     url: "/careers",
   },
 };
@@ -36,33 +32,33 @@ export const metadata: Metadata = {
 export default function CareersPage() {
   const whyWorkWithUs = [
     {
-      title: "High-Consequence Projects",
+      title: "Impactful Research Programs",
       description:
-        "Contribute to international litigation arbitrations, medical regulatory filings, and global investor disclosures where precision truly matters.",
+        "Lead and contribute to high-stakes market research studies guiding commercial expansion, product launches, and strategic investments.",
     },
     {
-      title: "Global Collaboration",
+      title: "Cross-Market Collaboration",
       description:
-        "Collaborate daily with certified linguists, senior research directors, and subject-matter specialists situated across major continents.",
+        "Work collaboratively with senior research directors, qualitative moderators, and data analysts across diverse international markets.",
     },
     {
-      title: "Professional Standards",
+      title: "Methodological Integrity",
       description:
-        "We value accredited human domain expertise over algorithmic shortcuts, honoring professional terminology management and methodology.",
+        "We prioritize sound research design, rigorous sample screening, and transparent data analysis over superficial metrics.",
     },
     {
-      title: "Flexible & Distributed Work",
+      title: "Flexible Working Environment",
       description:
-        "Enjoy project-based and distributed work opportunities designed for specialized translators, interpreters, and qualitative analysts.",
+        "Enjoy distributed and flexible project opportunities designed for seasoned research professionals, moderators, and analysts.",
     },
   ];
 
   return (
     <>
       <PageHeader
-        badge="Talent & Linguistic Network"
+        badge="Join Our Practice"
         title="Careers at DORA Global Research"
-        description="Join a disciplined international team dedicated to cross-border research integrity, rigorous localization, and multilingual excellence."
+        description="Join an international team dedicated to methodological rigor, qualitative depth, and evidence-based market intelligence."
       />
 
       {/* Why Work With Us */}
@@ -76,7 +72,7 @@ export default function CareersPage() {
               Why Work With DORA
             </h2>
             <p className="mt-3 text-base text-slate-600 leading-relaxed font-normal">
-              We cultivate an environment of analytical rigor, linguistic precision, and mutual respect for specialized domain knowledge.
+              We foster an environment of intellectual curiosity, analytical rigor, and collaborative problem-solving.
             </p>
           </div>
 
@@ -108,13 +104,13 @@ export default function CareersPage() {
         <Container>
           <div className="max-w-3xl mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest text-brand-blue-700 block mb-2">
-              Active Talent Openings
+              Active Opportunities
             </span>
             <h2 className="text-2xl sm:text-3xl font-semibold text-brand-navy-900 tracking-tight">
-              Current Areas of Opportunity
+              Current Practice Openings
             </h2>
             <p className="mt-3 text-base text-slate-600 leading-relaxed font-normal">
-              We continually seek experienced project managers, domain-certified linguists, and qualitative survey analysts to expand our practice groups.
+              We continually welcome experienced research leads, qualitative moderators, and data analysts to collaborate on active client engagements.
             </p>
           </div>
 
@@ -161,7 +157,7 @@ export default function CareersPage() {
                       size="sm"
                       icon={<ArrowRight className="w-3.5 h-3.5" />}
                     >
-                      Apply / Inquire
+                      Inquire / Apply
                     </Button>
                   </div>
                 </div>
@@ -173,18 +169,18 @@ export default function CareersPage() {
           <div className="mt-12 p-6 rounded-lg bg-white border border-slate-200 shadow-subtle flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
               <h4 className="text-sm font-semibold text-brand-navy-900">
-                Are You a Certified Translator or Conference Interpreter?
+                Experienced Research Moderator or Data Analyst?
               </h4>
               <p className="text-xs text-slate-600 mt-0.5">
-                Submit your credentials and domain accreditation to join our vetted freelance specialist roster.
+                Share your background and sector experience to explore upcoming research collaborations.
               </p>
             </div>
             <Button
-              href="/contact?subject=Linguist+Network+Application"
+              href="/contact?subject=Research+Specialist+Network"
               variant="primary"
               size="sm"
             >
-              Submit Credentials
+              Get in Touch
             </Button>
           </div>
         </Container>

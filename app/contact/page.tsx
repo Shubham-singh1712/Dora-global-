@@ -1,22 +1,22 @@
-import React from "react";
+import React, { Suspense } from "react";
 import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { ContactFormClient } from "@/components/sections/ContactFormClient";
 import { COMPANY_INFO } from "@/lib/constants";
-import { Lock, Clock, Mail, Phone, Globe } from "lucide-react";
+import { FileSearch, Clock, Mail, Globe, Layers } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact & Project Inquiries",
+  title: "Contact & Research Inquiries",
   description:
-    "Direct institutional practice desk for commissioning multi-market qualitative research, quantitative fieldwork, and accredited linguistic services.",
+    "Connect directly with the DORA Global Research team to discuss project requirements, methodologies, and cross-market research capabilities.",
   alternates: {
     canonical: "/contact",
   },
   openGraph: {
-    title: "Contact DORA Global Research | Enterprise Practice Desk",
+    title: "Contact DORA Global Research | Research Practice Desk",
     description:
-      "Submit your methodological brief, language requirements, or tender documentation to our sector coordinators.",
+      "Submit your research brief, audience specifications, or project scope to our senior research coordinators.",
     url: "/contact",
   },
 };
@@ -25,46 +25,56 @@ export default function ContactPage() {
   return (
     <>
       <PageHeader
-        badge="Direct Enterprise Practice Desk"
+        badge="Research Practice Desk"
         title="Contact DORA Global Research"
-        description="Submit your methodological brief, language requirements, or tender documentation to our sector coordinators."
+        description="Connect directly with our research leads to discuss your upcoming studies, sample parameters, and target markets."
       />
 
       <section className="py-16 sm:py-24 bg-brand-surface-subtle border-b border-slate-200">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            {/* Left Column: Practice Information & Guarantees */}
+            {/* Left Column: Practice Information */}
             <div className="lg:col-span-5 space-y-6">
               <div>
                 <span className="text-xs font-semibold uppercase tracking-widest text-brand-blue-700 block mb-2">
-                  Institutional Consultation
+                  Project Scoping & Consultation
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-semibold text-brand-navy-900 tracking-tight leading-tight">
-                  Engage With an Assigned Practice Lead
+                  Discuss Your Research Requirements
                 </h2>
                 <p className="mt-3 text-sm text-slate-600 leading-relaxed font-normal">
-                  All enterprise inquiries are reviewed by our senior practice directors rather than sales intermediaries. You receive a direct evaluation of timeline, resource availability, and technical parameters.
+                  Every inquiry is reviewed directly by our research team. We work with you to evaluate methodology fit, sample feasibility, and project timelines tailored to your strategic questions.
                 </p>
               </div>
 
               <div className="space-y-4">
                 <div className="p-5 bg-white border border-slate-200/90 rounded-lg shadow-subtle hover:border-slate-300 transition-all duration-200">
                   <div className="flex items-center gap-2 mb-2 text-brand-navy-900 font-semibold text-sm">
-                    <Lock className="w-4 h-4 text-brand-blue-600" />
-                    Institutional Confidentiality
+                    <FileSearch className="w-4 h-4 text-brand-blue-600" />
+                    Structured Methodology Review
                   </div>
                   <p className="text-xs text-slate-600 leading-relaxed">
-                    Prior to reviewing proprietary data rooms, patent briefs, or patient dossiers, our compliance office can execute a mutual bilateral NDA promptly.
+                    We evaluate your research objectives to recommend the most suitable qualitative, quantitative, or blended primary research approach.
                   </p>
                 </div>
 
                 <div className="p-5 bg-white border border-slate-200/90 rounded-lg shadow-subtle hover:border-slate-300 transition-all duration-200">
                   <div className="flex items-center gap-2 mb-2 text-brand-navy-900 font-semibold text-sm">
                     <Clock className="w-4 h-4 text-brand-blue-600" />
-                    Methodological Feasibility Assessment
+                    Responsive Scoping & Feasibility
                   </div>
                   <p className="text-xs text-slate-600 leading-relaxed">
-                    We deliver transparent methodological feasibility, itemized cost estimates, and linguistic team accreditation profiles for every scoped engagement.
+                    Receive clear feasibility assessments, audience recruitment parameters, and realistic fieldwork delivery schedules.
+                  </p>
+                </div>
+
+                <div className="p-5 bg-white border border-slate-200/90 rounded-lg shadow-subtle hover:border-slate-300 transition-all duration-200">
+                  <div className="flex items-center gap-2 mb-2 text-brand-navy-900 font-semibold text-sm">
+                    <Layers className="w-4 h-4 text-brand-blue-600" />
+                    Cross-Market Coordination
+                  </div>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    Capability to execute coordinated studies across key international regions with localized language and cultural context.
                   </p>
                 </div>
               </div>
@@ -85,12 +95,8 @@ export default function ContactPage() {
                     </a>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Phone className="w-3.5 h-3.5 text-brand-blue-400" />
-                    <span className="font-mono">{COMPANY_INFO.contacts.support}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
                     <Globe className="w-3.5 h-3.5 text-brand-blue-400" />
-                    <span>Coverage Hubs: {COMPANY_INFO.contacts.headquarters}</span>
+                    <span>{COMPANY_INFO.contacts.headquarters}</span>
                   </div>
                 </div>
               </div>
@@ -98,7 +104,9 @@ export default function ContactPage() {
 
             {/* Right Column: Contact Form */}
             <div className="lg:col-span-7">
-              <ContactFormClient />
+              <Suspense fallback={null}>
+                <ContactFormClient />
+              </Suspense>
             </div>
           </div>
         </Container>

@@ -7,17 +7,20 @@ import { QuoteInquirySection } from "@/components/sections/QuoteInquirySection";
 import {
   ArrowRight,
   Globe,
-  MapPin,
+  Compass,
   CheckCircle2,
-  ShieldCheck,
-  LockKeyhole,
+  Layers,
   FileText,
+  Search,
+  Users,
+  BarChart3,
 } from "lucide-react";
 import type { Metadata } from "next";
 import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
-  title: "DORA Global Research | International Market Intelligence & Research",
+  title: "DORA Global Research | International Market Research & Intelligence",
   description:
     "Delivering primary research, qualitative moderation, and quantitative studies to guide confident business decisions across international markets.",
   alternates: {
@@ -26,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "DORA Global Research | Intelligence Without Borders",
     description:
-      "Primary research, qualitative moderation, and quantitative measurement for multinational enterprises and advisory leads.",
+      "Primary research, qualitative moderation, and quantitative measurement for organizations navigating complex markets.",
     url: "/",
     siteName: "DORA Global Research",
   },
@@ -36,19 +39,19 @@ const SERVICE_ROWS = [
   {
     number: "01",
     title: "PRIMARY RESEARCH",
-    description: "Direct access to the questions that matter most.",
+    description: "Original data collection gathered directly from target stakeholders and buyers.",
     href: "/services/primary-research",
   },
   {
     number: "02",
     title: "QUALITATIVE RESEARCH",
-    description: "Understand motivations, behaviours and perceptions.",
+    description: "Understand motivations, attitudes, and decision drivers through expert moderation.",
     href: "/services/qualitative-research",
   },
   {
     number: "03",
     title: "QUANTITATIVE RESEARCH",
-    description: "Turn market signals into measurable insight.",
+    description: "Statistically robust measurement, audience segmentation, and market sizing.",
     href: "/services/quantitative-research",
   },
 ];
@@ -95,7 +98,7 @@ const INDUSTRY_LIST = [
 export default function HomePage() {
   return (
     <>
-      {/* 1. HERO EXPERIENCE 2.0 */}
+      {/* 1. HERO EXPERIENCE */}
       <HeroSection />
 
       {/* 2. WHAT WE DO (EDITORIAL SERVICE ROWS) */}
@@ -109,7 +112,7 @@ export default function HomePage() {
               Insight begins with the right question.
             </h2>
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
-              We combine rigorous research methodologies, localized market understanding and disciplined analysis to help organizations understand people, markets and opportunities.
+              We combine structured methodologies, localized market understanding, and disciplined analysis to help organizations understand audiences, validate hypotheses, and navigate opportunities.
             </p>
           </div>
 
@@ -157,7 +160,7 @@ export default function HomePage() {
                 RESEARCH ACROSS INDUSTRIES
               </h2>
               <p className="text-base text-slate-600 leading-relaxed font-normal">
-                Specialized market research solutions tailored to sector-specific dynamics and audience requirements.
+                Specialized market research frameworks tailored to sector-specific dynamics and audience requirements.
               </p>
             </div>
             <Link
@@ -201,110 +204,126 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* 4. WHY DORA & QUALITY GOVERNANCE */}
+      {/* 4. METHODOLOGICAL RIGOR & STANDARDS */}
       <section className="py-20 lg:py-28 bg-white border-b border-slate-200">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            <div className="lg:col-span-5 space-y-6">
+            <div className="lg:col-span-6 space-y-6">
               <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-blue-700">
-                THE DORA STANDARD
+                RESEARCH RIGOR
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy-900">
-                Disciplined Execution Across Markets
+                Disciplined Methodologies Built for Defensible Decisions
               </h2>
               <p className="text-base text-slate-600 leading-relaxed font-normal">
-                We combine direct in-market access with rigorous methodological controls to ensure every study delivers clear, defensible evidence.
+                We design custom research programs around your specific business questions, applying structured screening, localized moderation, and transparent analytical controls.
               </p>
 
               <div className="space-y-4 pt-2">
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-brand-blue-700 shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-bold text-brand-navy-900 text-sm">Verified Respondent Panels</h4>
-                    <p className="text-xs text-slate-600">Multi-step screening to validate buyer and decision-maker profiles.</p>
+                    <h4 className="font-bold text-brand-navy-900 text-sm">Targeted Sample Screening</h4>
+                    <p className="text-xs text-slate-600">Multi-step qualification to reach relevant decision-makers and verified consumer profiles.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <ShieldCheck className="w-5 h-5 text-brand-blue-700 shrink-0 mt-0.5" />
+                  <Compass className="w-5 h-5 text-brand-blue-700 shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-bold text-brand-navy-900 text-sm">ESOMAR Ethical Standards</h4>
-                    <p className="text-xs text-slate-600">Strict adherence to international research governance and privacy rules.</p>
+                    <h4 className="font-bold text-brand-navy-900 text-sm">Methodological Integrity</h4>
+                    <p className="text-xs text-slate-600">Structured interview guides, survey instruments, and analytical frameworks mitigating bias.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <LockKeyhole className="w-5 h-5 text-brand-blue-700 shrink-0 mt-0.5" />
+                  <Layers className="w-5 h-5 text-brand-blue-700 shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-bold text-brand-navy-900 text-sm">Data Security &amp; Confidentiality</h4>
-                    <p className="text-xs text-slate-600">Encrypted data processing pipelines safeguarding proprietary research.</p>
+                    <h4 className="font-bold text-brand-navy-900 text-sm">Cross-Market Alignment</h4>
+                    <p className="text-xs text-slate-600">Coordinated fieldwork protocols ensuring comparable findings across regional markets.</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="lg:col-span-7 bg-[#FAF8F5] p-8 sm:p-12 border border-slate-200">
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center sm:text-left">
-                <div className="space-y-2">
-                  <div className="text-3xl font-bold text-brand-navy-900">40+</div>
-                  <div className="text-xs font-bold uppercase tracking-wider text-slate-500">Global Hubs</div>
-                  <p className="text-xs text-slate-600">Coverage across EMEA, Americas, and APAC.</p>
+            <div className="lg:col-span-6 bg-[#FAF8F5] p-8 sm:p-10 border border-slate-200 space-y-6">
+              <h3 className="text-base font-bold text-brand-navy-900 pb-3 border-b border-slate-200">
+                Our Research Approach
+              </h3>
+
+              <div className="space-y-4 text-xs text-slate-700">
+                <div className="flex items-start gap-3">
+                  <Search className="w-4 h-4 text-brand-blue-700 shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="block text-brand-navy-900 text-sm">Custom Study Architecture</strong>
+                    Every project is designed around your unique hypotheses and commercial objectives.
+                  </div>
                 </div>
 
-                <div className="space-y-2">
-                  <div className="text-3xl font-bold text-brand-navy-900">100%</div>
-                  <div className="text-xs font-bold uppercase tracking-wider text-slate-500">First-Hand Data</div>
-                  <p className="text-xs text-slate-600">Direct respondent sampling with zero broker reliance.</p>
+                <div className="flex items-start gap-3">
+                  <Users className="w-4 h-4 text-brand-blue-700 shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="block text-brand-navy-900 text-sm">Localized Moderation</strong>
+                    In-depth discussions conducted with native cultural context and idiom understanding.
+                  </div>
                 </div>
 
-                <div className="space-y-2">
-                  <div className="text-3xl font-bold text-brand-navy-900">Native</div>
-                  <div className="text-xs font-bold uppercase tracking-wider text-slate-500">Field Directors</div>
-                  <p className="text-xs text-slate-600">In-country moderators capturing local context.</p>
+                <div className="flex items-start gap-3">
+                  <BarChart3 className="w-4 h-4 text-brand-blue-700 shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="block text-brand-navy-900 text-sm">Actionable Executive Synthesis</strong>
+                    Distilling complex qualitative narratives and survey data into clear strategic takeaways.
+                  </div>
                 </div>
+              </div>
+
+              <div className="pt-2 border-t border-slate-200">
+                <Button href="/services" variant="primary" size="sm" fullWidth>
+                  Explore Methodologies
+                </Button>
               </div>
             </div>
           </div>
         </Container>
       </section>
 
-      {/* 5. GLOBAL REACH SECTION */}
+      {/* 5. GLOBAL RESEARCH COVERAGE */}
       <section id="locations" className="py-20 lg:py-28 bg-brand-navy-950 text-white relative overflow-hidden">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5 space-y-6">
               <Badge variant="blue" size="sm">
-                Global Footprint
+                Cross-Market Capability
               </Badge>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white leading-tight">
-                Global Reach, Local Nuance
+                Global Research Coverage
               </h2>
               <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-light">
-                Our global operational desks coordinate multi-market research across key commercial regions without timezone delays.
+                Coordinated qualitative and quantitative execution across major international regions with localized language and cultural understanding.
               </p>
 
               <div className="space-y-4 pt-2">
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-brand-blue-400 shrink-0 mt-0.5" />
+                  <Globe className="w-5 h-5 text-brand-blue-400 shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-semibold text-white">London &amp; Frankfurt</h4>
-                    <p className="text-xs text-slate-400">EMEA Research &amp; Market Intelligence Hub</p>
+                    <h4 className="text-sm font-semibold text-white">Americas</h4>
+                    <p className="text-xs text-slate-400">North American &amp; Latin American consumer and B2B markets</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-brand-blue-400 shrink-0 mt-0.5" />
+                  <Globe className="w-5 h-5 text-brand-blue-400 shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-semibold text-white">New York</h4>
-                    <p className="text-xs text-slate-400">Americas Practice &amp; Corporate Advisory</p>
+                    <h4 className="text-sm font-semibold text-white">Europe, Middle East &amp; Africa</h4>
+                    <p className="text-xs text-slate-400">EMEA commercial jurisdictions and diverse market environments</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-brand-blue-400 shrink-0 mt-0.5" />
+                  <Globe className="w-5 h-5 text-brand-blue-400 shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-semibold text-white">Singapore &amp; Tokyo</h4>
-                    <p className="text-xs text-slate-400">Asia-Pacific Fieldwork &amp; Quantitative Units</p>
+                    <h4 className="text-sm font-semibold text-white">Asia-Pacific</h4>
+                    <p className="text-xs text-slate-400">APAC consumer trends, industrial sectors, and emerging markets</p>
                   </div>
                 </div>
               </div>
@@ -313,8 +332,8 @@ export default function HomePage() {
             <div className="lg:col-span-7 bg-brand-navy-900 border border-brand-navy-800 p-8 sm:p-10">
               <div className="flex items-center justify-between pb-6 border-b border-brand-navy-800 mb-6">
                 <div>
-                  <h3 className="text-base font-semibold text-white">In-Market Research Infrastructure</h3>
-                  <p className="text-xs text-slate-400 mt-0.5">Audited quality standards</p>
+                  <h3 className="text-base font-semibold text-white">Cross-Border Research Capability</h3>
+                  <p className="text-xs text-slate-400 mt-0.5">Structured multi-market execution</p>
                 </div>
                 <Globe className="w-6 h-6 text-brand-blue-400" />
               </div>
@@ -326,17 +345,17 @@ export default function HomePage() {
                     Targeted Sample Recruitment
                   </div>
                   <p className="text-slate-400 leading-relaxed">
-                    Audited cohort validation for B2B executives, consumers, and specialized sector participants.
+                    Qualification protocols tailored to reach verified decision-makers, consumers, and specialized sector participants.
                   </p>
                 </div>
 
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 font-semibold text-white">
                     <FileText className="w-4 h-4 text-brand-blue-400" />
-                    Native Idiomatic Analysis
+                    Localized Language Context
                   </div>
                   <p className="text-slate-400 leading-relaxed">
-                    Qualitative coding and synthesis conducted directly in source languages to preserve sentiment nuance.
+                    Qualitative moderation and survey analysis conducted in native idioms to preserve nuanced sentiment and intent.
                   </p>
                 </div>
               </div>

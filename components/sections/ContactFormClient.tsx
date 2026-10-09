@@ -1,39 +1,37 @@
 "use client";
 
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { Card } from "@/components/ui/Card";
 import { Input, Textarea } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
-import { COMPANY_INFO } from "@/lib/constants";
 import { enquirySchema } from "@/lib/validations/enquiry";
 import {
   Send,
   CheckCircle2,
   AlertCircle,
   Loader2,
+  RefreshCw,
 } from "lucide-react";
 
 export interface ContactSubmissionPayload {
   full_name: string;
-  company: string;
   email: string;
-  phone: string;
+  organization: string;
   service: string;
-  industry: string;
-  project_type: string;
+  target_market: string;
+  project_scope: string;
   message: string;
 }
 
 interface FormErrors {
-  name?: string;
-  company?: string;
+  full_name?: string;
   email?: string;
-  phone?: string;
+  organization?: string;
   service?: string;
-  industry?: string;
-  projectType?: string;
+  target_market?: string;
+  project_scope?: string;
   message?: string;
 }
 
@@ -42,26 +40,25 @@ interface ConfirmedEnquiry {
   name: string;
   email: string;
   service: string;
-  industry: string;
-  company?: string;
+  organization?: string;
 }
 
-function ContactFormInner() {
+export function ContactFormClient() {
   const searchParams = useSearchParams();
 
   const [formData, setFormData] = useState<ContactSubmissionPayload>({
     full_name: "",
-    company: "",
     email: "",
-    phone: "",
-    service: "Translation",
-    industry: "Healthcare & Life Sciences",
-    project_type: "One-Off Project Scope",
+    organization: "",
+    service: "Primary Research",
+    target_market: "",
+    project_scope: "One-Off Study",
     message: "",
   });
 
   // Prepopulate from query parameters if available
   useEffect(() => {
+    if (!searchParams) return;
     const preService = searchParams.get("service");
     const preIndustry = searchParams.get("industry");
     const preSubject = searchParams.get("subject");
@@ -70,11 +67,11 @@ function ContactFormInner() {
     setFormData((prev) => ({
       ...prev,
       service: preService || prev.service,
-      industry: preIndustry || prev.industry,
-      message: preTerritory
-        ? `Inquiry regarding operational coverage in ${preTerritory}.\n\n`
-        : preSubject
-        ? `Subject: ${preSubject}\n\n`
+      target_market: preTerritory || prev.target_market,
+      message: preSubject
+        ? `Subject: ${preSubject}\n\n${prev.message}`
+        : preIndustry
+        ? `Industry Focus: ${preIndustry}\n\n${prev.message}`
         : prev.message,
     }));
   }, [searchParams]);
@@ -86,32 +83,29 @@ function ContactFormInner() {
   const [confirmedEnquiry, setConfirmedEnquiry] = useState<ConfirmedEnquiry | null>(null);
 
   /**
-   * Client-side validation powered by Zod schema
+   * Client-side validation
    */
   const validate = (): boolean => {
     const validationResult = enquirySchema.safeParse({
       name: formData.full_name,
-      company: formData.company || null,
+      company: formData.organization || null,
       email: formData.email,
-      phone: formData.phone || null,
       service: formData.service,
-      industry: formData.industry || null,
-      project_type: formData.project_type || null,
-      message: formData.message,
-      source: "website",
+      industry: formData.project_scope || null,
+      project_type: formData.project_scope || null,
+      message: formData.target_market
+        ? `Target Market/Geography: ${formData.target_market}\n\n${formData.message}`
+        : formData.message,
+      source: "website-contact-page",
     });
 
     if (!validationResult.success) {
       const fieldErrors = validationResult.error.flatten().fieldErrors;
       const formattedErrors: FormErrors = {};
 
-      if (fieldErrors.name) formattedErrors.name = fieldErrors.name[0];
-      if (fieldErrors.company) formattedErrors.company = fieldErrors.company[0];
+      if (fieldErrors.name) formattedErrors.full_name = fieldErrors.name[0];
       if (fieldErrors.email) formattedErrors.email = fieldErrors.email[0];
-      if (fieldErrors.phone) formattedErrors.phone = fieldErrors.phone[0];
       if (fieldErrors.service) formattedErrors.service = fieldErrors.service[0];
-      if (fieldErrors.industry) formattedErrors.industry = fieldErrors.industry[0];
-      if (fieldErrors.project_type) formattedErrors.projectType = fieldErrors.project_type[0];
       if (fieldErrors.message) formattedErrors.message = fieldErrors.message[0];
 
       setErrors(formattedErrors);
@@ -129,7 +123,7 @@ function ContactFormInner() {
     e.preventDefault();
     setSubmissionError(null);
 
-    // 1. Validate on client using Zod
+    // 1. Validate on client
     if (!validate()) {
       return;
     }
@@ -138,7 +132,7 @@ function ContactFormInner() {
     setIsSubmitting(true);
 
     try {
-      // 3. Send POST request
+      // 3. Send POST request to existing real backend
       const response = await fetch("/api/enquiries", {
         method: "POST",
         headers: {
@@ -146,202 +140,163 @@ function ContactFormInner() {
         },
         body: JSON.stringify({
           name: formData.full_name,
-          company: formData.company,
+          company: formData.organization,
           email: formData.email,
-          phone: formData.phone,
           service: formData.service,
-          industry: formData.industry,
-          project_type: formData.project_type,
-          message: formData.message,
-          source: "website",
+          industry: formData.project_scope,
+          project_type: formData.project_scope,
+          message: formData.target_market
+            ? `Target Market/Geography: ${formData.target_market}\n\n${formData.message}`
+            : formData.message,
+          source: "website-contact-page",
         }),
       });
 
-      const result = await response.json();
+      const responseData = await response.json();
 
-      // 4. Handle failed response
       if (!response.ok) {
-        if (result.details) {
-          const serverFieldErrors: FormErrors = {};
-          if (result.details.name) serverFieldErrors.name = result.details.name[0];
-          if (result.details.company) serverFieldErrors.company = result.details.company[0];
-          if (result.details.email) serverFieldErrors.email = result.details.email[0];
-          if (result.details.phone) serverFieldErrors.phone = result.details.phone[0];
-          if (result.details.service) serverFieldErrors.service = result.details.service[0];
-          if (result.details.message) serverFieldErrors.message = result.details.message[0];
-          setErrors(serverFieldErrors);
-        }
-
         throw new Error(
-          result.error ||
-            "Unable to complete your request at this time. Please check your information and try again, or reach us at " +
-              COMPANY_INFO.contacts.email
+          responseData.error ||
+            "Unable to submit research enquiry. Please check your details and retry."
         );
       }
 
-      // 5. If successful: record confirmed summary, clear form, show polished success state
+      // 4. Registration successful
       setConfirmedEnquiry({
-        id: result.data?.id || "ENQ-" + Math.floor(100000 + Math.random() * 900000),
+        id: responseData.data?.id || `ENQ-${Math.floor(100000 + Math.random() * 900000)}`,
         name: formData.full_name,
         email: formData.email,
         service: formData.service,
-        industry: formData.industry,
-        company: formData.company || undefined,
+        organization: formData.organization,
       });
 
-      // Clear the form
-      setFormData({
-        full_name: "",
-        company: "",
-        email: "",
-        phone: "",
-        service: "Translation",
-        industry: "Healthcare & Life Sciences",
-        project_type: "One-Off Project Scope",
-        message: "",
-      });
-      setErrors({});
       setIsSubmitted(true);
     } catch (err: unknown) {
+      console.error("Submission error:", err);
       setSubmissionError(
         err instanceof Error
           ? err.message
-          : "We encountered an issue submitting your enquiry. Your entered details have been preserved. Please verify the fields and try again."
+          : "We encountered an unexpected connection issue. Your details have been preserved. Please try submitting again."
       );
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const handleReset = () => {
-    setIsSubmitted(false);
-    setConfirmedEnquiry(null);
+  const resetForm = () => {
+    setFormData({
+      full_name: "",
+      email: "",
+      organization: "",
+      service: "Primary Research",
+      target_market: "",
+      project_scope: "One-Off Study",
+      message: "",
+    });
     setErrors({});
+    setIsSubmitted(false);
     setSubmissionError(null);
+    setConfirmedEnquiry(null);
   };
 
   return (
-    <Card variant="default" padding="lg" className="bg-white border-slate-200 shadow-card">
-      {/* Premium Success State UI */}
-      {isSubmitted ? (
+    <Card variant="default" padding="lg" className="bg-white border-slate-200/90 shadow-elevated">
+      {/* SUCCESS STATE */}
+      {isSubmitted && confirmedEnquiry ? (
         <div className="py-8 text-center space-y-6">
-          <div className="w-16 h-16 bg-blue-50 text-brand-blue-700 rounded-full flex items-center justify-center mx-auto border border-blue-200 shadow-subtle">
-            <CheckCircle2 className="w-9 h-9" />
+          <div className="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center mx-auto border border-emerald-200">
+            <CheckCircle2 className="w-8 h-8" />
           </div>
 
-          <div className="space-y-3 max-w-lg mx-auto">
-            <Badge variant="blue" size="md" dot>
-              Enquiry Confirmed
+          <div className="space-y-2">
+            <Badge variant="blue" size="md">
+              Enquiry Registered
             </Badge>
-            <h2 className="text-2xl sm:text-3xl font-semibold text-brand-navy-900 tracking-tight">
-              Thank you for reaching out.
-            </h2>
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-              Your enquiry has been received. Our team will review your requirements and get back to you with relevant methodological and technical specifications.
+            <h3 className="text-2xl font-bold text-brand-navy-900">
+              Thank You, {confirmedEnquiry.name}
+            </h3>
+            <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
+              Your research enquiry has been received. A senior research lead will review your project parameters and get in touch with you shortly.
             </p>
           </div>
 
-          {/* Enquiry Confirmation Card */}
-          {confirmedEnquiry && (
-            <div className="p-5 bg-slate-50 border border-slate-200 rounded-lg shadow-subtle text-left text-xs text-slate-700 max-w-md mx-auto space-y-2.5">
-              <div className="flex items-center justify-between pb-2 border-b border-slate-200 text-slate-500 font-mono text-[11px]">
-                <span>REFERENCE</span>
-                <span className="font-semibold text-slate-800">{confirmedEnquiry.id}</span>
+          {confirmedEnquiry.id && (
+            <div className="p-4 bg-slate-50 border border-slate-200 rounded-lg max-w-sm mx-auto text-left text-xs space-y-1 font-mono text-slate-700">
+              <div className="flex justify-between">
+                <span className="text-slate-500">Reference:</span>
+                <span className="font-bold text-brand-navy-900">{confirmedEnquiry.id}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-slate-500">Service:</span>
+                <span>{confirmedEnquiry.service}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-slate-500">Contact:</span>
-                <span className="font-medium text-slate-900">{confirmedEnquiry.name}</span>
-              </div>
-              {confirmedEnquiry.company && (
-                <div className="flex justify-between">
-                  <span className="text-slate-500">Organization:</span>
-                  <span className="font-medium text-slate-900">{confirmedEnquiry.company}</span>
-                </div>
-              )}
-              <div className="flex justify-between">
-                <span className="text-slate-500">Registered Email:</span>
-                <span className="font-mono text-slate-800">{confirmedEnquiry.email}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-slate-500">Selected Practice:</span>
-                <span className="font-medium text-brand-blue-700">{confirmedEnquiry.service}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-slate-500">Target Industry:</span>
-                <span className="font-medium text-slate-900">{confirmedEnquiry.industry}</span>
+                <span>{confirmedEnquiry.email}</span>
               </div>
             </div>
           )}
 
-          <div className="pt-2">
-            <Button variant="outline" size="md" onClick={handleReset}>
+          <div className="pt-4">
+            <Button
+              type="button"
+              variant="outline"
+              size="md"
+              onClick={resetForm}
+              icon={<RefreshCw className="w-4 h-4" />}
+            >
               Submit Another Enquiry
             </Button>
           </div>
         </div>
       ) : (
-        /* Form Inputs */
+        /* ACTIVE FORM - RENDERS IMMEDIATELY */
         <form onSubmit={handleSubmit} noValidate className="space-y-5">
           <div className="flex items-center justify-between pb-3 border-b border-slate-100">
             <div>
-              <h2 className="text-lg font-semibold text-brand-navy-900">
-                Corporate Project Enquiry Form
-              </h2>
+              <h3 className="text-lg font-bold text-brand-navy-900">
+                Research Project Enquiry
+              </h3>
               <p className="text-xs text-slate-500 mt-0.5">
-                Fields marked with <span className="text-red-500">*</span> are required
+                Provide your research scope for a direct evaluation.
               </p>
             </div>
             <Badge variant="blue" size="sm">
-              Direct Practice RFQ
+              Direct Research Desk
             </Badge>
           </div>
 
-          {/* Submission General Error Banner */}
+          {/* ERROR STATE BANNER */}
           {submissionError && (
             <div className="p-4 rounded-lg bg-red-50 border border-red-200 flex items-start gap-3 text-xs text-red-800">
               <AlertCircle className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
-              <div className="space-y-1">
-                <p className="font-semibold">Unable to submit enquiry</p>
-                <p>{submissionError}</p>
+              <div>
+                <strong className="font-semibold block mb-0.5">Submission Error</strong>
+                <span>{submissionError}</span>
               </div>
             </div>
           )}
 
-          {/* Row 1: Name and Company */}
+          {/* Field 1 & 2: Full Name & Corporate Email */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Input
               id="full_name"
-              label="Name"
-              placeholder="e.g. Katherine Sterling"
+              label="Full Name"
+              placeholder="e.g. Eleanor Vance"
               required
               value={formData.full_name}
-              error={errors.name}
+              error={errors.full_name}
               onChange={(e) => {
                 setFormData({ ...formData, full_name: e.target.value });
-                if (errors.name) setErrors({ ...errors, name: undefined });
+                if (errors.full_name) setErrors({ ...errors, full_name: undefined });
               }}
             />
 
-            <Input
-              id="company"
-              label="Company"
-              placeholder="e.g. BioVance Therapeutics Ltd."
-              value={formData.company}
-              error={errors.company}
-              onChange={(e) => {
-                setFormData({ ...formData, company: e.target.value });
-                if (errors.company) setErrors({ ...errors, company: undefined });
-              }}
-            />
-          </div>
-
-          {/* Row 2: Email and Phone */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Input
               id="email"
+              label="Corporate Email"
               type="email"
-              label="Email"
-              placeholder="corporate.email@enterprise.com"
+              placeholder="e.vance@company.com"
               required
               value={formData.email}
               error={errors.email}
@@ -350,32 +305,26 @@ function ContactFormInner() {
                 if (errors.email) setErrors({ ...errors, email: undefined });
               }}
             />
-
-            <Input
-              id="phone"
-              type="tel"
-              label="Phone"
-              placeholder="+1 (555) 019-2834"
-              value={formData.phone}
-              error={errors.phone}
-              onChange={(e) => {
-                setFormData({ ...formData, phone: e.target.value });
-                if (errors.phone) setErrors({ ...errors, phone: undefined });
-              }}
-            />
           </div>
 
-          {/* Row 3: Service & Industry Selection */}
+          {/* Field 3 & 4: Organization & Research Service */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <Input
+              id="organization"
+              label="Organization"
+              placeholder="e.g. Apex Global Strategy"
+              value={formData.organization}
+              onChange={(e) => {
+                setFormData({ ...formData, organization: e.target.value });
+              }}
+            />
+
             <div>
-              <label
-                htmlFor="service-select"
-                className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5"
-              >
-                Service <span className="text-red-500">*</span>
+              <label htmlFor="service" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5">
+                Research Service <span className="text-red-500">*</span>
               </label>
               <select
-                id="service-select"
+                id="service"
                 className={`w-full px-3.5 py-2.5 bg-white text-slate-900 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue-600 focus:border-brand-blue-600 transition-colors ${
                   errors.service ? "border-red-500" : "border-slate-300"
                 }`}
@@ -385,83 +334,60 @@ function ContactFormInner() {
                   if (errors.service) setErrors({ ...errors, service: undefined });
                 }}
               >
-                <option value="Translation">Translation</option>
-                <option value="Remote Interpretation">Remote Interpretation</option>
-                <option value="On-Site Interpretation">On-Site Interpretation</option>
-                <option value="Sign Language Interpretation">Sign Language Interpretation</option>
-                <option value="Transcription">Transcription</option>
-                <option value="In-Language Coding">In-Language Coding</option>
-                <option value="Website Globalization">Website Globalization</option>
-                <option value="Multi-Market Qualitative Research">Multi-Market Qualitative Research</option>
-                <option value="Cross-Border Quantitative Fieldwork">Cross-Border Quantitative Fieldwork</option>
+                <option value="Primary Research">Primary Research</option>
+                <option value="Qualitative Research">Qualitative Research</option>
+                <option value="Quantitative Research">Quantitative Research</option>
+                <option value="Custom Market Advisory">Custom Market Advisory</option>
               </select>
               {errors.service && (
                 <p className="mt-1 text-xs text-red-600 font-medium">{errors.service}</p>
               )}
             </div>
+          </div>
+
+          {/* Field 5 & 6: Target Market / Geography & Project Scope */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <Input
+              id="target_market"
+              label="Target Market / Geography"
+              placeholder="e.g. North America, DACH, Japan, Pan-European"
+              value={formData.target_market}
+              onChange={(e) => {
+                setFormData({ ...formData, target_market: e.target.value });
+              }}
+              helperText="Specify key countries or target demographics."
+            />
 
             <div>
-              <label
-                htmlFor="industry-select"
-                className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5"
-              >
-                Industry
+              <label htmlFor="project_scope" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5">
+                Project Scope
               </label>
               <select
-                id="industry-select"
+                id="project_scope"
                 className="w-full px-3.5 py-2.5 bg-white text-slate-900 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue-600 focus:border-brand-blue-600 transition-colors"
-                value={formData.industry}
-                onChange={(e) =>
-                  setFormData({ ...formData, industry: e.target.value })
-                }
+                value={formData.project_scope}
+                onChange={(e) => {
+                  setFormData({ ...formData, project_scope: e.target.value });
+                }}
               >
-                <option value="Healthcare & Life Sciences">Healthcare & Life Sciences</option>
-                <option value="Finance & Banking">Finance & Banking</option>
-                <option value="Technology & Software">Technology & Software</option>
-                <option value="Legal & Regulatory">Legal & Regulatory</option>
-                <option value="Retail & E-commerce">Retail & E-commerce</option>
-                <option value="Education & Publishing">Education & Publishing</option>
-                <option value="Media & Entertainment">Media & Entertainment</option>
-                <option value="Other / Cross-Sector">Other / Cross-Sector</option>
+                <option value="One-Off Study">One-Off Study</option>
+                <option value="Multi-Market Tracking">Multi-Market Tracking</option>
+                <option value="Exploratory Scoping">Exploratory Scoping</option>
+                <option value="Ongoing Program">Ongoing Program</option>
               </select>
             </div>
           </div>
 
-          {/* Row 4: Project Type */}
-          <div>
-            <label
-              htmlFor="project-type-select"
-              className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5"
-            >
-              Project Type
-            </label>
-            <select
-              id="project-type-select"
-              className="w-full px-3.5 py-2.5 bg-white text-slate-900 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue-600 focus:border-brand-blue-600 transition-colors"
-              value={formData.project_type}
-              onChange={(e) =>
-                setFormData({ ...formData, project_type: e.target.value })
-              }
-            >
-              <option value="One-Off Project Scope">One-Off Project Scope</option>
-              <option value="Ongoing Master Services Retainer">Ongoing Master Services Retainer</option>
-              <option value="Urgent / High-Priority Turnaround">Urgent / High-Priority Turnaround</option>
-              <option value="Formal Enterprise RFP / Tender">Formal Enterprise RFP / Tender</option>
-              <option value="General Capability Consultation">General Capability Consultation</option>
-            </select>
-          </div>
-
-          {/* Row 5: Message */}
+          {/* Field 7: Message */}
           <div>
             <Textarea
               id="message"
               label="Message"
-              placeholder="Outline project specifications, target language pairs, document volume, or timeline requirements..."
+              placeholder="Describe your research questions, target audience profile, estimated sample size, or timeline expectations..."
               required
               rows={4}
               value={formData.message}
               error={errors.message}
-              helperText="Protected by 256-bit encryption. Strict corporate non-disclosure protocols apply."
               onChange={(e) => {
                 setFormData({ ...formData, message: e.target.value });
                 if (errors.message) setErrors({ ...errors, message: undefined });
@@ -485,25 +411,11 @@ function ContactFormInner() {
                 )
               }
             >
-              {isSubmitting ? "Submitting Enquiry..." : "Submit Enquiry"}
+              {isSubmitting ? "Submitting Enquiry..." : "Submit Research Enquiry"}
             </Button>
           </div>
         </form>
       )}
     </Card>
-  );
-}
-
-export function ContactFormClient() {
-  return (
-    <Suspense
-      fallback={
-        <div className="p-12 text-center text-sm text-slate-500 bg-white border border-slate-200 rounded-lg shadow-subtle">
-          Loading project enquiry interface...
-        </div>
-      }
-    >
-      <ContactFormInner />
-    </Suspense>
   );
 }

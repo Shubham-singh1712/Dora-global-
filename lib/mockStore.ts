@@ -22,22 +22,19 @@ declare global {
 }
 
 const MOCK_SERVICES = [
-  "Translation",
-  "Remote Interpretation",
-  "On-Site Interpretation",
-  "Sign Language Interpretation",
-  "Transcription",
-  "In-Language Coding",
-  "Website Globalization",
+  "Primary Research",
+  "Qualitative Research",
+  "Quantitative Research",
+  "Custom Market Advisory",
 ];
 
 const MOCK_INDUSTRIES = [
-  "Healthcare & Life Sciences",
-  "Finance & Banking",
-  "Technology & Software",
-  "Legal & Regulatory",
-  "Retail & E-commerce",
-  "Education & Publishing",
+  "Automotives",
+  "Energy & Utilities",
+  "Banking and Finance",
+  "Food & Beverage",
+  "Transportation",
+  "Media & Entertainment",
 ];
 
 const MOCK_STATUSES: EnquiryStatus[] = [
@@ -51,7 +48,7 @@ const MOCK_STATUSES: EnquiryStatus[] = [
 
 function generateInitialMockEnquiries(): MockEnquiry[] {
   const names = [
-    "Dr. Elena Vasquez",
+    "Eleanor Vance",
     "James Okonkwo",
     "Mei-Ling Chen",
     "Stefan Hartmann",
@@ -69,21 +66,21 @@ function generateInitialMockEnquiries(): MockEnquiry[] {
     "Marco Bianchi",
   ];
   const companies = [
-    "BioVance Therapeutics",
-    "Horizon Capital Partners",
+    "Apex Mobility Group",
+    "Horizon Energy Partners",
     "TechSphere Global",
-    "Lex International LLP",
-    "MediQuant AG",
-    "Synapse Research",
-    "Vantage Analytics",
-    "Clarion Publishing",
-    "Nordic Pharma AS",
     "Meridian Financial Group",
-    "Luminary Tech",
+    "Quantix Analytics",
+    "Synapse Strategy",
+    "Vantage Consumer Brands",
+    "Clarion Logistics",
+    "Nordic Utilities AS",
+    "Pinnacle Media Networks",
+    "Luminary Automotive",
     "Al-Rashid Consulting",
-    "Scandinavian Research Institute",
+    "Global Transit Solutions",
     "Pacific Rim Investments",
-    "Crescent Medical",
+    "Artisan Foods Int.",
     "Romano & Partners",
   ];
 
@@ -99,12 +96,12 @@ function generateInitialMockEnquiries(): MockEnquiry[] {
     service: MOCK_SERVICES[i % MOCK_SERVICES.length],
     industry: MOCK_INDUSTRIES[i % MOCK_INDUSTRIES.length],
     project_type: [
-      "One-Off Project Scope",
-      "Ongoing Master Services Retainer",
-      "Urgent / High-Priority Turnaround",
-      "Formal Enterprise RFP / Tender",
+      "One-Off Study",
+      "Multi-Market Tracking",
+      "Exploratory Scoping",
+      "Ongoing Program",
     ][i % 4],
-    message: `Enquiry ${i + 1}: We require specialized ${MOCK_SERVICES[i % MOCK_SERVICES.length].toLowerCase()} services for a multi-market engagement spanning Q${(i % 4) + 1}. Please advise on availability, accredited resource profiles, and indicative timelines for scoping.`,
+    message: `Enquiry ${i + 1}: We are scoping a ${MOCK_SERVICES[i % MOCK_SERVICES.length].toLowerCase()} study in the ${MOCK_INDUSTRIES[i % MOCK_INDUSTRIES.length]} sector. Please advise on methodology recommendations and indicative timing.`,
     source: "website",
     status: MOCK_STATUSES[i % MOCK_STATUSES.length],
     created_at: new Date(Date.now() - i * 86400000 * 1.5).toISOString(),
@@ -113,19 +110,19 @@ function generateInitialMockEnquiries(): MockEnquiry[] {
 }
 
 export function getMockEnquiriesStore(): MockEnquiry[] {
-  if (!globalThis.__doraMockEnquiries) {
-    globalThis.__doraMockEnquiries = generateInitialMockEnquiries();
+  if (!global.__doraMockEnquiries) {
+    global.__doraMockEnquiries = generateInitialMockEnquiries();
   }
-  return globalThis.__doraMockEnquiries;
+  return global.__doraMockEnquiries;
 }
 
 export function addMockEnquiry(
-  payload: Omit<MockEnquiry, "id" | "status" | "created_at" | "updated_at">
+  payload: Omit<MockEnquiry, "id" | "created_at" | "updated_at" | "status">
 ): MockEnquiry {
   const store = getMockEnquiriesStore();
   const newEnquiry: MockEnquiry = {
     ...payload,
-    id: `enq-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`,
+    id: `mock-${String(store.length + 1).padStart(3, "0")}`,
     status: "new",
     created_at: new Date().toISOString(),
     updated_at: new Date().toISOString(),
@@ -140,10 +137,8 @@ export function updateMockEnquiryStatus(
 ): MockEnquiry | null {
   const store = getMockEnquiriesStore();
   const target = store.find((e) => e.id === id);
-  if (target) {
-    target.status = status;
-    target.updated_at = new Date().toISOString();
-    return target;
-  }
-  return null;
+  if (!target) return null;
+  target.status = status;
+  target.updated_at = new Date().toISOString();
+  return target;
 }

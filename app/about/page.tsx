@@ -4,91 +4,114 @@ import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/Badge";
 import { CTASection } from "@/components/sections/CTASection";
 import {
   Compass,
   Eye,
-  Shield,
-  Layers,
   CheckCircle2,
-  ArrowRight,
   Globe,
-  FileCheck,
-  Lock,
+  Layers,
+  Search,
+  Users,
+  BarChart3,
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Us & Corporate Governance",
+  title: "About Us | International Market Research & Intelligence",
   description:
-    "Corporate profile, mission, vision, values, and rigorous methodology standards of DORA Global Research.",
+    "Learn about DORA Global Research: our research philosophy, qualitative and quantitative methodologies, sector depth, and cross-market capabilities.",
   alternates: {
     canonical: "/about",
   },
   openGraph: {
-    title: "About DORA Global Research | Institutional Profile & Governance",
+    title: "About DORA Global Research | Research Practice & Methodologies",
     description:
-      "Bridging cross-border complexity with linguistic authority and verified field intelligence for multinational enterprises.",
+      "Delivering evidence-based market intelligence, qualitative context, and quantitative validation across international markets.",
     url: "/about",
   },
 };
 
 export default function AboutPage() {
-  const corporateValues = [
+  const researchPhilosophy = [
     {
-      title: "Linguistic & Methodological Rigor",
+      title: "Methodological Integrity",
       description:
-        "We believe quality begins with accredited subject-matter expertise rather than automated shortcuts. Every translated clause and research finding is subjected to multi-tiered review.",
+        "Every study is built upon sound research architecture—from robust questionnaire design and screening criteria to structured moderation and statistically valid sample frames.",
     },
     {
-      title: "Uncompromising Confidentiality",
+      title: "Contextual Depth",
       description:
-        "Operating with sensitive clinical trials, litigation discovery, and pre-deal intelligence requires institutional-grade data privacy, non-disclosure protocols, and secure storage.",
+        "We believe market intelligence requires understanding the cultural, commercial, and operational nuance behind consumer and stakeholder decisions.",
     },
     {
-      title: "Cultural & Idiomatic Precision",
+      title: "Actionable Synthesis",
       description:
-        "Language cannot be separated from cultural nuance. We employ native in-market linguists to preserve intent, emotional nuance, and legal certainty.",
+        "We focus on turning raw qualitative dialogue and complex survey datasets into clear, defensible executive insights that directly inform strategic decisions.",
     },
     {
-      title: "Operational Transparency",
+      title: "Collaborative Engagement",
       description:
-        "Clear scoping, transparent delivery milestones, verified audit trails, and accountable project managers on every engagement.",
+        "We work closely with client stakeholders from initial scoping through final presentation, ensuring research parameters precisely align with core business questions.",
     },
   ];
 
-  const whyChoosePoints = [
+  const approachSteps = [
     {
-      title: "Native In-Market Linguistic Network",
+      step: "01",
+      title: "Scoping & Hypothesis Framing",
       description:
-        "Our coordinators deploy native speakers and certified interpreters who live and work within the target jurisdictions, ensuring local colloquial accuracy.",
+        "Defining core business objectives, target audience profiles, key hypotheses, and the optimal methodological mix.",
     },
     {
-      title: "Subject-Matter Specialization",
+      step: "02",
+      title: "Sample & Instrument Design",
       description:
-        "Linguists are matched specifically to their domain—medical doctors for pharmacological documents, patent attorneys for legal briefs, and quantitative analysts for survey coding.",
+        "Developing structured discussion guides or survey instruments with precise screening criteria and bias mitigation.",
     },
     {
-      title: "Agile Project Coordination",
+      step: "03",
+      title: "Fieldwork & In-Market Execution",
       description:
-        "Dedicated project managers orchestrate complex multilingual timelines, emergency court interpretation requests, and continuous software localization pipelines.",
+        "Conducting native-language moderations, stakeholder interviews, or survey data collection across target territories.",
     },
     {
-      title: "Secure Data Workflows",
+      step: "04",
+      title: "Analysis & Strategic Briefing",
       description:
-        "Institutional protocols ensure complete data segregation, encrypted file handling, and mutual non-disclosure agreements before project commencement.",
+        "Synthesizing qualitative themes and quantitative cross-tabulations into clear executive briefings and strategic recommendations.",
+    },
+  ];
+
+  const corePractices = [
+    {
+      icon: Search,
+      title: "Primary Research",
+      description:
+        "Bespoke studies gathering original, first-hand data straight from verified target buyers, industry specialists, and commercial decision-makers.",
+    },
+    {
+      icon: Users,
+      title: "Qualitative Research",
+      description:
+        "In-depth interviews (IDIs), focus group sessions, and exploratory studies designed to unpack attitudes, underlying motivations, and decision triggers.",
+    },
+    {
+      icon: BarChart3,
+      title: "Quantitative Research",
+      description:
+        "Statistically robust survey design, audience segmentation, market sizing models, and longitudinal tracking to validate market opportunities.",
     },
   ];
 
   return (
     <>
       <PageHeader
-        badge="Corporate Profile"
+        badge="About Our Practice"
         title="About DORA Global Research"
-        description="Delivering international field intelligence, cross-border research, and specialized multilingual solutions to global organizations."
+        description="Delivering structured market intelligence, qualitative context, and quantitative research to guide strategic decision-making across complex markets."
       />
 
-      {/* Company Introduction Section */}
+      {/* 1. Who We Are & What We Do */}
       <section className="py-16 sm:py-24 bg-white border-b border-slate-200">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -96,65 +119,57 @@ export default function AboutPage() {
               <div className="inline-flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-brand-blue-600" />
                 <span className="text-xs font-semibold uppercase tracking-widest text-brand-blue-700">
-                  Institutional Background
+                  Who We Are
                 </span>
               </div>
 
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-brand-navy-900 leading-tight">
-                Bridging Cross-Border Complexity with Linguistic Authority
+                Research Designed for Clarity in Complex Markets
               </h2>
 
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
-                DORA Global Research serves multinational enterprises, law practices, healthcare institutions, and advisory firms that require verified cross-border field intelligence and high-stakes language services.
+                DORA Global Research is an international market research and market intelligence practice. We help organizations understand customer behavior, evaluate market opportunities, and make confident commercial decisions.
               </p>
 
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-                From high-consequence regulatory filings to simultaneous diplomatic interpretation, we combine localized fieldwork capability with centralized quality governance. We believe clear, accurate international communication is a prerequisite for sound commercial decision-making.
+                Through customized primary research, expert qualitative moderation, and robust quantitative measurement, we bridge the gap between high-level business questions and grounded, empirical evidence across international markets.
               </p>
-
-              {/* Editable Facts & Parameters Notice */}
-              <div className="p-4 rounded-lg bg-slate-50 border border-slate-200 text-xs text-slate-600">
-                <span className="font-semibold text-slate-800 block mb-1">
-                  Corporate Governance Note
-                </span>
-                Corporate registration details, formal operational histories, and audited disclosures are available directly upon formal enterprise inquiry.
-              </div>
             </div>
 
             <div className="lg:col-span-5 bg-brand-surface-subtle p-8 rounded-lg border border-slate-200 space-y-6">
               <h3 className="text-base font-semibold text-brand-navy-900 pb-3 border-b border-slate-200">
-                Operational Tenets
+                Core Research Capabilities
               </h3>
 
               <div className="space-y-4 text-xs text-slate-700">
                 <div className="flex items-start gap-3">
                   <Globe className="w-4 h-4 text-brand-blue-600 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="block text-brand-navy-900">Multilateral Reach</strong>
-                    Coordinating linguistic resources across major international timezones.
+                    <strong className="block text-brand-navy-900">Cross-Market Coverage</strong>
+                    Multi-market study design with localized language and cultural context.
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <FileCheck className="w-4 h-4 text-brand-blue-600 shrink-0 mt-0.5" />
+                  <Layers className="w-4 h-4 text-brand-blue-600 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="block text-brand-navy-900">Dual-Pass Verification</strong>
-                    Translation workflows structured with primary translation and independent subject-matter review.
+                    <strong className="block text-brand-navy-900">Sector-Focused Depth</strong>
+                    Tailored research frameworks for automotive, energy, finance, food & beverage, transportation, and media.
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <Lock className="w-4 h-4 text-brand-blue-600 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-brand-blue-600 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="block text-brand-navy-900">Institutional Confidentiality</strong>
-                    Protected under mutual NDAs, secure transfer pipelines, and access-controlled repositories.
+                    <strong className="block text-brand-navy-900">Empirical Rigor</strong>
+                    Structured screening, verified respondent recruitment, and clear analytical reporting.
                   </div>
                 </div>
               </div>
 
               <div className="pt-2 border-t border-slate-200">
                 <Button href="/contact" variant="primary" size="sm" fullWidth>
-                  Consult Our Advisory Team
+                  Discuss a Research Project
                 </Button>
               </div>
             </div>
@@ -162,56 +177,66 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Mission & Vision Section */}
+      {/* 2. Core Practices */}
       <section className="py-16 sm:py-24 bg-brand-surface-subtle border-b border-slate-200">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Mission */}
-            <Card variant="default" padding="lg" className="border-slate-200 bg-white shadow-subtle">
-              <div className="flex items-center gap-3 mb-5">
-                <div className="w-10 h-10 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center shadow-subtle">
-                  <Compass className="w-5 h-5 text-brand-blue-700" />
-                </div>
-                <h3 className="text-xl font-semibold text-brand-navy-900">Our Mission</h3>
-              </div>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                To provide multinational enterprises and advisory practices with uncompromising linguistic precision and verified ground-level field intelligence, eliminating the risks of cross-border miscommunication in high-stakes environments.
-              </p>
-            </Card>
+          <div className="max-w-3xl mb-12">
+            <span className="text-xs font-semibold uppercase tracking-widest text-brand-blue-700 block mb-2">
+              Our Capabilities
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-semibold text-brand-navy-900 tracking-tight">
+              Primary Research Methodologies
+            </h2>
+            <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">
+              We design custom research programs around your specific business questions rather than forcing one-size-fits-all methodologies.
+            </p>
+          </div>
 
-            {/* Vision */}
-            <Card variant="default" padding="lg" className="border-slate-200 bg-white shadow-subtle">
-              <div className="flex items-center gap-3 mb-5">
-                <div className="w-10 h-10 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center shadow-subtle">
-                  <Eye className="w-5 h-5 text-brand-blue-700" />
-                </div>
-                <h3 className="text-xl font-semibold text-brand-navy-900">Our Vision</h3>
-              </div>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                To serve as the trusted international language solutions and research partner for global institutions, setting the benchmark for domain rigor, technological resilience, and verified methodological integrity.
-              </p>
-            </Card>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {corePractices.map((practice, idx) => {
+              const Icon = practice.icon;
+              return (
+                <Card
+                  key={idx}
+                  variant="default"
+                  padding="lg"
+                  className="bg-white border-slate-200/90 shadow-subtle hover:border-slate-300 transition-all flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="w-10 h-10 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center mb-4">
+                      <Icon className="w-5 h-5 text-brand-blue-700" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-brand-navy-900 mb-2">
+                      {practice.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                      {practice.description}
+                    </p>
+                  </div>
+                </Card>
+              );
+            })}
           </div>
         </Container>
       </section>
 
-      {/* Corporate Values */}
+      {/* 3. Research Philosophy */}
       <section className="py-16 sm:py-24 bg-white border-b border-slate-200">
         <Container>
           <div className="max-w-3xl mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest text-brand-blue-700 block mb-2">
-              Foundational Principles
+              Our Principles
             </span>
             <h2 className="text-2xl sm:text-3xl font-semibold text-brand-navy-900 tracking-tight">
-              Values That Drive Our Delivery
+              Our Research Philosophy
             </h2>
             <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">
-              Every deliverable from DORA Global Research is grounded in four non-negotiable operational principles.
+              Our work is guided by fundamental commitments to quality, analytical clarity, and actionable business relevance.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {corporateValues.map((value, idx) => (
+            {researchPhilosophy.map((phil, idx) => (
               <Card
                 key={idx}
                 variant="flat"
@@ -223,11 +248,11 @@ export default function AboutPage() {
                     0{idx + 1}.
                   </span>
                   <h3 className="text-base font-semibold text-brand-navy-900">
-                    {value.title}
+                    {phil.title}
                   </h3>
                 </div>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  {value.description}
+                  {phil.description}
                 </p>
               </Card>
             ))}
@@ -235,36 +260,36 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Why DORA Section */}
+      {/* 4. How We Approach Research */}
       <section className="py-16 sm:py-24 bg-brand-surface-subtle border-b border-slate-200">
         <Container>
           <div className="max-w-3xl mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest text-brand-blue-700 block mb-2">
-              Competitive Advantage
+              Structured Process
             </span>
             <h2 className="text-2xl sm:text-3xl font-semibold text-brand-navy-900 tracking-tight">
-              Why Global Enterprises Partner With DORA
+              How We Approach Research Engagements
             </h2>
             <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">
-              In an era of automated translations and generic agencies, we differentiate through verifiable human domain competence and structured coordination.
+              From initial scoping to final deliverable, our structured methodology ensures seamless execution, transparent milestones, and defensible results.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {whyChoosePoints.map((point, idx) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {approachSteps.map((step, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-lg bg-white border border-slate-200/90 hover:border-slate-300 hover:shadow-subtle transition-all duration-200 flex items-start gap-4"
+                className="p-6 rounded-lg bg-white border border-slate-200/90 shadow-subtle space-y-3"
               >
-                <CheckCircle2 className="w-5 h-5 text-brand-blue-600 shrink-0 mt-0.5" />
-                <div>
-                  <h4 className="text-base font-semibold text-brand-navy-900 mb-1.5">
-                    {point.title}
-                  </h4>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    {point.description}
-                  </p>
-                </div>
+                <span className="font-mono text-xs font-bold text-brand-blue-700 px-2.5 py-1 bg-brand-blue-50 border border-brand-blue-200/50 rounded inline-block">
+                  Step {step.step}
+                </span>
+                <h4 className="text-base font-semibold text-brand-navy-900">
+                  {step.title}
+                </h4>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  {step.description}
+                </p>
               </div>
             ))}
           </div>

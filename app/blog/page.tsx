@@ -8,19 +8,19 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { CTASection } from "@/components/sections/CTASection";
 import { SEED_BLOG_ARTICLES } from "@/lib/constants";
-import { Sparkles, Info, ArrowRight } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Methodologies & Research Insights",
   description:
-    "Executive briefings, technical perspectives, and operational frameworks examining cross-border research design and multilingual compliance.",
+    "Executive briefings, methodology frameworks, and perspectives on cross-border primary research and market intelligence.",
   alternates: {
     canonical: "/blog",
   },
   openGraph: {
-    title: "Methodologies & Industry Insights | DORA Global Research",
+    title: "Methodologies & Research Insights | DORA Global Research",
     description:
-      "Expert analyses, regulatory translation protocols, and technical perspectives examining language solutions and multi-market fieldwork.",
+      "Methodology briefings, qualitative moderation frameworks, and quantitative survey design perspectives.",
     url: "/blog",
   },
 };
@@ -29,21 +29,21 @@ export default function BlogPage() {
   return (
     <>
       <PageHeader
-        badge="Perspectives & Technical Briefings"
-        title="Research Methodologies & Industry Insights"
-        description="Analyses, operational checklists, and technical perspectives examining language solutions, quantitative fieldwork, and cross-border compliance."
+        badge="Perspectives & Briefings"
+        title="Research Methodologies & Market Insights"
+        description="Methodological frameworks, qualitative research design, and data validation perspectives across international commercial markets."
       />
 
       <section className="py-16 sm:py-24 bg-white">
         <Container>
-          {/* Transparent Demonstration Disclaimer Notice */}
+          {/* Demonstration Notice */}
           <div className="mb-12 p-4 rounded-lg bg-amber-50/70 border border-amber-200/80 flex items-start gap-3 text-xs text-amber-900 shadow-subtle">
             <Sparkles className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
             <div>
               <strong className="font-semibold block mb-0.5">
                 Editorial Demonstration Notice
               </strong>
-              The articles displayed below are seed and demo briefings configured to illustrate layout hierarchy, categorization, and metadata formatting. They represent sample topical coverage rather than verified corporate publications.
+              The articles displayed below illustrate publication hierarchy and topical coverage across qualitative and quantitative research methodologies.
             </div>
           </div>
 
@@ -60,24 +60,24 @@ export default function BlogPage() {
                     Featured Briefing
                   </Badge>
                   <span className="text-[10px] uppercase font-mono tracking-wider text-amber-400 bg-amber-950/60 px-2 py-0.5 rounded border border-amber-800/80">
-                    Seed Demo
+                    Methodology
                   </span>
                 </div>
 
                 <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight leading-snug">
-                  The Multi-Market Regulatory Compliance Mandate: Establishing Auditable Dual-Pass Translation
+                  Designing Multi-Market Qualitative Research Programs for Cross-Border Clarity
                 </h2>
 
                 <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-light">
-                  A foundational examination of regulatory linguistic audit trails, back-translation protocols, and glossary governance required for cross-jurisdictional compliance filings in clinical and financial sectors.
+                  A foundational examination of moderation guidelines, cross-cultural nuance, and thematic synthesis models required for comparative multi-country qualitative studies.
                 </p>
 
                 <div className="pt-2 flex items-center gap-4 text-xs text-slate-400 font-mono">
                   <span>October 2026</span>
                   <span>•</span>
-                  <span>8 min read</span>
+                  <span>6 min read</span>
                   <span>•</span>
-                  <span>Clinical & Legal Practice</span>
+                  <span>Qualitative Practice</span>
                 </div>
               </div>
             </Card>
@@ -100,7 +100,7 @@ export default function BlogPage() {
                 Receive Quarterly Methodology Briefings
               </h3>
               <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                Direct insights on cross-border research design, terminology governance, and international regulatory shifts delivered to institutional subscribers.
+                Direct perspectives on cross-border research design, audience segmentation, and emerging market trends.
               </p>
             </div>
             <div className="shrink-0">
