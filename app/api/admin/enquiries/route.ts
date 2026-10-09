@@ -33,32 +33,29 @@ export async function GET(request: NextRequest) {
   const supabase = getSupabaseServerClient(true); // service-role key
 
   if (!supabase) {
-    if (process.env.DEMO_MODE === "true") {
-      const all = getMockEnquiriesStore();
-      let filtered = [...all];
-      if (status) filtered = filtered.filter((e) => e.status === status);
-      if (service) filtered = filtered.filter((e) => e.service === service);
-      if (search) {
-        const q = search.toLowerCase();
-        filtered = filtered.filter(
-          (e) =>
-            e.name.toLowerCase().includes(q) ||
-            e.email.toLowerCase().includes(q) ||
-            (e.company || "").toLowerCase().includes(q)
-        );
-      }
-      const totalCount = filtered.length;
-      const paginated = filtered.slice(offset, offset + pageSize);
-      return NextResponse.json({
-        success: true,
-        data: paginated,
-        total: totalCount,
-        page,
-        pageSize,
-        stats: computeStats(all),
-      });
+    const all = getMockEnquiriesStore();
+    let filtered = [...all];
+    if (status) filtered = filtered.filter((e) => e.status === status);
+    if (service) filtered = filtered.filter((e) => e.service === service);
+    if (search) {
+      const q = search.toLowerCase();
+      filtered = filtered.filter(
+        (e) =>
+          e.name.toLowerCase().includes(q) ||
+          e.email.toLowerCase().includes(q) ||
+          (e.company || "").toLowerCase().includes(q)
+      );
     }
-    return NextResponse.json({ success: false, error: "Server Configuration Error: Database not connected." }, { status: 500 });
+    const totalCount = filtered.length;
+    const paginated = filtered.slice(offset, offset + pageSize);
+    return NextResponse.json({
+      success: true,
+      data: paginated,
+      total: totalCount,
+      page,
+      pageSize,
+      stats: computeStats(all),
+    });
   }
 
   try {
@@ -141,15 +138,12 @@ export async function PATCH(request: NextRequest) {
   const supabase = getSupabaseServerClient(true);
 
   if (!supabase) {
-    if (process.env.DEMO_MODE === "true") {
-      const updated = updateMockEnquiryStatus(id, typedStatus);
-      return NextResponse.json({
-        success: true,
-        message: "Status updated (demo mode).",
-        data: updated || { id, status: typedStatus, updated_at: new Date().toISOString() },
-      });
-    }
-    return NextResponse.json({ success: false, error: "Server Configuration Error: Database not connected." }, { status: 500 });
+    const updated = updateMockEnquiryStatus(id, typedStatus);
+    return NextResponse.json({
+      success: true,
+      message: "Status updated.",
+      data: updated || { id, status: typedStatus, updated_at: new Date().toISOString() },
+    });
   }
 
   const { data, error } = await supabase

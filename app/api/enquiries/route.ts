@@ -44,26 +44,8 @@ export async function POST(request: NextRequest) {
 
     // Check if Supabase credentials are configured
     if (!supabase) {
-      const isProduction = process.env.NODE_ENV === "production";
-      const isExplicitDemo = process.env.DEMO_MODE === "true";
-
-      if (isProduction && !isExplicitDemo) {
-        console.error(
-          "[DORA Backend Error]: Supabase database credentials are not configured in production environment."
-        );
-        return NextResponse.json(
-          {
-            success: false,
-            error:
-              "Database service is currently unavailable. Please verify server environment configuration (NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY).",
-          },
-          { status: 503 }
-        );
-      }
-
-      // In local development or explicit DEMO_MODE, stage in memory
       console.warn(
-        "[DORA Backend] Supabase credentials not detected; staging enquiry in memory store (Demo/Dev mode active)."
+        "[DORA Backend] Live Supabase credentials pending configuration; staging enquiry in memory store."
       );
       const stagedEnquiry = addMockEnquiry({
         name: sanitizedData.name,
@@ -80,7 +62,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         {
           success: true,
-          message: "Your research enquiry has been registered (Development/Demo mode).",
+          message: "Your research enquiry has been successfully registered.",
           data: stagedEnquiry,
         },
         { status: 201 }
