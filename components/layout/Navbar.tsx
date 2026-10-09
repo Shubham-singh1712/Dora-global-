@@ -61,12 +61,12 @@ export function Navbar() {
             <div className="flex items-center gap-6">
               <span className="flex items-center gap-1.5 font-medium tracking-wide">
                 <Globe className="w-3.5 h-3.5 text-brand-blue-400" />
-                Global Research Offices: {COMPANY_INFO.contacts.headquarters}
+                Global Research Coverage: Americas &bull; EMEA &bull; Asia-Pacific
               </span>
             </div>
             <div className="flex items-center gap-6 text-slate-400">
               <span className="font-mono text-[11px] tracking-wider uppercase text-slate-400">
-                Institutional &amp; Enterprise Practice
+                Market Research &amp; Intelligence
               </span>
               <span className="text-slate-600">|</span>
               <a

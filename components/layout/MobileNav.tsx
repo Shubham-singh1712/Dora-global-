@@ -175,7 +175,7 @@ export function MobileNav({ isOpen, onClose, activePath }: MobileNavProps) {
             onClick={onClose}
             icon={<ArrowRight className="w-4 h-4" />}
           >
-            Get a Quote
+            Start a Conversation
           </Button>
 
           <div className="pt-2 text-xs text-slate-600 space-y-2">
@@ -191,10 +191,6 @@ export function MobileNav({ isOpen, onClose, activePath }: MobileNavProps) {
               >
                 {COMPANY_INFO.contacts.email}
               </a>
-            </div>
-            <div className="flex items-center gap-2">
-              <Phone className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-              <span>{COMPANY_INFO.contacts.support}</span>
             </div>
           </div>
         </div>

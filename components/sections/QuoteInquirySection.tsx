@@ -204,6 +204,18 @@ export function QuoteInquirySection() {
                     </div>
                   )}
 
+                  {/* Hidden Honeypot Spam Protection Field */}
+                  <input
+                    type="text"
+                    name="website_url"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value=""
+                    onChange={() => {}}
+                    className="hidden absolute -left-[9999px]"
+                    aria-hidden="true"
+                  />
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <Input
                       label="Full Name"

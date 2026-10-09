@@ -14,19 +14,19 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL || "https://doraglobalresearch.com"
   ),
   title: {
-    default: "DORA Global Research | International Market Intelligence & Language Solutions",
+    default: "DORA Global Research | International Market Research & Intelligence",
     template: "%s | DORA Global Research",
   },
   description:
-    "Delivering verified multi-market qualitative moderation, institutional quantitative fieldwork, and domain-certified language solutions for multinational enterprises.",
+    "Delivering primary research, qualitative moderation, and quantitative intelligence across key global sectors to guide strategic decision-making.",
   keywords: [
     "global market research",
     "international qualitative research",
     "b2b quantitative fieldwork",
-    "language solutions",
-    "market due diligence",
-    "medical translation",
-    "corporate intelligence",
+    "primary research",
+    "market intelligence",
+    "audience segmentation",
+    "concept testing",
     "cross-border research",
   ],
   authors: [{ name: "DORA Global Research" }],
@@ -42,15 +42,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://doraglobalresearch.com",
     siteName: "DORA Global Research",
-    title: "DORA Global Research | International Market Intelligence & Language Solutions",
+    title: "DORA Global Research | International Market Research & Intelligence",
     description:
-      "Delivering verified multi-market qualitative moderation, institutional quantitative fieldwork, and domain-certified language solutions for multinational enterprises.",
+      "Delivering primary research, qualitative moderation, and quantitative intelligence across key global sectors to guide strategic decision-making.",
   },
   twitter: {
     card: "summary_large_image",
     title: "DORA Global Research",
     description:
-      "Delivering verified multi-market qualitative moderation, institutional quantitative fieldwork, and domain-certified language solutions for multinational enterprises.",
+      "Delivering primary research, qualitative moderation, and quantitative intelligence across key global sectors to guide strategic decision-making.",
   },
   robots: {
     index: true,

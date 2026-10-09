@@ -277,6 +277,18 @@ export function ContactFormClient() {
             </div>
           )}
 
+          {/* Hidden Honeypot Spam Protection Field */}
+          <input
+            type="text"
+            name="website_url"
+            tabIndex={-1}
+            autoComplete="off"
+            value={formData.target_market === "SPAM_TRIGGER" ? "bot" : ""}
+            onChange={() => {}}
+            className="hidden absolute -left-[9999px]"
+            aria-hidden="true"
+          />
+
           {/* Field 1 & 2: Full Name & Corporate Email */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Input

@@ -82,13 +82,10 @@ interface Toast {
 // ─────────────────────────────────────────────────────────────────────────────
 
 const SERVICES = [
-  "Translation",
-  "Remote Interpretation",
-  "On-Site Interpretation",
-  "Sign Language Interpretation",
-  "Transcription",
-  "In-Language Coding",
-  "Website Globalization",
+  "Primary Research",
+  "Qualitative Research",
+  "Quantitative Research",
+  "Custom Market Advisory",
 ];
 
 const STATUS_CONFIG: Record<

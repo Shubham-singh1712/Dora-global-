@@ -75,6 +75,15 @@ export const enquirySchema = z.object({
     .transform(sanitizeText)
     .optional()
     .default("website"),
+
+  // Honeypot field for bot protection (must be empty)
+  website_url: z
+    .string()
+    .optional()
+    .nullable()
+    .refine((val) => !val || val.length === 0, {
+      message: "Automated submission detected.",
+    }),
 });
 
 export type EnquiryInput = z.infer<typeof enquirySchema>;
