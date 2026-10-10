@@ -1,5 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { Card } from "@/components/ui/Card";
@@ -167,10 +168,24 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="pt-2 border-t border-slate-200">
+              <div className="pt-3 border-t border-slate-200 space-y-2.5">
                 <Button href="/contact" variant="primary" size="sm" fullWidth>
-                  Discuss a Research Project
+                  Discuss a Project
                 </Button>
+                <div className="flex items-center justify-between text-xs pt-1 px-1 text-slate-500">
+                  <Link
+                    href="/locations"
+                    className="hover:text-brand-blue-700 font-medium text-slate-600 transition-colors"
+                  >
+                    Global Locations &rarr;
+                  </Link>
+                  <Link
+                    href="/careers"
+                    className="hover:text-brand-blue-700 font-medium text-slate-600 transition-colors"
+                  >
+                    Careers at DORA &rarr;
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

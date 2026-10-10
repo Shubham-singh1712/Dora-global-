@@ -1,6 +1,17 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, Search, Users, BarChart3, ShieldCheck } from "lucide-react";
+import {
+  ArrowRight,
+  Search,
+  Users,
+  BarChart3,
+  ShieldCheck,
+  Languages,
+  Headphones,
+  FileText,
+  Binary,
+  Globe,
+} from "lucide-react";
 import { ServiceDetail } from "@/lib/data/services";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
@@ -18,6 +29,18 @@ export function ServiceCard({ service }: ServiceCardProps) {
         return <Users className="w-6 h-6 text-brand-blue-700" />;
       case "quantitative-research":
         return <BarChart3 className="w-6 h-6 text-brand-blue-700" />;
+      case "translation":
+        return <Languages className="w-6 h-6 text-brand-blue-700" />;
+      case "on-site-interpretation":
+        return <Users className="w-6 h-6 text-brand-blue-700" />;
+      case "remote-interpretation":
+        return <Headphones className="w-6 h-6 text-brand-blue-700" />;
+      case "transcription":
+        return <FileText className="w-6 h-6 text-brand-blue-700" />;
+      case "in-language-coding":
+        return <Binary className="w-6 h-6 text-brand-blue-700" />;
+      case "survey-localization":
+        return <Globe className="w-6 h-6 text-brand-blue-700" />;
       default:
         return <ShieldCheck className="w-6 h-6 text-brand-blue-700" />;
     }

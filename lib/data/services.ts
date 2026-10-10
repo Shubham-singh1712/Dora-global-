@@ -263,6 +263,588 @@ export const SERVICES_DATA: Record<string, ServiceDetail> = {
     ctaTitle: "Talk to Our Research Team",
     ctaButtonText: "Schedule a Quantitative Scoping Call",
   },
+  "translation": {
+    id: "translation",
+    slug: "translation",
+    title: "Translation for Market Research",
+    shortDescription:
+      "Methodologically faithful translation of surveys, discussion guides, stimulus boards, and executive findings across language markets.",
+    heroBadge: "Linguistic Precision",
+    heroTitle: "Translation for Market Research Built for Methodological Equivalence",
+    heroDescription:
+      "Translate questionnaires, discussion guides, stimulus concepts, and research materials with rigorous semantic precision and cross-cultural consistency.",
+    whatIsTitle: "What is Translation for Market Research?",
+    whatIsDescription: [
+      "Market research translation requires specialized linguistic adaptation tailored specifically to questionnaires, qualitative discussion guides, concept stimulus boards, and executive intelligence briefings.",
+      "Unlike generalized corporate translation, market research translation demands semantic precision, scale consistency, and conversational naturalness so that respondents in every international market interpret questions identically and provide comparable data.",
+    ],
+    understandTitle: "How Translation Supports Global Research",
+    understandPoints: [
+      {
+        title: "Questionnaire & Screener Translation",
+        description: "Adapting complex quantitative survey logic, screening filters, and rating options for authentic local comprehension.",
+      },
+      {
+        title: "Discussion Guides & Moderator Notes",
+        description: "Equipping local qualitative moderators with natural idiomatic phrasing that facilitates conversational rapport and probing.",
+      },
+      {
+        title: "Stimulus & Concept Testing Materials",
+        description: "Translating product concept statements, brand boards, packaging claims, and storyboards while maintaining core brand intent.",
+      },
+      {
+        title: "Open-Ended Verbatims & Reporting",
+        description: "Translating qualitative participant narratives and full research decks into structured English for multinational project stakeholders.",
+      },
+      {
+        title: "Harmonized Research Glossaries",
+        description: "Maintaining study-specific terminology across multi-wave trackers and multi-country research programs.",
+      },
+      {
+        title: "Cultural Appropriateness Screening",
+        description: "Evaluating proposed brand names, survey wording, and concepts against local cultural sensitivities and linguistic nuances.",
+      },
+    ],
+    methodsTitle: "Quality & Review Methodologies",
+    methods: [
+      {
+        name: "Forward & Back-Translation",
+        description: "Independent forward translation followed by blind back-translation to audit semantic fidelity and uncover ambiguities.",
+      },
+      {
+        name: "Dual-Linguist Reconciliation",
+        description: "Two experienced research linguists independently translating and reconciling findings with research leads.",
+      },
+      {
+        name: "Cognitive Pre-Testing Review",
+        description: "Reviewing translated survey questions against respondent processing tendencies to ensure conversational clarity.",
+      },
+      {
+        name: "Terminology Harmonization",
+        description: "Constructing and maintaining central glossaries to protect longitudinal trend comparisons across tracking waves.",
+      },
+    ],
+    useCasesTitle: "Typical Use Cases",
+    useCases: [
+      {
+        title: "Multi-Country Quantitative Tracking Studies",
+        description: "Harmonizing questionnaires across recurring tracking waves to ensure historical trend comparability.",
+      },
+      {
+        title: "Global Concept & Product Innovation Testing",
+        description: "Translating descriptive concept sheets and benefit ladders for international consumer evaluation.",
+      },
+      {
+        title: "Healthcare & B2B Decision-Maker IDIs",
+        description: "Translating highly technical discussion guides for key opinion leaders, clinical specialists, and procurement heads.",
+      },
+      {
+        title: "Cross-Market Brand Perception Audits",
+        description: "Translating qualitative probe materials and findings presentations for corporate leadership teams.",
+      },
+    ],
+    whyDoraPoints: [
+      {
+        title: "Research-Specific Linguistic Protocol",
+        description: "Workflows engineered around survey routing, skip logic, and qualitative moderation needs rather than generic prose.",
+      },
+      {
+        title: "Defensible Cross-Market Equivalence",
+        description: "Rigorous quality controls verifying that questions test identical underlying constructs across every language market.",
+      },
+      {
+        title: "Fieldwork-Aligned Agility",
+        description: "Turnaround milestones scheduled to support fast-paced fieldwork launch dates and programming deadlines.",
+      },
+    ],
+    ctaTitle: "Discuss Your Research Translation Needs",
+    ctaButtonText: "Request Translation Scoping",
+  },
+  "on-site-interpretation": {
+    id: "on-site-interpretation",
+    slug: "on-site-interpretation",
+    title: "On-Site Interpretation",
+    shortDescription:
+      "Simultaneous and consecutive professional interpretation supporting in-person focus groups, IDIs, and facility sessions.",
+    heroBadge: "In-Person Research Support",
+    heroTitle: "On-Site Interpretation for Immersive Fieldwork & Focus Groups",
+    heroDescription:
+      "Provide real-time interpretation for international observers, moderators, and stakeholders during in-person qualitative sessions, focus groups, and facility testing.",
+    whatIsTitle: "What is On-Site Interpretation in Market Research?",
+    whatIsDescription: [
+      "On-site interpretation delivers live, in-person spoken language facilitation for qualitative research environments such as viewing facilities, central location tests (CLT), in-facility focus groups, and in-depth interviews.",
+      "Client observers behind two-way mirrors or in backroom suites hear real-time simultaneous interpretation through dedicated wireless headsets, allowing immediate comprehension of respondent discussions, reactions, and non-verbal cues.",
+    ],
+    understandTitle: "How On-Site Interpretation Empowers Research Teams",
+    understandPoints: [
+      {
+        title: "Real-Time Client Backroom Access",
+        description: "International clients and brand teams observe live discussions without language barriers, hearing nuances as they unfold.",
+      },
+      {
+        title: "Spontaneous Probing & Observer Input",
+        description: "Enabling observers to pass timely follow-up probes to the local moderator through interpreted debriefs between session blocks.",
+      },
+      {
+        title: "Emotional Nuance & Tone Capture",
+        description: "Capturing sarcasm, hesitation, excitement, and subtle inflection that written summaries often omit.",
+      },
+      {
+        title: "Immediate Post-Session Debriefs",
+        description: "Facilitating instant dialogue between client observers and local moderators immediately following each group discussion.",
+      },
+      {
+        title: "Facility Audio & Technical Alignment",
+        description: "Seamless synchronization with facility wireless receiver headsets, observer audio channels, and master recording equipment.",
+      },
+    ],
+    methodsTitle: "Interpretation Formats & Approaches",
+    methods: [
+      {
+        name: "Simultaneous Interpretation with Headsets",
+        description: "Real-time interpretation delivered directly to client viewing suites via multichannel wireless audio transmitters.",
+      },
+      {
+        name: "Consecutive Interpretation for Executive IDIs",
+        description: "Spoken translation delivered during natural conversation pauses, ideal for high-level B2B or clinical stakeholder interviews.",
+      },
+      {
+        name: "Whisper Interpretation (Chuchotage)",
+        description: "Discreet, mobile interpretation suitable for in-home ethnographies, shop-alongs, and facility walkthroughs.",
+      },
+      {
+        name: "Dedicated Audio Channel Recording",
+        description: "Capturing separate source and interpreted audio tracks for retrospective analysis and video compilation.",
+      },
+    ],
+    useCasesTitle: "Typical Use Cases",
+    useCases: [
+      {
+        title: "Multi-Market Consumer Focus Groups",
+        description: "Enabling multinational brand managers to observe live consumer reactions across regional viewing facilities.",
+      },
+      {
+        title: "Central Location Sensory & Taste Testing (CLT)",
+        description: "Facilitating real-time verbal feedback and prompt clarification during structured in-person product evaluations.",
+      },
+      {
+        title: "Key Opinion Leader & Healthcare Interviews",
+        description: "Delivering precise consecutive interpretation during specialized interviews with physicians, engineers, or executives.",
+      },
+      {
+        title: "Retail & In-Home Ethnographic Fieldwork",
+        description: "Providing mobile language support as researchers observe consumer habits in their authentic environments.",
+      },
+    ],
+    whyDoraPoints: [
+      {
+        title: "Qualitative Research Acumen",
+        description: "Interpreters accustomed to qualitative moderation dynamics, subtle probing styles, and backroom confidentiality protocols.",
+      },
+      {
+        title: "Uncompromising Discretion",
+        description: "Strict confidentiality and non-disclosure standards safeguarding proprietary prototypes and unreleased concepts.",
+      },
+      {
+        title: "Turnkey Logistics Coordination",
+        description: "Coordinated technical handoffs with research viewing facilities and audiovisual technicians.",
+      },
+    ],
+    ctaTitle: "Plan On-Site Interpretation for Your Upcoming Study",
+    ctaButtonText: "Discuss On-Site Interpretation",
+  },
+  "remote-interpretation": {
+    id: "remote-interpretation",
+    slug: "remote-interpretation",
+    title: "Remote Interpretation",
+    shortDescription:
+      "Simultaneous and consecutive remote interpretation across digital focus groups, virtual IDIs, and web-enabled qualitative platforms.",
+    heroBadge: "Virtual Qualitative Insights",
+    heroTitle: "Remote Interpretation for Global Virtual Research Sessions",
+    heroDescription:
+      "Connect distributed research teams to international participants through crystal-clear simultaneous interpretation across web-enabled interviews and online focus groups.",
+    whatIsTitle: "What is Remote Interpretation for Market Research?",
+    whatIsDescription: [
+      "Remote interpretation provides live, real-time spoken language facilitation for virtual qualitative research conducted over digital platforms, video conferencing software, and specialized qualitative portals.",
+      "Whether using platform-native audio channels (such as Zoom interpretation) or dedicated qualitative research streaming suites, remote interpreters enable global clients, moderators, and observers to participate in real time regardless of geography.",
+    ],
+    understandTitle: "Key Advantages for Virtual Fieldwork",
+    understandPoints: [
+      {
+        title: "Global Observer Participation",
+        description: "Distributed brand and research stakeholders join from anywhere in the world and listen to localized conversations live.",
+      },
+      {
+        title: "Independent Audio Channels",
+        description: "Dual-audio channel separation allows observers to listen to the interpreted stream while the moderator and respondent converse naturally in source language.",
+      },
+      {
+        title: "Flexible Cross-Timezone Fieldwork",
+        description: "Agile scheduling accommodating qualitative fieldwork across diverse timezones with minimal operational overhead.",
+      },
+      {
+        title: "Backchannel Collaboration",
+        description: "Supporting observer backchannel chat and live probing without interrupting the respondent flow.",
+      },
+      {
+        title: "Dual-Track Archival Recording",
+        description: "Recording isolated audio feeds for both native conversation and interpreted commentary for subsequent review.",
+      },
+    ],
+    methodsTitle: "Platform & Delivery Capabilities",
+    methods: [
+      {
+        name: "Platform-Native Channel Integration",
+        description: "Seamless configuration of language channels within Zoom, Teams, Google Meet, and enterprise collaboration suites.",
+      },
+      {
+        name: "Specialized Research Suite Support",
+        description: "Familiarity with dedicated qualitative platforms including Civicom, FocusVision, Recollective, and Discuss.io.",
+      },
+      {
+        name: "Pre-Flight Technical Checks",
+        description: "Pre-session verification of interpreter audio equipment, microphone latency, and channel isolation prior to respondent arrival.",
+      },
+      {
+        name: "Paired Interpreter Relays",
+        description: "Deploying rotation teams for extended multi-hour virtual sessions to guarantee consistent cognitive stamina and accuracy.",
+      },
+    ],
+    useCasesTitle: "Typical Use Cases",
+    useCases: [
+      {
+        title: "Multi-Country Online Focus Groups (OFGs)",
+        description: "Connecting corporate observers with consumer groups across disparate international markets simultaneously.",
+      },
+      {
+        title: "Web-Enabled Executive & B2B Interviews",
+        description: "Conducting in-depth interviews with specialized overseas stakeholders, procurement leads, and technology decision-makers.",
+      },
+      {
+        title: "Digital Diary & Asynchronous Debriefs",
+        description: "Providing live interpretation for video debriefs following mobile diary studies and asynchronous consumer communities.",
+      },
+      {
+        title: "Multi-Market Virtual Co-Creation Sessions",
+        description: "Supporting interactive digital workshops and product innovation ideation sessions across multilingual participant groups.",
+      },
+    ],
+    whyDoraPoints: [
+      {
+        title: "Virtual Research Platform Fluency",
+        description: "Interpreters familiar with online whiteboard tools, screen sharing, stimulus reveals, and virtual breakout mechanics.",
+      },
+      {
+        title: "Redundant Connectivity Safeguards",
+        description: "Backup audio bridges and secondary communication lines minimizing risk of session interruption.",
+      },
+      {
+        title: "Strict Data Privacy & NDA Governance",
+        description: "Encrypted transmission protocols and rigorous confidentiality governance protecting pre-market concepts.",
+      },
+    ],
+    ctaTitle: "Equip Your Virtual Fieldwork with Remote Interpretation",
+    ctaButtonText: "Discuss Remote Interpretation",
+  },
+  "transcription": {
+    id: "transcription",
+    slug: "transcription",
+    title: "Transcription",
+    shortDescription:
+      "Verbatim, intelligent-verbatim, and time-stamped audio/video transcription paired with direct translation for qualitative analysis.",
+    heroBadge: "Audio & Video Intelligence",
+    heroTitle: "Research Transcription Engineered for Analytical Depth",
+    heroDescription:
+      "Transform audio and video recordings of focus groups, IDIs, and ethnographic sessions into structured, searchable transcripts formatted for qualitative coding.",
+    whatIsTitle: "What is Market Research Transcription?",
+    whatIsDescription: [
+      "Market research transcription converts spoken qualitative audio and video into structured, accurate written documentation. Unlike automated machine transcription, specialized research transcription captures multi-speaker overlap, technical terminology, and contextual nuance.",
+      "High-quality transcripts form the essential evidentiary foundation for thematic coding, verbatim quote extraction, client highlight reels, and compliance audits across qualitative studies.",
+    ],
+    understandTitle: "Core Deliverables & Transcription Options",
+    understandPoints: [
+      {
+        title: "Precise Speaker Attribution",
+        description: "Clear identification of moderators, individual respondents, and co-participants throughout dynamic group exchanges.",
+      },
+      {
+        title: "Verbatim vs. Intelligent Verbatim",
+        description: "Choice between full verbatim (including filler words and pauses) or clean intelligent verbatim (edited for reading clarity).",
+      },
+      {
+        title: "Time-Stamped Reference Points",
+        description: "Periodic time coding (e.g. every 30 or 60 seconds) enabling rapid verification against video and audio recordings.",
+      },
+      {
+        title: "Integrated Dual-Language Transcripts",
+        description: "Side-by-side or translated transcripts converting non-English recordings directly into structured English text.",
+      },
+      {
+        title: "Qualitative Software Compatibility",
+        description: "Formatted outputs tailored for immediate import into NVivo, Atlas.ti, MAXQDA, and spreadsheet analysis templates.",
+      },
+      {
+        title: "Terminology & Acronym Verification",
+        description: "Contextual checking of industry-specific jargon, medical terms, and brand names against project glossaries.",
+      },
+    ],
+    methodsTitle: "Output Formats & Quality Assurance",
+    methods: [
+      {
+        name: "Multi-Tier Quality Review",
+        description: "Initial transcript generation followed by audio cross-audit by a senior linguist to eliminate omissions and verify speaker tags.",
+      },
+      {
+        name: "Time-Coded Subtitle & Caption Files",
+        description: "Generating SRT and VTT files for client presentations and video montage clip editing.",
+      },
+      {
+        name: "Direct Source-to-English Translation",
+        description: "Combining transcription and translation into a single consolidated workflow to accelerate qualitative analysis.",
+      },
+      {
+        name: "Custom Template Alignment",
+        description: "Structuring transcript layouts to match client-specific formatting, speaker codes, and font conventions.",
+      },
+    ],
+    useCasesTitle: "Typical Use Cases",
+    useCases: [
+      {
+        title: "In-Depth Interview (IDI) Series Analysis",
+        description: "Generating comprehensive text records of lengthy one-on-one stakeholder, clinician, or executive interviews.",
+      },
+      {
+        title: "Multi-Speaker Focus Group Documentation",
+        description: "Capturing fast-paced group discussions with distinct speaker tracking and participant agreement dynamics.",
+      },
+      {
+        title: "Ethnographic Journey & Mobile Video Logs",
+        description: "Transcribing consumer self-recorded video diaries and in-home product usage demonstrations.",
+      },
+      {
+        title: "Executive Report Evidence & Quote Compilations",
+        description: "Providing searchable verbatims for executive presentations and thematic insight decks.",
+      },
+    ],
+    whyDoraPoints: [
+      {
+        title: "Researcher-Friendly Formatting",
+        description: "Templates designed with clear speaker differentiation and time tags optimized for thematic coding.",
+      },
+      {
+        title: "Confidentiality & Data Protection",
+        description: "Secure file transfer protocols and strict adherence to international respondent privacy regulations.",
+      },
+      {
+        title: "Flexible Delivery Turnarounds",
+        description: "Standard, rush, and overnight delivery options aligned with tight reporting and debrief milestones.",
+      },
+    ],
+    ctaTitle: "Convert Research Recordings into Usable Intelligence",
+    ctaButtonText: "Discuss Transcription Services",
+  },
+  "in-language-coding": {
+    id: "in-language-coding",
+    slug: "in-language-coding",
+    title: "In-Language Coding",
+    shortDescription:
+      "Categorizing and analyzing open-ended survey verbatims directly in their native language to safeguard cultural sentiment and nuance.",
+    heroBadge: "Verbatim Intelligence",
+    heroTitle: "In-Language Coding for Multilingual Open-Ended Analysis",
+    heroDescription:
+      "Analyze and classify open-ended survey responses directly in their original language, preserving authentic sentiment, idioms, and cultural context.",
+    whatIsTitle: "What is In-Language Coding?",
+    whatIsDescription: [
+      "In-language coding is the practice of categorizing open-ended survey verbatims directly in their original source language using standardized codeframes, rather than translating raw responses prior to analysis.",
+      "By coding in the native idiom, research teams avoid the distortion, loss of subtle sentiment, and bias that often occurs when slang, cultural metaphors, or regional idioms are translated literally into English before classification.",
+    ],
+    understandTitle: "Why In-Language Coding Protects Data Quality",
+    understandPoints: [
+      {
+        title: "Preservation of Authentic Sentiment",
+        description: "Capturing nuanced consumer attitudes, humor, irony, and cultural subtext that direct translation can dilute.",
+      },
+      {
+        title: "Consistent Centralized Codeframes",
+        description: "Applying unified thematic categories across multiple languages, ensuring cross-country statistical comparability.",
+      },
+      {
+        title: "Discovery of Emerging Themes",
+        description: "Identifying unanticipated local consumer priorities and brand perceptions that might otherwise go unflagged.",
+      },
+      {
+        title: "Conversion to Quantitative Datasets",
+        description: "Transforming unstructured qualitative narrative text into structured numerical codes for cross-tabulation and statistical modeling.",
+      },
+      {
+        title: "Elimination of Translation Overhead",
+        description: "Streamlining data processing by eliminating the requirement to translate thousands of raw open-ended strings prior to coding.",
+      },
+    ],
+    methodsTitle: "Methodology & Coding Architecture",
+    methods: [
+      {
+        name: "Standardized Codeframe Development",
+        description: "Collaborative design of structured, mutually exclusive codeframes aligned with key project research questions.",
+      },
+      {
+        name: "Native-Speaker Coding Execution",
+        description: "Trained market research coders reviewing responses in their primary language to ensure accurate category assignment.",
+      },
+      {
+        name: "Hierarchical Net & Sub-Net Categorization",
+        description: "Structuring thematic categories into primary nets and granular sub-codes for layered analytical reporting.",
+      },
+      {
+        name: "Inter-Coder Reliability Audits",
+        description: "Conducting systematic cross-coder audits to guarantee categorization consistency and statistical reliability.",
+      },
+    ],
+    useCasesTitle: "Typical Use Cases",
+    useCases: [
+      {
+        title: "Multi-Market Net Promoter Score (NPS) Open-Ends",
+        description: "Analyzing promoter and detractor rationales across global markets to identify regional customer satisfaction drivers.",
+      },
+      {
+        title: "Unprompted Brand & Advertising Recall",
+        description: "Categorizing spontaneous brand mentions and campaign takeaways across disparate language environments.",
+      },
+      {
+        title: "Product Experience & Pain Point Mapping",
+        description: "Classifying consumer feedback regarding product usability, customer service, or feature requests.",
+      },
+      {
+        title: "Consumer Perception & Packaging Feedback",
+        description: "Evaluating open-ended respondent reactions to newly launched packaging designs and advertising creative.",
+      },
+    ],
+    whyDoraPoints: [
+      {
+        title: "Methodological Discipline",
+        description: "Strict coding conventions, net thresholds, and consistency guidelines established for market research standards.",
+      },
+      {
+        title: "Cross-Market Harmonization",
+        description: "Supervised alignment ensuring that codeframes applied in Tokyo, São Paulo, and Frankfurt remain analytically equivalent.",
+      },
+      {
+        title: "Software-Ready Datasets",
+        description: "Delivery in clean SPSS, CSV, or Excel formats ready for immediate tabulations, banner cuts, and dashboard ingestion.",
+      },
+    ],
+    ctaTitle: "Extract Deeper Meaning from Multilingual Open-Ends",
+    ctaButtonText: "Discuss In-Language Coding",
+  },
+  "survey-localization": {
+    id: "survey-localization",
+    slug: "survey-localization",
+    title: "Survey Translation and Localization",
+    shortDescription:
+      "Cultural adaptation and cognitive calibration of survey instruments, rating scales, and demographics to ensure measurement validity.",
+    heroBadge: "Measurement Validity",
+    heroTitle: "Survey Translation & Localization for Reliable Global Measurement",
+    heroDescription:
+      "Adapt survey questions, rating scales, instructions, and demographic categories to target cultural contexts while safeguarding cross-market statistical comparability.",
+    whatIsTitle: "What is Survey Translation & Localization?",
+    whatIsDescription: [
+      "Survey localization extends far beyond literal translation. It is the comprehensive cultural, cognitive, and linguistic adaptation of survey instruments, response options, rating scales, and demographic categories to match local respondent expectations.",
+      "When a survey is inadequately localized, cultural response biases, misunderstood scales, or confusing terminology skew statistical results. Methodological localization ensures every question measures the exact same underlying construct across all markets.",
+    ],
+    understandTitle: "Key Pillars of Survey Localization",
+    understandPoints: [
+      {
+        title: "Conceptual & Semantic Equivalence",
+        description: "Ensuring survey questions probe identical cognitive concepts regardless of cultural and linguistic variations.",
+      },
+      {
+        title: "Rating Scale Calibration",
+        description: "Harmonizing Likert scales, agreement matrices, and numerical endpoints to mitigate cultural acquiescence or extreme response bias.",
+      },
+      {
+        title: "Demographic Category Adaptation",
+        description: "Adapting income bands, education credentials, employment categories, and regional geographies to local standards.",
+      },
+      {
+        title: "Instructional Clarity & Flow",
+        description: "Crafting clear, intuitive survey guidance that minimizes respondent cognitive fatigue and reduces drop-off rates.",
+      },
+      {
+        title: "Survey Platform Overlay QA",
+        description: "Reviewing programmed surveys within online survey tools to verify character display, button wrapping, and routing logic.",
+      },
+    ],
+    methodsTitle: "Localization Protocols",
+    methods: [
+      {
+        name: "Forward & Back-Translation Audit",
+        description: "Rigorous forward translation with independent back-translation to uncover potential semantic divergences.",
+      },
+      {
+        name: "Cognitive Pre-Testing Debriefs",
+        description: "Assessing respondent question processing and interpretation to verify that localized wording functions as expected.",
+      },
+      {
+        name: "In-Tool Linguistic Quality Assurance (LQA)",
+        description: "Testing translated surveys directly inside survey engines (Qualtrics, Decipher, Confirmit) for UI fit and dynamic text piping.",
+      },
+      {
+        name: "Cultural Sensitivity & Bias Screening",
+        description: "Screening survey content for culturally inappropriate phrasing or taboos that could provoke respondent non-response.",
+      },
+    ],
+    useCasesTitle: "Typical Use Cases",
+    useCases: [
+      {
+        title: "Global Brand Equity & Health Trackers",
+        description: "Deploying multi-country survey trackers that yield statistically reliable cross-market benchmark comparisons.",
+      },
+      {
+        title: "Cross-Border Customer Experience (CX) Programs",
+        description: "Localizing touchpoint satisfaction surveys across international operational markets.",
+      },
+      {
+        title: "New Product Concept & Pricing Surveys",
+        description: "Calibrating feature trade-off and price sensitivity questions to local currency norms and spending habits.",
+      },
+      {
+        title: "Multinational Employee & Stakeholder Audits",
+        description: "Adapting organizational sentiment surveys to regional workplace culture and terminology.",
+      },
+    ],
+    whyDoraPoints: [
+      {
+        title: "Survey Science Grounding",
+        description: "Linguistic adaptation informed by questionnaire design principles, measurement psychology, and data integrity.",
+      },
+      {
+        title: "Survey Platform Compatibility",
+        description: "Familiarity with online survey tools, XML/CSV export formats, question types, and piping protocols.",
+      },
+      {
+        title: "Defensible Cross-Market Comparability",
+        description: "Empowering research teams to benchmark findings across international markets with statistical confidence.",
+      },
+    ],
+    ctaTitle: "Ensure Cross-Market Validity in Your Next Survey",
+    ctaButtonText: "Schedule Localization Scoping",
+  },
 };
 
+export const CORE_RESEARCH_SERVICES = [
+  SERVICES_DATA["primary-research"],
+  SERVICES_DATA["qualitative-research"],
+  SERVICES_DATA["quantitative-research"],
+];
+
+export const LANGUAGE_SERVICES = [
+  SERVICES_DATA["translation"],
+  SERVICES_DATA["on-site-interpretation"],
+  SERVICES_DATA["remote-interpretation"],
+  SERVICES_DATA["transcription"],
+  SERVICES_DATA["in-language-coding"],
+  SERVICES_DATA["survey-localization"],
+];
+
 export const SERVICES_LIST = Object.values(SERVICES_DATA);
+

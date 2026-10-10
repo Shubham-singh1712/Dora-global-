@@ -266,10 +266,20 @@ export function QuoteInquirySection() {
                           if (errors.service) setErrors({ ...errors, service: undefined });
                         }}
                       >
-                        <option value="Primary Research">Primary Research</option>
-                        <option value="Qualitative Research">Qualitative Research</option>
-                        <option value="Quantitative Research">Quantitative Research</option>
-                        <option value="Custom Market Advisory">Custom Market Advisory</option>
+                        <optgroup label="Market Research">
+                          <option value="Primary Research">Primary Research</option>
+                          <option value="Qualitative Research">Qualitative Research</option>
+                          <option value="Quantitative Research">Quantitative Research</option>
+                          <option value="Custom Market Advisory">Custom Market Advisory</option>
+                        </optgroup>
+                        <optgroup label="Language Solutions">
+                          <option value="Translation for Market Research">Translation for Market Research</option>
+                          <option value="On-Site Interpretation">On-Site Interpretation</option>
+                          <option value="Remote Interpretation">Remote Interpretation</option>
+                          <option value="Transcription">Transcription</option>
+                          <option value="In-Language Coding">In-Language Coding</option>
+                          <option value="Survey Translation and Localization">Survey Translation and Localization</option>
+                        </optgroup>
                       </select>
                       {errors.service && (
                         <p className="mt-1 text-xs text-red-600 font-medium">{errors.service}</p>

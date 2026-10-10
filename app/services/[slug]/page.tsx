@@ -11,11 +11,7 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  return [
-    { slug: "primary-research" },
-    { slug: "qualitative-research" },
-    { slug: "quantitative-research" },
-  ];
+  return Object.keys(SERVICES_DATA).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -61,8 +57,9 @@ export default async function ServiceDetailPage({ params }: Props) {
 
       <ServiceCTA
         title={service.ctaTitle}
-        description="Connect with our domain leads to review sample framing, moderation approaches, or survey design for your next project."
+        description="Connect with our research team to review study parameters, sample feasibility, moderation approaches, or language solutions."
         buttonText={service.ctaButtonText}
+        buttonHref={`/contact?service=${encodeURIComponent(service.title)}`}
       />
     </>
   );

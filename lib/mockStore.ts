@@ -26,6 +26,12 @@ const MOCK_SERVICES = [
   "Qualitative Research",
   "Quantitative Research",
   "Custom Market Advisory",
+  "Translation for Market Research",
+  "On-Site Interpretation",
+  "Remote Interpretation",
+  "Transcription",
+  "In-Language Coding",
+  "Survey Translation and Localization",
 ];
 
 const MOCK_INDUSTRIES = [

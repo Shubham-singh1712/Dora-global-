@@ -56,10 +56,31 @@ export function ContactFormClient() {
     message: "",
   });
 
+  // Normalize query param service to matched option
+  const normalizeService = (val: string | null): string | null => {
+    if (!val) return null;
+    const lower = val.toLowerCase();
+    if (lower.includes("survey") || lower.includes("localization"))
+      return "Survey Translation and Localization";
+    if (lower.includes("translation")) return "Translation for Market Research";
+    if (lower.includes("on-site") || lower.includes("onsite"))
+      return "On-Site Interpretation";
+    if (lower.includes("remote")) return "Remote Interpretation";
+    if (lower.includes("transcript")) return "Transcription";
+    if (lower.includes("coding")) return "In-Language Coding";
+    if (lower.includes("primary")) return "Primary Research";
+    if (lower.includes("qualitative")) return "Qualitative Research";
+    if (lower.includes("quantitative")) return "Quantitative Research";
+    if (lower.includes("language solutions") || lower.includes("language-solutions"))
+      return "Translation for Market Research";
+    return val;
+  };
+
   // Prepopulate from query parameters if available
   useEffect(() => {
     if (!searchParams) return;
-    const preService = searchParams.get("service");
+    const rawService = searchParams.get("service");
+    const preService = normalizeService(rawService);
     const preIndustry = searchParams.get("industry");
     const preSubject = searchParams.get("subject");
     const preTerritory = searchParams.get("territory");
@@ -346,10 +367,20 @@ export function ContactFormClient() {
                   if (errors.service) setErrors({ ...errors, service: undefined });
                 }}
               >
-                <option value="Primary Research">Primary Research</option>
-                <option value="Qualitative Research">Qualitative Research</option>
-                <option value="Quantitative Research">Quantitative Research</option>
-                <option value="Custom Market Advisory">Custom Market Advisory</option>
+                <optgroup label="Market Research">
+                  <option value="Primary Research">Primary Research</option>
+                  <option value="Qualitative Research">Qualitative Research</option>
+                  <option value="Quantitative Research">Quantitative Research</option>
+                  <option value="Custom Market Advisory">Custom Market Advisory</option>
+                </optgroup>
+                <optgroup label="Language Solutions">
+                  <option value="Translation for Market Research">Translation for Market Research</option>
+                  <option value="On-Site Interpretation">On-Site Interpretation</option>
+                  <option value="Remote Interpretation">Remote Interpretation</option>
+                  <option value="Transcription">Transcription</option>
+                  <option value="In-Language Coding">In-Language Coding</option>
+                  <option value="Survey Translation and Localization">Survey Translation and Localization</option>
+                </optgroup>
               </select>
               {errors.service && (
                 <p className="mt-1 text-xs text-red-600 font-medium">{errors.service}</p>

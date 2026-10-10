@@ -9,6 +9,7 @@ export interface SubNavItem {
   label: string;
   href: string;
   description: string;
+  section?: "market-research" | "language-solutions";
 }
 
 export const SERVICES_NAV_ITEMS: SubNavItem[] = [
@@ -16,17 +17,64 @@ export const SERVICES_NAV_ITEMS: SubNavItem[] = [
     label: "Primary Research",
     href: "/services/primary-research",
     description: "Direct respondent insights and customized primary intelligence.",
+    section: "market-research",
   },
   {
     label: "Qualitative Research",
     href: "/services/qualitative-research",
     description: "In-depth moderation, focus groups, and directional insights.",
+    section: "market-research",
   },
   {
     label: "Quantitative Research",
     href: "/services/quantitative-research",
     description: "Statistically robust surveys, market sizing, and data analytics.",
+    section: "market-research",
   },
+];
+
+export const LANGUAGE_SOLUTIONS_NAV_ITEMS: SubNavItem[] = [
+  {
+    label: "Translation",
+    href: "/services/translation",
+    description: "Surveys, guides, stimulus materials, and reporting translation.",
+    section: "language-solutions",
+  },
+  {
+    label: "On-Site Interpretation",
+    href: "/services/on-site-interpretation",
+    description: "In-person simultaneous & consecutive interpreters for facility sessions.",
+    section: "language-solutions",
+  },
+  {
+    label: "Remote Interpretation",
+    href: "/services/remote-interpretation",
+    description: "Real-time simultaneous interpretation across virtual platforms.",
+    section: "language-solutions",
+  },
+  {
+    label: "Transcription",
+    href: "/services/transcription",
+    description: "Verbatim and time-stamped audio/video transcription with direct translation.",
+    section: "language-solutions",
+  },
+  {
+    label: "In-Language Coding",
+    href: "/services/in-language-coding",
+    description: "Categorizing open-ended survey verbatims directly in source idioms.",
+    section: "language-solutions",
+  },
+  {
+    label: "Survey Translation & Localization",
+    href: "/services/survey-localization",
+    description: "Cultural adaptation and cognitive calibration of survey instruments.",
+    section: "language-solutions",
+  },
+];
+
+export const ALL_SERVICES_NAV_ITEMS: SubNavItem[] = [
+  ...SERVICES_NAV_ITEMS,
+  ...LANGUAGE_SOLUTIONS_NAV_ITEMS,
 ];
 
 export const INDUSTRIES_NAV_ITEMS: SubNavItem[] = [
@@ -41,7 +89,7 @@ export const INDUSTRIES_NAV_ITEMS: SubNavItem[] = [
     description: "Ratepayer sentiment, renewable energy, and grid transition.",
   },
   {
-    label: "Banking and Finance",
+    label: "Banking & Finance",
     href: "/industries/banking-finance",
     description: "Financial product adoption, digital banking CX, and investor trust.",
   },
@@ -62,13 +110,54 @@ export const INDUSTRIES_NAV_ITEMS: SubNavItem[] = [
   },
 ];
 
+export const ABOUT_NAV_ITEMS: SubNavItem[] = [
+  {
+    label: "About DORA",
+    href: "/about",
+    description: "Our mission, research philosophy, and governance principles.",
+  },
+  {
+    label: "Global Coverage",
+    href: "/locations",
+    description: "Fieldwork reach across the Americas, EMEA, and Asia-Pacific.",
+  },
+  {
+    label: "Careers",
+    href: "/careers",
+    description: "Opportunities across quantitative, qualitative, and operations.",
+  },
+];
+
+export const INSIGHTS_NAV_ITEMS: SubNavItem[] = [
+  {
+    label: "Blog & Perspectives",
+    href: "/blog",
+    description: "Methodology perspectives, briefing papers, and research practice notes.",
+  },
+  {
+    label: "Qualitative Research Design",
+    href: "/blog/evaluating-regulatory-translation-protocols",
+    description: "Multi-market qualitative studies and cross-cultural moderation frameworks.",
+  },
+  {
+    label: "Quantitative Sample Integrity",
+    href: "/blog/remote-simultaneous-interpretation-standards",
+    description: "Safeguarding statistical validity in cross-border survey research.",
+  },
+  {
+    label: "In-Language Qualitative Coding",
+    href: "/blog/in-language-coding-vs-translated-verbatims",
+    description: "Analyzing verbatims in source idioms to prevent sentiment distortion.",
+  },
+];
+
 export const NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "/" },
   {
     label: "Services",
     href: "/services",
-    description: "Global research methodologies & intelligence",
-    children: SERVICES_NAV_ITEMS,
+    description: "Global research methodologies & language solutions",
+    children: ALL_SERVICES_NAV_ITEMS,
   },
   {
     label: "Industries",
@@ -76,10 +165,17 @@ export const NAV_ITEMS: NavItem[] = [
     description: "Specialized sector market intelligence",
     children: INDUSTRIES_NAV_ITEMS,
   },
-  { label: "About", href: "/about", description: "Mission, vision, and research principles" },
-  { label: "Locations", href: "/locations", description: "Global research coverage" },
-  { label: "Blog", href: "/blog", description: "Methodology perspectives & briefings" },
-  { label: "Careers", href: "/careers", description: "Professional opportunities" },
+  {
+    label: "About",
+    href: "/about",
+    description: "Mission, research philosophy, and governance principles",
+  },
+  {
+    label: "Insights",
+    href: "/blog",
+    description: "Methodology perspectives, briefings, and articles",
+    children: INSIGHTS_NAV_ITEMS,
+  },
   { label: "Contact", href: "/contact", description: "Connect with our research team" },
 ];
 
@@ -116,6 +212,57 @@ export const FEATURED_SERVICES: ServiceItem[] = [
     description: "Statistically robust measurement and data analysis to quantify market demand, validate hypotheses, and benchmark performance.",
     deliverables: ["Survey design & execution", "Audience segmentation", "Market sizing & trend analysis"],
     href: "/services/quantitative-research",
+  },
+];
+
+export const FEATURED_LANGUAGE_SERVICES: ServiceItem[] = [
+  {
+    id: "translation",
+    title: "Translation for Market Research",
+    category: "Linguistic Precision",
+    description: "Methodologically faithful translation of surveys, discussion guides, stimulus concepts, and reporting materials across language markets.",
+    deliverables: ["Questionnaire & guide translation", "Stimulus & concept adaptation", "Harmonized terminology glossaries"],
+    href: "/services/translation",
+  },
+  {
+    id: "on-site-interpretation",
+    title: "On-Site Interpretation",
+    category: "In-Person Fieldwork",
+    description: "Simultaneous and consecutive interpretation for viewing facility focus groups, IDIs, central location tests, and client backrooms.",
+    deliverables: ["Multichannel headset audio", "Live client backroom interpretation", "Immediate post-session debriefs"],
+    href: "/services/on-site-interpretation",
+  },
+  {
+    id: "remote-interpretation",
+    title: "Remote Interpretation",
+    category: "Virtual Fieldwork",
+    description: "High-definition remote simultaneous interpretation for online focus groups, web-enabled IDIs, and virtual collaboration portals.",
+    deliverables: ["Platform channel routing", "Dual-interpreter relays", "Isolated audio channel recording"],
+    href: "/services/remote-interpretation",
+  },
+  {
+    id: "transcription",
+    title: "Transcription",
+    category: "Audio & Video",
+    description: "Verbatim and time-stamped transcription of qualitative recordings paired with direct English or multi-language translation.",
+    deliverables: ["Time-stamped transcripts", "Speaker-attributed dialog", "Qualitative software-ready outputs"],
+    href: "/services/transcription",
+  },
+  {
+    id: "in-language-coding",
+    title: "In-Language Coding",
+    category: "Verbatim Intelligence",
+    description: "Categorizing and classifying open-ended survey verbatims directly in source idioms to safeguard authentic sentiment.",
+    deliverables: ["Unified multilingual codeframes", "Net & sub-net hierarchies", "SPSS / Excel-ready datasets"],
+    href: "/services/in-language-coding",
+  },
+  {
+    id: "survey-localization",
+    title: "Survey Translation and Localization",
+    category: "Measurement Validity",
+    description: "Cultural and cognitive adaptation of survey questionnaires, rating scales, and demographic measures ensuring cross-market comparability.",
+    deliverables: ["Rating scale calibration", "Cognitive pre-testing audits", "In-tool survey platform overlay QA"],
+    href: "/services/survey-localization",
   },
 ];
 

@@ -5,7 +5,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { COMPANY_INFO, NAV_ITEMS, FEATURED_SERVICES, INDUSTRIES_NAV_ITEMS } from "@/lib/constants";
+import {
+  COMPANY_INFO,
+  FEATURED_SERVICES,
+  FEATURED_LANGUAGE_SERVICES,
+} from "@/lib/constants";
 import { Globe, Mail, ArrowRight } from "lucide-react";
 
 export function Footer() {
@@ -20,8 +24,8 @@ export function Footer() {
     <footer className="bg-brand-navy-950 text-slate-300 hairline-t border-brand-navy-900 pt-16 pb-12">
       <Container>
         {/* Top Tier: Brand, Brief, Contact CTA */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-14 border-b border-brand-navy-900">
-          <div className="lg:col-span-4 space-y-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-14 border-b border-brand-navy-900">
+          <div className="lg:col-span-3 space-y-5">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-none bg-white text-brand-navy-900 flex items-center justify-center font-bold text-lg">
                 D
@@ -36,7 +40,7 @@ export function Footer() {
               </div>
             </div>
 
-            <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
+            <p className="text-xs text-slate-400 leading-relaxed">
               {COMPANY_INFO.description}
             </p>
 
@@ -60,27 +64,57 @@ export function Footer() {
           {/* Quick Navigation Columns */}
           <div className="lg:col-span-2">
             <p className="text-xs font-semibold uppercase tracking-wider text-white mb-4">
-              Navigation
+              Company
             </p>
-            <ul className="space-y-2.5 text-sm">
-              {NAV_ITEMS.map((item) => (
-                <li key={item.label}>
-                  <Link
-                    href={item.href}
-                    className="text-slate-400 hover:text-white transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
+            <ul className="space-y-2.5 text-xs">
+              <li>
+                <Link
+                  href="/about"
+                  className="text-slate-400 hover:text-white transition-colors"
+                >
+                  About DORA
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/locations"
+                  className="text-slate-400 hover:text-white transition-colors"
+                >
+                  Global Coverage
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/careers"
+                  className="text-slate-400 hover:text-white transition-colors"
+                >
+                  Careers
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/blog"
+                  className="text-slate-400 hover:text-white transition-colors"
+                >
+                  Insights &amp; Perspectives
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-slate-400 hover:text-white transition-colors"
+                >
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-2">
             <p className="text-xs font-semibold uppercase tracking-wider text-white mb-4">
-              Research Practices
+              Core Practices
             </p>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-2.5 text-xs">
               {FEATURED_SERVICES.map((service) => (
                 <li key={service.id}>
                   <Link
@@ -91,19 +125,53 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li className="pt-2">
+                <Link
+                  href="/services"
+                  className="text-brand-blue-400 hover:text-brand-blue-300 font-semibold transition-colors"
+                >
+                  All Methodologies &rarr;
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="lg:col-span-2">
+            <p className="text-xs font-semibold uppercase tracking-wider text-white mb-4">
+              Language Solutions
+            </p>
+            <ul className="space-y-2.5 text-xs">
+              {FEATURED_LANGUAGE_SERVICES.map((service) => (
+                <li key={service.id}>
+                  <Link
+                    href={service.href}
+                    className="text-slate-400 hover:text-white transition-colors"
+                  >
+                    {service.title}
+                  </Link>
+                </li>
+              ))}
+              <li className="pt-2">
+                <Link
+                  href="/services/language-solutions"
+                  className="text-brand-blue-400 hover:text-brand-blue-300 font-semibold transition-colors"
+                >
+                  Solutions Overview &rarr;
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Contact Inquiry CTA Block */}
-          <div className="lg:col-span-3 bg-brand-navy-900/80 p-6 rounded-none border border-brand-navy-800">
+          <div className="lg:col-span-3 bg-brand-navy-900/80 p-5 rounded-none border border-brand-navy-800">
             <span className="text-xs font-semibold uppercase tracking-wider text-brand-blue-400 block mb-2">
               Research Consultation
             </span>
             <h4 className="text-sm font-semibold text-white">
-              Planning a Research Study?
+              Planning a Global Study?
             </h4>
             <p className="text-xs text-slate-400 mt-2 mb-4 leading-relaxed">
-              Connect with our team to evaluate methodologies, sample parameters, and delivery timelines.
+              Connect with our team to evaluate methodologies, sample parameters, and multilingual delivery.
             </p>
             <Button
               href="/contact"
@@ -112,7 +180,7 @@ export function Footer() {
               fullWidth
               icon={<ArrowRight className="w-3.5 h-3.5" />}
             >
-              Start a Conversation
+              Discuss a Project
             </Button>
           </div>
         </div>

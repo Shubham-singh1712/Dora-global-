@@ -148,6 +148,104 @@ export default function HomePage() {
         </Container>
       </section>
 
+      {/* 2B. LANGUAGE SOLUTIONS FOR RESEARCH */}
+      <section id="language-solutions" className="py-20 lg:py-24 bg-brand-surface-subtle border-b border-slate-200">
+        <Container>
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+            <div className="max-w-2xl space-y-3">
+              <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-blue-700">
+                LINGUISTIC CAPABILITIES
+              </span>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-brand-navy-900">
+                Language Solutions for Global Studies
+              </h2>
+              <p className="text-base text-slate-600 leading-relaxed font-normal">
+                Purpose-built language services tailored for market research workflows—from questionnaire localization and live interpretation to verbatim coding.
+              </p>
+            </div>
+            <Link
+              href="/services/language-solutions"
+              className="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-bold text-brand-navy-900 hover:text-brand-blue-700 transition-colors shrink-0"
+            >
+              <span>Explore All Language Solutions</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          {/* 6 Language Solutions Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Translation for Market Research",
+                description:
+                  "Surveys, discussion guides, stimulus concepts, and reporting materials translated with methodological equivalence.",
+                href: "/services/translation",
+                badge: "Linguistic Precision",
+              },
+              {
+                title: "On-Site Interpretation",
+                description:
+                  "Simultaneous and consecutive interpreters for viewing facility focus groups, CLT sessions, and client backrooms.",
+                href: "/services/on-site-interpretation",
+                badge: "In-Person Fieldwork",
+              },
+              {
+                title: "Remote Interpretation",
+                description:
+                  "Real-time interpretation across online focus groups, virtual IDIs, and web-enabled qualitative research portals.",
+                href: "/services/remote-interpretation",
+                badge: "Virtual Insights",
+              },
+              {
+                title: "Transcription",
+                description:
+                  "Verbatim and time-stamped audio/video transcription paired with direct translation for qualitative analysis.",
+                href: "/services/transcription",
+                badge: "Audio & Video",
+              },
+              {
+                title: "In-Language Coding",
+                description:
+                  "Categorizing and analyzing open-ended survey verbatims directly in source idioms to safeguard authentic sentiment.",
+                href: "/services/in-language-coding",
+                badge: "Verbatim Intelligence",
+              },
+              {
+                title: "Survey Translation & Localization",
+                description:
+                  "Cultural adaptation, rating scale calibration, and cognitive pre-testing ensuring cross-market measurement validity.",
+                href: "/services/survey-localization",
+                badge: "Measurement Validity",
+              },
+            ].map((sol) => (
+              <Link
+                key={sol.title}
+                href={sol.href}
+                className="group p-6 bg-white rounded-lg border border-slate-200/90 hover:border-brand-blue-300 hover:shadow-subtle transition-all duration-200 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-brand-blue-700 bg-brand-blue-50 px-2 py-0.5 rounded">
+                      {sol.badge}
+                    </span>
+                    <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-brand-blue-700 group-hover:translate-x-1 transition-all" />
+                  </div>
+                  <h3 className="text-base font-bold text-brand-navy-900 group-hover:text-brand-blue-700 transition-colors">
+                    {sol.title}
+                  </h3>
+                  <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+                    {sol.description}
+                  </p>
+                </div>
+                <div className="pt-4 mt-4 border-t border-slate-100 text-[11px] font-semibold text-brand-blue-700 group-hover:underline">
+                  Learn More &rarr;
+                </div>
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       {/* 3. RESEARCH ACROSS INDUSTRIES (EDITORIAL INDUSTRY LIST) */}
       <section id="industries" className="py-20 lg:py-28 bg-[#FAF8F5] border-b border-slate-200">
         <Container>

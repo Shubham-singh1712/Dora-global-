@@ -7,12 +7,14 @@ interface ServiceCTAProps {
   title?: string;
   description?: string;
   buttonText?: string;
+  buttonHref?: string;
 }
 
 export function ServiceCTA({
   title = "Discuss Your Research Requirement",
   description = "Speak directly with our senior research team to evaluate methodologies, project scopes, and timing for your upcoming initiatives.",
   buttonText = "Contact Us",
+  buttonHref = "/contact",
 }: ServiceCTAProps) {
   return (
     <section className="py-16 sm:py-20 bg-brand-navy-950 text-white relative overflow-hidden">
@@ -39,7 +41,7 @@ export function ServiceCTA({
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <Button
-              href="/contact"
+              href={buttonHref}
               variant="primary"
               size="lg"
               icon={<ArrowRight className="w-4 h-4" />}
