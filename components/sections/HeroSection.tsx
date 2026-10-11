@@ -7,7 +7,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section className="relative pt-12 sm:pt-16 lg:pt-20 pb-10 sm:pb-12 lg:pb-14 bg-[radial-gradient(ellipse_at_top_left,#EBF3FF_0%,#F4F8FE_50%,#FFFFFF_100%)] overflow-hidden border-b border-slate-200">
+    <section className="relative lg:min-h-[calc(100vh-105px)] flex flex-col justify-center pt-12 sm:pt-16 lg:pt-16 pb-12 sm:pb-16 lg:pb-16 bg-[radial-gradient(ellipse_at_top_left,#EBF3FF_0%,#F4F8FE_50%,#FFFFFF_100%)] overflow-hidden border-b border-slate-200">
 
       {/* Signature DORA Blue Extended Curved Background Pattern */}
       <div
