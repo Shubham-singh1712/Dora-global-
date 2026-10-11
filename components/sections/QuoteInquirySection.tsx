@@ -2,8 +2,6 @@
 
 import React, { useState } from "react";
 import { Container } from "@/components/ui/Container";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Card } from "@/components/ui/Card";
 import { Input, Textarea } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
@@ -122,35 +120,43 @@ export function QuoteInquirySection() {
   };
 
   return (
-    <section id="contact" className="py-20 lg:py-28 bg-brand-surface-subtle border-t border-slate-200">
-      <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+    <section id="contact" className="py-12 sm:py-16 lg:py-20 bg-brand-surface-subtle border-t border-slate-200">
+      <Container size="lg" className="max-w-6xl">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           {/* Context and Scope Guidelines */}
-          <div className="lg:col-span-5 space-y-6">
-            <SectionHeading
-              eyebrow="Research Inquiry"
-              title="Initiate Project Scoping"
-              description="Connect with our research team to evaluate methodology fit, sample feasibility, and multi-market delivery timelines."
-              className="mb-8"
-            />
+          <div className="lg:col-span-5 space-y-5">
+            <div>
+              <div className="flex items-center gap-2 mb-2.5">
+                <span className="w-2 h-2 rounded-full bg-brand-blue-600" aria-hidden="true" />
+                <span className="text-xs font-semibold uppercase tracking-widest text-brand-blue-700">
+                  Research Inquiry
+                </span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-brand-navy-900 leading-[1.2]">
+                Initiate Project Scoping
+              </h2>
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal mt-3 max-w-xl">
+                Connect with our research team to evaluate methodology fit, sample feasibility, and multi-market delivery timelines.
+              </p>
+            </div>
 
-            <div className="space-y-4">
-              <div className="p-5 bg-white border border-slate-200/90 rounded-lg shadow-subtle hover:border-slate-300 transition-all duration-200">
-                <div className="flex items-center gap-2 mb-2 text-brand-navy-900 font-semibold text-sm">
-                  <Compass className="w-4 h-4 text-brand-blue-600" />
+            <div className="space-y-3 pt-1">
+              <div className="p-4 bg-white border border-slate-200/90 rounded-lg shadow-subtle hover:border-slate-300 transition-all duration-200">
+                <div className="flex items-center gap-2 mb-1.5 text-brand-navy-900 font-semibold text-sm">
+                  <Compass className="w-4 h-4 text-brand-blue-600 shrink-0" />
                   Structured Methodology Review
                 </div>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="text-xs text-slate-600 leading-relaxed pl-6">
                   We review your business questions to recommend the optimal primary, qualitative, or quantitative approach.
                 </p>
               </div>
 
-              <div className="p-5 bg-white border border-slate-200/90 rounded-lg shadow-subtle hover:border-slate-300 transition-all duration-200">
-                <div className="flex items-center gap-2 mb-2 text-brand-navy-900 font-semibold text-sm">
-                  <Layers className="w-4 h-4 text-brand-blue-600" />
+              <div className="p-4 bg-white border border-slate-200/90 rounded-lg shadow-subtle hover:border-slate-300 transition-all duration-200">
+                <div className="flex items-center gap-2 mb-1.5 text-brand-navy-900 font-semibold text-sm">
+                  <Layers className="w-4 h-4 text-brand-blue-600 shrink-0" />
                   Cross-Market Feasibility
                 </div>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="text-xs text-slate-600 leading-relaxed pl-6">
                   Clear sample size estimates, screening feasibility, and realistic timelines across your target geographies.
                 </p>
               </div>
@@ -159,13 +165,13 @@ export function QuoteInquirySection() {
 
           {/* Form Card */}
           <div className="lg:col-span-7">
-            <Card variant="default" padding="lg" className="bg-white border-slate-200/90 shadow-elevated">
+            <div className="p-6 sm:p-7 bg-white border border-slate-200/90 rounded-xl shadow-elevated">
               {submitted ? (
-                <div className="py-12 text-center space-y-5">
-                  <div className="w-12 h-12 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto border border-emerald-200">
-                    <CheckCircle2 className="w-6 h-6" />
+                <div className="py-10 text-center space-y-4">
+                  <div className="w-11 h-11 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto border border-emerald-200">
+                    <CheckCircle2 className="w-5 h-5" />
                   </div>
-                  <h3 className="text-2xl font-bold text-brand-navy-900">
+                  <h3 className="text-xl font-bold text-brand-navy-900">
                     Enquiry Registered
                   </h3>
                   <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
@@ -176,7 +182,7 @@ export function QuoteInquirySection() {
                       Tracking Reference: {confirmedId}
                     </p>
                   )}
-                  <div className="pt-4">
+                  <div className="pt-2">
                     <Button
                       variant="outline"
                       size="sm"
@@ -187,9 +193,9 @@ export function QuoteInquirySection() {
                   </div>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} noValidate className="space-y-5">
+                <form onSubmit={handleSubmit} noValidate className="space-y-4">
                   <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-                    <h3 className="text-base font-semibold text-brand-navy-900">
+                    <h3 className="text-sm sm:text-base font-semibold text-brand-navy-900">
                       Research Scoping Form
                     </h3>
                     <Badge variant="blue" size="sm">
@@ -216,7 +222,7 @@ export function QuoteInquirySection() {
                     aria-hidden="true"
                   />
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                     <Input
                       label="Full Name"
                       placeholder="e.g. Eleanor Vance"
@@ -242,7 +248,7 @@ export function QuoteInquirySection() {
                     />
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                     <Input
                       label="Organization"
                       placeholder="e.g. Apex Global Strategy"
@@ -301,7 +307,7 @@ export function QuoteInquirySection() {
                     label="Project Scope / Research Objectives"
                     placeholder="Describe your research questions, target audience profile, estimated sample size, or timeline expectations..."
                     required
-                    rows={4}
+                    rows={3}
                     value={formData.projectBrief}
                     error={errors.message}
                     onChange={(e) => {
@@ -310,11 +316,11 @@ export function QuoteInquirySection() {
                     }}
                   />
 
-                  <div className="pt-2">
+                  <div className="pt-1.5">
                     <Button
                       type="submit"
                       variant="primary"
-                      size="lg"
+                      size="md"
                       fullWidth
                       disabled={isSubmitting}
                       icon={
@@ -330,7 +336,7 @@ export function QuoteInquirySection() {
                   </div>
                 </form>
               )}
-            </Card>
+            </div>
           </div>
         </div>
       </Container>

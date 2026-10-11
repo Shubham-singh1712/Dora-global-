@@ -28,9 +28,9 @@ export default function IndustriesOverviewPage() {
         description="We combine deep sector knowledge with customized qualitative and quantitative research methodologies to answer mission-critical questions across major global industries."
       />
 
-      <section className="py-16 lg:py-24 bg-white">
+      <section className="pt-8 sm:pt-9 lg:pt-10 pb-16 lg:pb-24 bg-white">
         <Container>
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14 space-y-4">
             <span className="text-xs font-bold uppercase tracking-widest text-brand-blue-700">
               Sector Intelligence
             </span>

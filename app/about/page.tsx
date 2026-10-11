@@ -113,7 +113,7 @@ export default function AboutPage() {
       />
 
       {/* 1. Who We Are & What We Do */}
-      <section className="py-16 sm:py-24 bg-white border-b border-slate-200">
+      <section className="pt-8 sm:pt-9 lg:pt-10 pb-16 sm:pb-20 lg:pb-24 bg-white border-b border-slate-200">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">

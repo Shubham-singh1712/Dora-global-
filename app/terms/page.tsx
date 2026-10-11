@@ -24,7 +24,7 @@ export default function TermsPage() {
         description="Please read these terms carefully before using our website."
       />
 
-      <section className="py-16 lg:py-20 bg-white">
+      <section className="pt-8 sm:pt-9 lg:pt-10 pb-16 lg:pb-20 bg-white">
         <Container size="md">
           <div className="prose prose-slate max-w-none text-sm leading-relaxed space-y-8">
             <p className="text-xs text-slate-500 uppercase tracking-widest font-bold">

@@ -9,7 +9,7 @@ interface ServiceOverviewProps {
 
 export function ServiceOverview({ service }: ServiceOverviewProps) {
   return (
-    <section className="py-16 sm:py-24 bg-white">
+    <section className="pt-8 sm:pt-9 lg:pt-10 pb-16 sm:pb-20 lg:pb-24 bg-white">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           {/* Main Content Column */}
@@ -117,7 +117,7 @@ export function ServiceOverview({ service }: ServiceOverviewProps) {
 
           {/* Sidebar Column: Why DORA */}
           <div className="lg:col-span-4">
-            <div className="sticky top-28 p-8 rounded-xl bg-brand-navy-950 text-white shadow-card space-y-6">
+            <div className="p-8 rounded-xl bg-brand-navy-950 text-white shadow-card space-y-6">
               <div>
                 <span className="text-[11px] font-bold uppercase tracking-widest text-brand-blue-400 block mb-1">
                   The DORA Advantage

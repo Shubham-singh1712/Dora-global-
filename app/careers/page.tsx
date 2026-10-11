@@ -62,9 +62,9 @@ export default function CareersPage() {
       />
 
       {/* Why Work With Us */}
-      <section className="py-16 sm:py-24 bg-white border-b border-slate-200">
+      <section className="pt-8 sm:pt-9 lg:pt-10 pb-16 sm:pb-20 lg:pb-24 bg-white border-b border-slate-200">
         <Container>
-          <div className="max-w-3xl mb-12">
+          <div className="max-w-3xl mb-10 sm:mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest text-brand-blue-700 block mb-2">
               Our Professional Culture
             </span>

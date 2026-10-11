@@ -221,28 +221,32 @@ export function ContactFormClient() {
   };
 
   return (
-    <Card variant="default" padding="lg" className="bg-white border-slate-200/90 shadow-elevated">
+    <Card
+      variant="default"
+      padding="none"
+      className="bg-white border border-slate-200/90 rounded-lg shadow-card p-6 sm:p-7 lg:p-8"
+    >
       {/* SUCCESS STATE */}
       {isSubmitted && confirmedEnquiry ? (
-        <div className="py-8 text-center space-y-6">
-          <div className="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center mx-auto border border-emerald-200">
-            <CheckCircle2 className="w-8 h-8" />
+        <div className="py-6 text-center space-y-5">
+          <div className="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center mx-auto border border-emerald-200">
+            <CheckCircle2 className="w-6 h-6" />
           </div>
 
-          <div className="space-y-2">
-            <Badge variant="blue" size="md">
+          <div className="space-y-1.5">
+            <Badge variant="blue" size="sm">
               Enquiry Registered
             </Badge>
-            <h3 className="text-2xl font-bold text-brand-navy-900">
+            <h3 className="text-xl sm:text-2xl font-bold text-brand-navy-900">
               Thank You, {confirmedEnquiry.name}
             </h3>
-            <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
               Your research enquiry has been received. A senior research lead will review your project parameters and get in touch with you shortly.
             </p>
           </div>
 
           {confirmedEnquiry.id && (
-            <div className="p-4 bg-slate-50 border border-slate-200 rounded-lg max-w-sm mx-auto text-left text-xs space-y-1 font-mono text-slate-700">
+            <div className="p-3.5 bg-slate-50 border border-slate-200 rounded-lg max-w-sm mx-auto text-left text-xs space-y-1 font-mono text-slate-700">
               <div className="flex justify-between">
                 <span className="text-slate-500">Reference:</span>
                 <span className="font-bold text-brand-navy-900">{confirmedEnquiry.id}</span>
@@ -258,7 +262,7 @@ export function ContactFormClient() {
             </div>
           )}
 
-          <div className="pt-4">
+          <div className="pt-2">
             <Button
               type="button"
               variant="outline"
@@ -272,18 +276,18 @@ export function ContactFormClient() {
         </div>
       ) : (
         /* ACTIVE FORM - RENDERS IMMEDIATELY */
-        <form onSubmit={handleSubmit} noValidate className="space-y-5">
+        <form onSubmit={handleSubmit} noValidate className="space-y-4">
           <div className="flex items-center justify-between pb-3 border-b border-slate-100">
             <div>
-              <h3 className="text-lg font-bold text-brand-navy-900">
+              <h3 className="text-base sm:text-lg font-bold text-brand-navy-900">
                 Research Project Enquiry
               </h3>
               <p className="text-xs text-slate-500 mt-0.5">
-                Provide your research scope for a direct evaluation.
+                Provide project scope for a direct evaluation.
               </p>
             </div>
             <Badge variant="blue" size="sm">
-              Direct Research Desk
+              Direct Practice Desk
             </Badge>
           </div>
 

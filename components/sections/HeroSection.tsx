@@ -7,7 +7,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section className="relative py-16 lg:py-24 bg-[radial-gradient(ellipse_at_top_left,#EBF3FF_0%,#F4F8FE_50%,#FFFFFF_100%)] overflow-hidden border-b border-slate-200">
+    <section className="relative pt-12 sm:pt-16 lg:pt-20 pb-10 sm:pb-12 lg:pb-14 bg-[radial-gradient(ellipse_at_top_left,#EBF3FF_0%,#F4F8FE_50%,#FFFFFF_100%)] overflow-hidden border-b border-slate-200">
 
       {/* Signature DORA Blue Extended Curved Background Pattern */}
       <div
@@ -25,9 +25,9 @@ export function HeroSection() {
       </div>
 
       <Container className="relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* LEFT: 55-60% (7 cols out of 12) */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-7 space-y-5">
             {/* Small Eyebrow */}
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-blue-50 border border-brand-blue-200/60 rounded-none text-brand-blue-700 text-[11px] font-mono font-semibold uppercase tracking-widest">
               Global Market Research
@@ -45,7 +45,7 @@ export function HeroSection() {
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
               <Button
                 href="/services"
                 variant="primary"
@@ -61,7 +61,7 @@ export function HeroSection() {
                 className="border-slate-300 text-brand-navy-900 hover:bg-slate-100"
                 icon={<ArrowUpRight className="w-4 h-4 text-brand-blue-700" />}
               >
-                Start a Conversation
+                Discuss a Project
               </Button>
             </div>
           </div>

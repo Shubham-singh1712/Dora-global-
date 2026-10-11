@@ -103,9 +103,9 @@ export default function LanguageSolutionsPage() {
       />
 
       {/* Overview Grid */}
-      <section className="py-16 lg:py-24 bg-white border-b border-slate-200">
+      <section className="pt-8 sm:pt-9 lg:pt-10 pb-16 lg:pb-24 bg-white border-b border-slate-200">
         <Container>
-          <div className="max-w-3xl mx-auto text-center mb-16 space-y-4">
+          <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-14 space-y-4">
             <span className="text-xs font-bold uppercase tracking-widest text-brand-blue-700">
               Specialized Research Capabilities
             </span>

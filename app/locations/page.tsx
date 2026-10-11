@@ -42,7 +42,7 @@ export default function LocationsPage() {
       />
 
       {/* Global Coverage Overview */}
-      <section className="py-16 sm:py-20 bg-white border-b border-slate-200">
+      <section className="pt-8 sm:pt-9 lg:pt-10 pb-16 sm:pb-20 bg-white border-b border-slate-200">
         <Container>
           <div className="max-w-3xl">
             <span className="text-xs font-semibold uppercase tracking-widest text-brand-blue-700 block mb-2">

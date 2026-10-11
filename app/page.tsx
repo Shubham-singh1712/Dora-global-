@@ -102,9 +102,9 @@ export default function HomePage() {
       <HeroSection />
 
       {/* 2. WHAT WE DO (EDITORIAL SERVICE ROWS) */}
-      <section id="what-we-do" className="py-20 lg:py-28 bg-white border-b border-slate-200">
+      <section id="what-we-do" className="pt-10 sm:pt-12 lg:pt-14 pb-16 sm:pb-20 lg:pb-24 bg-white border-b border-slate-200">
         <Container>
-          <div className="max-w-3xl mb-16 space-y-4">
+          <div className="max-w-3xl mb-12 sm:mb-14 space-y-4">
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-blue-700">
               WHAT WE DO
             </span>

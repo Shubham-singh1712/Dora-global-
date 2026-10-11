@@ -34,10 +34,10 @@ export default function BlogPage() {
         description="Methodological frameworks, qualitative research design, and data validation perspectives across international commercial markets."
       />
 
-      <section className="py-16 sm:py-24 bg-white">
+      <section className="pt-8 sm:pt-9 lg:pt-10 pb-16 sm:pb-20 lg:pb-24 bg-white">
         <Container>
           {/* Demonstration Notice */}
-          <div className="mb-12 p-4 rounded-lg bg-amber-50/70 border border-amber-200/80 flex items-start gap-3 text-xs text-amber-900 shadow-subtle">
+          <div className="mb-10 sm:mb-12 p-4 rounded-lg bg-amber-50/70 border border-amber-200/80 flex items-start gap-3 text-xs text-amber-900 shadow-subtle">
             <Sparkles className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
             <div>
               <strong className="font-semibold block mb-0.5">

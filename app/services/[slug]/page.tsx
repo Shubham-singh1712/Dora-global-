@@ -14,6 +14,10 @@ export async function generateStaticParams() {
   return Object.keys(SERVICES_DATA).map((slug) => ({ slug }));
 }
 
+// Only allow slugs defined in SERVICES_DATA — unknown slugs return 404
+// without triggering dynamic SSR (prevents the "Rendering..." overlay).
+export const dynamicParams = false;
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params;
   const service = SERVICES_DATA[resolvedParams.slug];
@@ -25,10 +29,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${service.title} | DORA Global Research`,
+    // Use only service.title — the layout template appends "| DORA Global Research"
+    // automatically, so specifying it here would duplicate it.
+    title: service.title,
     description: service.shortDescription,
     alternates: { canonical: `/services/${service.slug}` },
     openGraph: {
+      // og:title is not processed by the template, so include the full brand suffix.
       title: `${service.title} | DORA Global Research`,
       description: service.shortDescription,
       url: `/services/${service.slug}`,
@@ -48,6 +55,7 @@ export default async function ServiceDetailPage({ params }: Props) {
     <>
       <ServiceHero
         title={service.heroTitle}
+        breadcrumbLabel={service.title}
         badge={service.heroBadge}
         description={service.heroDescription}
         slug={service.slug}

@@ -110,8 +110,8 @@ export function Navbar() {
       <header
         className={`sticky top-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? "bg-white/95 backdrop-blur-md border-b border-slate-300 py-3 shadow-subtle"
-            : "bg-white border-b border-slate-200 py-4.5"
+            ? "bg-white/95 backdrop-blur-md border-b border-slate-300 py-2.5 shadow-subtle"
+            : "bg-white border-b border-slate-200 py-3 sm:py-3.5"
         }`}
       >
         <Container>

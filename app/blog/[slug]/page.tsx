@@ -60,7 +60,7 @@ export default async function BlogPostPage({ params }: Props) {
         ]}
       />
 
-      <section className="py-16 sm:py-20 bg-white">
+      <section className="pt-8 sm:pt-9 lg:pt-10 pb-16 sm:pb-20 bg-white">
         <Container size="md">
           {/* Demo disclaimer */}
           <div className="mb-8 p-3 rounded-lg bg-amber-50 border border-amber-200 flex items-center gap-2 text-xs text-amber-800 shadow-subtle">

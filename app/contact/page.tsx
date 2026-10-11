@@ -4,7 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { ContactFormClient } from "@/components/sections/ContactFormClient";
 import { COMPANY_INFO } from "@/lib/constants";
-import { FileSearch, Clock, Mail, Globe, Layers } from "lucide-react";
+import { Clock, Mail, Globe, CheckCircle2, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact & Research Inquiries",
@@ -27,78 +27,98 @@ export default function ContactPage() {
       <PageHeader
         badge="Research Practice Desk"
         title="Contact DORA Global Research"
-        description="Connect directly with our research leads to discuss your upcoming studies, sample parameters, and target markets."
+        description="Connect directly with our senior research team to evaluate methodology feasibility, sample parameters, and cross-market research timelines."
       />
 
-      <section className="py-16 sm:py-24 bg-brand-surface-subtle border-b border-slate-200">
+      <section className="pt-8 sm:pt-9 lg:pt-10 pb-12 sm:pb-14 lg:pb-16 bg-brand-surface-subtle/50 border-b border-slate-200">
         <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            {/* Left Column: Practice Information */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            {/* Left Column: Practice Information & Verified Contacts */}
             <div className="lg:col-span-5 space-y-6">
               <div>
-                <span className="text-xs font-semibold uppercase tracking-widest text-brand-blue-700 block mb-2">
-                  Project Scoping & Consultation
+                <span className="text-xs font-bold uppercase tracking-widest text-brand-blue-700 block mb-2">
+                  Project Scoping &amp; Feasibility
                 </span>
-                <h2 className="text-2xl sm:text-3xl font-semibold text-brand-navy-900 tracking-tight leading-tight">
+                <h2 className="text-2xl sm:text-3xl font-bold text-brand-navy-900 tracking-tight leading-tight">
                   Discuss Your Research Requirements
                 </h2>
                 <p className="mt-3 text-sm text-slate-600 leading-relaxed font-normal">
-                  Every inquiry is reviewed directly by our research team. We work with you to evaluate methodology fit, sample feasibility, and project timelines tailored to your strategic questions.
+                  Every inquiry is evaluated directly by our senior research coordinators. We collaborate with your team to determine optimal methodology fit, calibrate screening criteria, and confirm cross-market fieldwork feasibility.
                 </p>
               </div>
 
-              <div className="space-y-4">
-                <div className="p-5 bg-white border border-slate-200/90 rounded-lg shadow-subtle hover:border-slate-300 transition-all duration-200">
-                  <div className="flex items-center gap-2 mb-2 text-brand-navy-900 font-semibold text-sm">
-                    <FileSearch className="w-4 h-4 text-brand-blue-600" />
-                    Structured Methodology Review
+              {/* Verified Contact Details Card */}
+              <div className="p-5 sm:p-6 bg-white border border-slate-200/90 rounded-lg shadow-subtle space-y-4">
+                <span className="text-xs font-bold uppercase tracking-wider text-brand-navy-900 block pb-2.5 border-b border-slate-100">
+                  Verified Contact Information
+                </span>
+                <div className="space-y-3.5 text-xs sm:text-sm">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded bg-brand-blue-50 border border-brand-blue-100 flex items-center justify-center text-brand-blue-700 shrink-0 mt-0.5">
+                      <Mail className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <span className="block text-[11px] font-medium text-slate-500 uppercase tracking-wider">
+                        Direct Inquiries
+                      </span>
+                      <a
+                        href={`mailto:${COMPANY_INFO.contacts.email}`}
+                        className="font-semibold text-brand-navy-900 hover:text-brand-blue-700 transition-colors"
+                      >
+                        {COMPANY_INFO.contacts.email}
+                      </a>
+                    </div>
                   </div>
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    We evaluate your research objectives to recommend the most suitable qualitative, quantitative, or blended primary research approach.
-                  </p>
-                </div>
 
-                <div className="p-5 bg-white border border-slate-200/90 rounded-lg shadow-subtle hover:border-slate-300 transition-all duration-200">
-                  <div className="flex items-center gap-2 mb-2 text-brand-navy-900 font-semibold text-sm">
-                    <Clock className="w-4 h-4 text-brand-blue-600" />
-                    Responsive Scoping & Feasibility
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded bg-brand-blue-50 border border-brand-blue-100 flex items-center justify-center text-brand-blue-700 shrink-0 mt-0.5">
+                      <Globe className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <span className="block text-[11px] font-medium text-slate-500 uppercase tracking-wider">
+                        Global Footprint
+                      </span>
+                      <span className="font-semibold text-brand-navy-900">
+                        {COMPANY_INFO.contacts.headquarters}
+                      </span>
+                    </div>
                   </div>
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    Receive clear feasibility assessments, audience recruitment parameters, and realistic fieldwork delivery schedules.
-                  </p>
-                </div>
 
-                <div className="p-5 bg-white border border-slate-200/90 rounded-lg shadow-subtle hover:border-slate-300 transition-all duration-200">
-                  <div className="flex items-center gap-2 mb-2 text-brand-navy-900 font-semibold text-sm">
-                    <Layers className="w-4 h-4 text-brand-blue-600" />
-                    Cross-Market Coordination
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded bg-brand-blue-50 border border-brand-blue-100 flex items-center justify-center text-brand-blue-700 shrink-0 mt-0.5">
+                      <Clock className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <span className="block text-[11px] font-medium text-slate-500 uppercase tracking-wider">
+                        Response Commitment
+                      </span>
+                      <span className="font-semibold text-brand-navy-900">
+                        Direct evaluation within 1 business day
+                      </span>
+                    </div>
                   </div>
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    Capability to execute coordinated studies across key international regions with localized language and cultural context.
-                  </p>
                 </div>
               </div>
 
-              {/* Direct Communication Points */}
-              <div className="p-5 bg-brand-navy-950 text-white rounded-lg shadow-elevated space-y-3">
-                <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-300">
-                  Direct Inquiries
-                </h3>
-                <div className="space-y-2 text-xs text-slate-300">
-                  <div className="flex items-center gap-2">
-                    <Mail className="w-3.5 h-3.5 text-brand-blue-400" />
-                    <a
-                      href={`mailto:${COMPANY_INFO.contacts.email}`}
-                      className="hover:underline font-mono"
-                    >
-                      {COMPANY_INFO.contacts.email}
-                    </a>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Globe className="w-3.5 h-3.5 text-brand-blue-400" />
-                    <span>{COMPANY_INFO.contacts.headquarters}</span>
-                  </div>
-                </div>
+              {/* Scoping Standards */}
+              <div className="p-4 bg-slate-50/90 border border-slate-200/80 rounded-lg space-y-2.5">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 block">
+                  Engagement Protocol
+                </span>
+                <ul className="space-y-2 text-xs text-slate-600">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-brand-blue-700 shrink-0" />
+                    <span>Rigorous methodology selection (Qual, Quant &amp; Multilingual)</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-brand-blue-700 shrink-0" />
+                    <span>Audience recruitment feasibility and timeline assessment</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <ShieldCheck className="w-3.5 h-3.5 text-brand-blue-700 shrink-0" />
+                    <span>Strict commercial confidentiality and NDA adherence</span>
+                  </li>
+                </ul>
               </div>
             </div>
 
