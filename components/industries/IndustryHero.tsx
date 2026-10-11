@@ -21,7 +21,7 @@ export function IndustryHero({
   decorationVariant = "network",
 }: IndustryHeroProps) {
   return (
-    <div className="relative lg:min-h-[calc(100vh-105px)] pt-12 sm:pt-14 lg:pt-20 pb-12 sm:pb-14 lg:pb-24 bg-gradient-to-b from-slate-50/90 via-brand-surface-subtle/50 to-white border-b border-slate-200/80 overflow-hidden">
+    <div className="relative lg:min-h-[calc(100vh-105px)] pt-12 sm:pt-14 lg:pt-20 pb-12 sm:pb-14 lg:pb-24 bg-gradient-to-b from-slate-50/90 via-brand-surface-subtle/50 to-white overflow-hidden">
       <HeroDecoration variant={decorationVariant} />
 
       <Container className="relative z-10">

@@ -28,7 +28,7 @@ export function PageHeader({
   return (
     <div
       className={cn(
-        "relative pt-10 sm:pt-12 lg:pt-14 pb-8 sm:pb-9 lg:pb-10 bg-gradient-to-b from-slate-50/90 via-brand-surface-subtle/50 to-white border-b border-slate-200/80 overflow-hidden",
+        "relative pt-10 sm:pt-12 lg:pt-14 pb-8 sm:pb-9 lg:pb-10 bg-gradient-to-b from-slate-50/90 via-brand-surface-subtle/50 to-white overflow-hidden",
         className
       )}
     >
