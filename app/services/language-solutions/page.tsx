@@ -103,7 +103,7 @@ export default function LanguageSolutionsPage() {
       />
 
       {/* Overview Grid */}
-      <section className="pt-8 sm:pt-9 lg:pt-10 pb-16 lg:pb-24 bg-white border-b border-slate-200">
+      <section className="pt-8 sm:pt-9 lg:pt-10 pb-16 lg:pb-24 bg-white">
         <Container>
           <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-14 space-y-4">
             <span className="text-xs font-bold uppercase tracking-widest text-brand-blue-700">
@@ -126,7 +126,7 @@ export default function LanguageSolutionsPage() {
       </section>
 
       {/* Lifecycle Integration Section */}
-      <section className="py-16 lg:py-24 bg-brand-surface-subtle border-b border-slate-200">
+      <section className="py-16 lg:py-24 bg-brand-surface-subtle">
         <Container>
           <div className="max-w-3xl mb-14 space-y-3">
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-blue-700">
@@ -185,7 +185,7 @@ export default function LanguageSolutionsPage() {
       </section>
 
       {/* Methodological Value & Safeguards */}
-      <section className="py-16 lg:py-24 bg-white border-b border-slate-200">
+      <section className="py-16 lg:py-24 bg-white">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">

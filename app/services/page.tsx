@@ -31,7 +31,7 @@ export default function ServicesOverviewPage() {
       />
 
       {/* SECTION A: MARKET RESEARCH */}
-      <section id="market-research" className="pt-8 sm:pt-9 lg:pt-10 pb-16 lg:pb-24 bg-white border-b border-slate-200">
+      <section id="market-research" className="pt-8 sm:pt-9 lg:pt-10 pb-16 lg:pb-24 bg-white">
         <Container>
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-14 gap-6">
             <div className="max-w-3xl space-y-3">
@@ -57,7 +57,7 @@ export default function ServicesOverviewPage() {
       </section>
 
       {/* SECTION B: LANGUAGE SOLUTIONS FOR RESEARCH */}
-      <section id="language-solutions" className="py-16 lg:py-24 bg-brand-surface-subtle border-b border-slate-200">
+      <section id="language-solutions" className="py-16 lg:py-24 bg-brand-surface-subtle">
         <Container>
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div className="max-w-3xl space-y-3">

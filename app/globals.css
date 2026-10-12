@@ -40,14 +40,6 @@
     border-color: #E2E8F0;
   }
 
-  .hairline-b {
-    border-bottom: 1px solid #E2E8F0;
-  }
-
-  .hairline-t {
-    border-top: 1px solid #E2E8F0;
-  }
-
   /* Standardized Hero & Section Spacing System */
   .hero-spacing {
     @apply pt-10 sm:pt-12 lg:pt-14 pb-8 sm:pb-9 lg:pb-10;

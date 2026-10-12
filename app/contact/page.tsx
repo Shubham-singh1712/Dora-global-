@@ -53,7 +53,7 @@ export default function ContactPage() {
       />
 
       {/* 2. Main Enquiry Section */}
-      <section className="pt-10 sm:pt-12 lg:pt-14 pb-16 sm:pb-20 lg:pb-24 bg-brand-surface-subtle/50 border-b border-slate-200">
+      <section className="pt-10 sm:pt-12 lg:pt-14 pb-16 sm:pb-20 lg:pb-24 bg-brand-surface-subtle/50">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             {/* Left Column: Practice Information & Scoping Steps */}

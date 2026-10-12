@@ -102,7 +102,7 @@ export default function HomePage() {
       <HeroSection />
 
       {/* 2. WHAT WE DO (EDITORIAL SERVICE ROWS) */}
-      <section id="what-we-do" className="pt-10 sm:pt-12 lg:pt-14 pb-16 sm:pb-20 lg:pb-24 bg-white border-b border-slate-200">
+      <section id="what-we-do" className="pt-10 sm:pt-12 lg:pt-14 pb-16 sm:pb-20 lg:pb-24 bg-white">
         <Container>
           <div className="max-w-3xl mb-12 sm:mb-14 space-y-4">
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-blue-700">
@@ -149,7 +149,7 @@ export default function HomePage() {
       </section>
 
       {/* 2B. LANGUAGE SOLUTIONS FOR RESEARCH */}
-      <section id="language-solutions" className="py-20 lg:py-24 bg-brand-surface-subtle border-b border-slate-200">
+      <section id="language-solutions" className="py-20 lg:py-24 bg-brand-surface-subtle">
         <Container>
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
             <div className="max-w-2xl space-y-3">
@@ -247,7 +247,7 @@ export default function HomePage() {
       </section>
 
       {/* 3. RESEARCH ACROSS INDUSTRIES (EDITORIAL INDUSTRY LIST) */}
-      <section id="industries" className="py-20 lg:py-28 bg-[#FAF8F5] border-b border-slate-200">
+      <section id="industries" className="py-20 lg:py-28 bg-[#FAF8F5]">
         <Container>
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div className="max-w-2xl space-y-3">
@@ -303,7 +303,7 @@ export default function HomePage() {
       </section>
 
       {/* 4. METHODOLOGICAL RIGOR & STANDARDS */}
-      <section className="py-20 lg:py-28 bg-white border-b border-slate-200">
+      <section className="py-20 lg:py-28 bg-white">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-6 space-y-6">

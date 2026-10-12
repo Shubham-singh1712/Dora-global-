@@ -120,7 +120,7 @@ export function QuoteInquirySection() {
   };
 
   return (
-    <section id="contact" className="py-12 sm:py-16 lg:py-20 bg-brand-surface-subtle border-t border-slate-200">
+    <section id="contact" className="py-12 sm:py-16 lg:py-20 bg-brand-surface-subtle">
       <Container size="lg" className="max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           {/* Context and Scope Guidelines */}

@@ -151,7 +151,7 @@ export default function AboutPage() {
       />
 
       {/* 2. Who We Are & What We Do (Refined Editorial Layout) */}
-      <section className="pt-10 sm:pt-12 lg:pt-16 pb-16 sm:pb-20 lg:pb-24 bg-white border-b border-slate-200">
+      <section className="pt-10 sm:pt-12 lg:pt-16 pb-16 sm:pb-20 lg:pb-24 bg-white">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             {/* Left Column: Narrative Editorial Presentation */}
@@ -315,7 +315,7 @@ export default function AboutPage() {
       </section>
 
       {/* 3. Visual Research Approach (Connected Sequence Flow) */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-brand-surface-subtle border-b border-slate-200">
+      <section className="py-16 sm:py-20 lg:py-24 bg-brand-surface-subtle">
         <Container>
           <div className="max-w-3xl mb-12 sm:mb-14">
             <span className="text-xs font-semibold uppercase tracking-widest text-brand-blue-700 block mb-2">
@@ -412,7 +412,7 @@ export default function AboutPage() {
       </section>
 
       {/* 4. Core Practices (Primary Research Methodologies) */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white border-b border-slate-200">
+      <section className="py-16 sm:py-20 lg:py-24 bg-white">
         <Container>
           <div className="max-w-3xl mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest text-brand-blue-700 block mb-2">
@@ -474,7 +474,7 @@ export default function AboutPage() {
       </section>
 
       {/* 5. Research Philosophy (Refined Principles) */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-brand-surface-subtle border-b border-slate-200">
+      <section className="py-16 sm:py-20 lg:py-24 bg-brand-surface-subtle">
         <Container>
           <div className="max-w-3xl mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest text-brand-blue-700 block mb-2">

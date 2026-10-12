@@ -21,10 +21,10 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-brand-navy-950 text-slate-300 hairline-t border-brand-navy-900 pt-16 pb-12">
+    <footer className="bg-brand-navy-950 text-slate-300 pt-16 pb-12">
       <Container>
         {/* Top Tier: Brand, Brief, Contact CTA */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-14 border-b border-brand-navy-900">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-14 border-b border-brand-navy-900/40">
           <div className="lg:col-span-3 space-y-5">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-none bg-white text-brand-navy-900 flex items-center justify-center font-bold text-lg">
