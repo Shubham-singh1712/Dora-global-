@@ -129,7 +129,7 @@ export default function LanguageSolutionsPage() {
       <section className="py-16 lg:py-24 bg-brand-surface-subtle">
         <Container>
           <div className="max-w-3xl mb-14 space-y-3">
-            <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-blue-700">
+            <span className="text-xs font-bold uppercase tracking-widest text-brand-blue-700">
               WORKFLOW INTEGRATION
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy-900">
@@ -147,7 +147,7 @@ export default function LanguageSolutionsPage() {
                 className="bg-white p-8 rounded-xl border border-slate-200/90 shadow-subtle flex flex-col justify-between"
               >
                 <div>
-                  <span className="text-xs font-mono font-bold text-brand-blue-700 uppercase tracking-widest">
+                  <span className="text-xs font-bold text-brand-blue-700 uppercase tracking-widest">
                     {stage.phase}
                   </span>
                   <h3 className="text-xl font-bold text-brand-navy-900 mt-2 mb-3">
@@ -189,7 +189,7 @@ export default function LanguageSolutionsPage() {
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-blue-700">
+              <span className="text-xs font-bold uppercase tracking-widest text-brand-blue-700">
                 METHODOLOGICAL INTEGRITY
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy-900">

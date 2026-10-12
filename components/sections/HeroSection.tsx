@@ -29,7 +29,7 @@ export function HeroSection() {
           {/* LEFT: 55-60% (7 cols out of 12) */}
           <div className="lg:col-span-7 space-y-5">
             {/* Small Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-blue-50 border border-brand-blue-200/60 rounded-none text-brand-blue-700 text-[11px] font-mono font-semibold uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-blue-50 border border-brand-blue-200/60 rounded-none text-brand-blue-700 text-xs font-semibold uppercase tracking-wider">
               Global Market Research
             </div>
 
@@ -85,7 +85,7 @@ export function HeroSection() {
               {/* Minimal Editorial Overlay Caption */}
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-navy-950/90 via-brand-navy-950/50 to-transparent p-6 text-white">
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-brand-blue-300">
+                  <span className="text-[11px] uppercase tracking-wider text-brand-blue-300 font-medium">
                     Primary &bull; Qualitative &bull; Quantitative
                   </span>
                   <span className="text-[10px] font-semibold text-slate-300">

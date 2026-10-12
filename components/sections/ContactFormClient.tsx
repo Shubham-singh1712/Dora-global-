@@ -279,18 +279,18 @@ export function ContactFormClient() {
         <form onSubmit={handleSubmit} noValidate className="space-y-4 sm:space-y-4.5">
           <div className="flex items-center justify-between pb-3.5 border-b border-slate-100">
             <div>
-              <span className="text-[10px] font-mono uppercase tracking-widest text-slate-400 block font-semibold mb-0.5">
-                Practice Intake Form
+              <span className="text-xs font-semibold uppercase tracking-wider text-brand-blue-700 block mb-0.5">
+                Project Consultation
               </span>
               <h3 className="text-base sm:text-lg font-bold text-brand-navy-900">
                 Research Project Enquiry
               </h3>
               <p className="text-xs text-slate-500 mt-0.5">
-                Provide project scope for a direct evaluation.
+                Share your project objectives to explore scope, methodology, and timing.
               </p>
             </div>
             <Badge variant="blue" size="sm">
-              Direct Practice Desk
+              Confidential Review
             </Badge>
           </div>
 

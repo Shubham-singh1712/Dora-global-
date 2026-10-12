@@ -15,9 +15,9 @@ export const metadata: Metadata = {
     canonical: "/contact",
   },
   openGraph: {
-    title: "Contact DORA Global Research | Research Practice Desk",
+    title: "Contact DORA Global Research | Client Advisory & Inquiries",
     description:
-      "Submit your research brief, audience specifications, or project scope to our senior research coordinators.",
+      "Connect with our senior research team to discuss your study objectives, target audience requirements, and project scope.",
     url: "/contact",
   },
 };
@@ -26,18 +26,18 @@ export default function ContactPage() {
   const scopingSteps = [
     {
       num: "01",
-      title: "Share Your Project Scope",
-      desc: "Provide your business objectives, target audience profile, and required market geographies.",
+      title: "Share Your Project Objectives",
+      desc: "Tell us about your business questions, target audience profile, and key geographic markets.",
     },
     {
       num: "02",
-      title: "Methodology Alignment",
-      desc: "Our senior research coordinators review qualitative, quantitative, or multilingual feasibility.",
+      title: "Senior Director Consultation",
+      desc: "Our research leads review qualitative, quantitative, or language methodology fit with your team.",
     },
     {
       num: "03",
-      title: "Actionable Next Steps",
-      desc: "Receive structured recommendations regarding sample feasibility, timelines, and study design.",
+      title: "Tailored Study Proposal",
+      desc: "Receive clear recommendations covering research design, delivery timelines, and project investment.",
     },
   ];
 
@@ -45,9 +45,9 @@ export default function ContactPage() {
     <>
       {/* 1. Hero Section with Visual Anchor & Signature Curve */}
       <PageHeader
-        badge="Research Practice Desk"
+        badge="Client Advisory & Inquiries"
         title="Contact DORA Global Research"
-        description="Connect directly with our senior research team to evaluate methodology feasibility, sample parameters, and cross-market research timelines."
+        description="Connect directly with our senior research team to discuss your project requirements, explore custom methodologies, and receive a tailored study proposal."
         visual={<ContactHeroVisual />}
         showCurve={true}
       />
@@ -60,13 +60,13 @@ export default function ContactPage() {
             <div className="lg:col-span-5 space-y-7">
               <div>
                 <span className="text-xs font-bold uppercase tracking-widest text-brand-blue-700 block mb-2">
-                  Project Scoping &amp; Feasibility
+                  How We Partner With You
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-bold text-brand-navy-900 tracking-tight leading-tight">
-                  Discuss Your Research Requirements
+                  Discuss Your Research Needs
                 </h2>
                 <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-                  Every inquiry is evaluated directly by our senior research coordinators. We collaborate with your team to determine optimal methodology fit, calibrate screening criteria, and confirm cross-market fieldwork feasibility.
+                  Every inquiry is reviewed directly by our senior research directors. We take the time to understand your strategic questions, target audiences, and project timelines to recommend the right research approach.
                 </p>
               </div>
 
@@ -74,17 +74,17 @@ export default function ContactPage() {
               <div className="p-5 sm:p-6 bg-white border border-slate-200/90 rounded-xl shadow-subtle space-y-4">
                 <div className="flex items-center justify-between pb-2.5 border-b border-slate-100">
                   <span className="text-xs font-bold uppercase tracking-wider text-brand-navy-900">
-                    Engagement Sequence
+                    Our Consultation Process
                   </span>
-                  <span className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">
-                    Structured Review
+                  <span className="text-[11px] text-slate-500 font-medium">
+                    What to expect
                   </span>
                 </div>
 
                 <div className="space-y-4 relative">
                   {scopingSteps.map((step, idx) => (
                     <div key={idx} className="flex items-start gap-3 text-xs">
-                      <span className="w-6 h-6 rounded-full bg-brand-blue-50 border border-brand-blue-200 text-brand-blue-700 font-mono font-bold flex items-center justify-center shrink-0 mt-0.5 text-[11px]">
+                      <span className="w-6 h-6 rounded-full bg-brand-blue-50 border border-brand-blue-200 text-brand-blue-700 font-bold flex items-center justify-center shrink-0 mt-0.5 text-[11px]">
                         {step.num}
                       </span>
                       <div className="space-y-0.5">

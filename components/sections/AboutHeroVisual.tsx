@@ -24,9 +24,9 @@ export function AboutHeroVisual() {
         {/* Ambient top-left practice status indicator */}
         <div className="absolute top-3 left-3 z-10">
           <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-white/95 backdrop-blur-sm border border-slate-200/90 shadow-subtle text-brand-navy-900">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-blue-600 animate-pulse" />
-            <span className="font-mono text-[10px] font-semibold tracking-wider uppercase text-slate-700">
-              Practice Architecture
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-blue-600" />
+            <span className="text-[11px] font-semibold tracking-wider uppercase text-slate-700">
+              Strategic Research
             </span>
           </div>
         </div>
@@ -35,14 +35,14 @@ export function AboutHeroVisual() {
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-navy-950/95 via-brand-navy-950/65 to-transparent pt-12 pb-3.5 px-4 sm:px-4.5 text-white">
           <div className="flex items-end justify-between gap-3">
             <div className="space-y-0.5">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-brand-blue-300 block font-medium">
+              <span className="text-[11px] uppercase tracking-wider text-brand-blue-300 block font-medium">
                 Primary &bull; Qualitative &bull; Quantitative
               </span>
               <p className="text-xs sm:text-[13px] font-semibold text-slate-100 leading-snug">
                 Empirical Intelligence &amp; Defensible Direction
               </p>
             </div>
-            <span className="text-[10px] font-mono text-slate-300 px-2 py-0.5 bg-brand-navy-900/80 border border-slate-700/80 rounded-none shrink-0 hidden sm:inline-block">
+            <span className="text-[11px] text-slate-300 px-2 py-0.5 bg-brand-navy-900/80 border border-slate-700/80 rounded shrink-0 hidden sm:inline-block">
               Global Scope
             </span>
           </div>

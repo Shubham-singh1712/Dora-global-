@@ -105,7 +105,7 @@ export default function HomePage() {
       <section id="what-we-do" className="pt-10 sm:pt-12 lg:pt-14 pb-16 sm:pb-20 lg:pb-24 bg-white">
         <Container>
           <div className="max-w-3xl mb-12 sm:mb-14 space-y-4">
-            <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-blue-700">
+            <span className="text-xs font-bold uppercase tracking-widest text-brand-blue-700">
               WHAT WE DO
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-brand-navy-900 leading-tight">
@@ -153,7 +153,7 @@ export default function HomePage() {
         <Container>
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
             <div className="max-w-2xl space-y-3">
-              <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-blue-700">
+              <span className="text-xs font-bold uppercase tracking-widest text-brand-blue-700">
                 LINGUISTIC CAPABILITIES
               </span>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-brand-navy-900">
@@ -251,7 +251,7 @@ export default function HomePage() {
         <Container>
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div className="max-w-2xl space-y-3">
-              <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-blue-700">
+              <span className="text-xs font-bold uppercase tracking-widest text-brand-blue-700">
                 SECTOR DEPTH
               </span>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-brand-navy-900">
@@ -307,7 +307,7 @@ export default function HomePage() {
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-blue-700">
+              <span className="text-xs font-bold uppercase tracking-widest text-brand-blue-700">
                 RESEARCH RIGOR
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy-900">

@@ -180,8 +180,8 @@ export default function AboutPage() {
                 <p className="text-sm sm:text-base font-serif italic text-brand-navy-900 leading-relaxed">
                   &ldquo;Evidence-based decision-making requires both statistical rigor and in-market cultural context. We treat research as strategic infrastructure, not commoditized data collection.&rdquo;
                 </p>
-                <footer className="text-[11px] font-mono uppercase tracking-wider text-slate-500 font-semibold block">
-                  DORA Practice Standard // Grounded Intelligence
+                <footer className="text-xs uppercase tracking-wider text-slate-500 font-semibold block">
+                  DORA Practice Standard &bull; Grounded Intelligence
                 </footer>
               </blockquote>
 
