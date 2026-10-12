@@ -60,7 +60,7 @@ export function PageHeader({
         aria-hidden="true"
       />
 
-      <Container className="relative z-10">
+      <Container className={cn("relative z-10", visual ? "max-w-6xl" : "max-w-7xl")}>
         {/* Breadcrumb Bar */}
         <nav
           aria-label="Breadcrumb"
@@ -92,7 +92,7 @@ export function PageHeader({
           </span>
         </nav>
 
-        <div className={visual ? "grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center" : "max-w-3xl"}>
+        <div className={visual ? "grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center" : "max-w-3xl"}>
           <div className={visual ? "min-w-0" : undefined}>
             {badge && (
               <div className="mb-3 sm:mb-4">
@@ -102,7 +102,7 @@ export function PageHeader({
               </div>
             )}
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-brand-navy-900 leading-[1.15]">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-brand-navy-900 leading-[1.12]">
               {title}
             </h1>
 

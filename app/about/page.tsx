@@ -152,7 +152,7 @@ export default function AboutPage() {
 
       {/* 2. Who We Are & What We Do (Refined Editorial Layout) */}
       <section className="pt-10 sm:pt-12 lg:pt-16 pb-16 sm:pb-20 lg:pb-24 bg-white">
-        <Container>
+        <Container className="max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             {/* Left Column: Narrative Editorial Presentation */}
             <div className="lg:col-span-7 space-y-6">
