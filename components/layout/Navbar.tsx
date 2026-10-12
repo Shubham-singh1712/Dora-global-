@@ -12,7 +12,6 @@ import {
   INSIGHTS_NAV_ITEMS,
 } from "@/lib/constants";
 import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/Button";
 import { MobileNav } from "@/components/layout/MobileNav";
 
 export function Navbar() {
@@ -87,17 +86,17 @@ export function Navbar() {
 
   return (
     <>
-      {/* 1. Simplified, Restrained Top Utility Bar */}
+      {/* 1. Slim, Restrained Top Utility Bar */}
       <div className="hidden lg:block bg-brand-navy-950 text-slate-400 text-[11px] py-1.5 border-b border-brand-navy-900/60 select-none">
         <Container>
           <div className="flex items-center justify-between">
-            <span className="font-medium tracking-wide text-slate-300">
+            <span className="font-normal tracking-wide text-slate-300">
               Global Research &amp; Language Solutions
             </span>
             <div className="flex items-center gap-4 text-slate-400">
               <Link
                 href="/contact"
-                className="hover:text-white transition-colors font-medium text-slate-300 focus:outline-none focus-visible:underline"
+                className="hover:text-white transition-colors font-medium text-slate-300 focus:outline-none focus-visible:ring-1 focus-visible:ring-brand-blue-400 rounded-sm px-1 py-0.5"
               >
                 Contact
               </Link>
@@ -108,32 +107,32 @@ export function Navbar() {
 
       {/* 2. Main Sticky Navigation */}
       <header
-        className={`sticky top-0 z-40 transition-all duration-300 ${
+        className={`sticky top-0 z-40 transition-colors duration-200 ${
           isScrolled
-            ? "bg-white/95 backdrop-blur-md border-b border-slate-300 py-2.5 shadow-subtle"
-            : "bg-white border-b border-slate-200 py-3 sm:py-3.5"
+            ? "bg-white/98 backdrop-blur-sm border-b border-slate-200/90 shadow-[0_1px_3px_0_rgba(0,0,0,0.04)]"
+            : "bg-white border-b border-slate-200"
         }`}
       >
         <Container>
           <div
             ref={navContainerRef}
-            className="flex items-center justify-between"
+            className="flex items-center justify-between h-16 sm:h-[68px]"
           >
             {/* Brand Identity / Wordmark */}
             <Link
               href="/"
-              className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-navy-900 rounded"
+              className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue-600 focus-visible:ring-offset-2 rounded-sm select-none"
               aria-label="DORA Global Research Home"
               onClick={() => setOpenDropdown(null)}
             >
-              <div className="w-8 h-8 sm:w-9 sm:h-9 bg-brand-navy-900 flex items-center justify-center text-white font-bold text-lg tracking-tight group-hover:bg-brand-blue-700 transition-colors">
+              <div className="w-8 h-8 rounded-sm bg-brand-navy-900 flex items-center justify-center text-white font-bold text-base tracking-tight shrink-0 group-hover:bg-brand-blue-700 transition-colors">
                 D
               </div>
               <div className="flex flex-col">
-                <span className="text-base sm:text-lg font-bold tracking-tight text-brand-navy-900 leading-none group-hover:text-brand-blue-700 transition-colors">
+                <span className="text-[15px] sm:text-base font-bold tracking-tight text-brand-navy-900 leading-none group-hover:text-brand-blue-700 transition-colors">
                   DORA
                 </span>
-                <span className="text-[10px] sm:text-[11px] uppercase tracking-widest text-slate-500 font-semibold mt-0.5">
+                <span className="text-[9px] sm:text-[9.5px] uppercase tracking-[0.16em] text-slate-500 font-semibold mt-1 leading-none">
                   Global Research
                 </span>
               </div>
@@ -141,7 +140,7 @@ export function Navbar() {
 
             {/* Desktop Navigation Links */}
             <nav
-              className="hidden lg:flex items-center space-x-1 xl:space-x-1.5"
+              className="hidden lg:flex items-center gap-1 xl:gap-2 h-full"
               aria-label="Main Navigation"
             >
               {NAV_ITEMS.map((item) => {
@@ -156,16 +155,23 @@ export function Navbar() {
                   return (
                     <div
                       key={item.label}
-                      className="relative"
+                      className="relative h-full flex items-center"
                       onMouseEnter={() => handleMouseEnter(item.label)}
                       onMouseLeave={handleMouseLeave}
+                      onBlur={(e) => {
+                        if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+                          setOpenDropdown(null);
+                        }
+                      }}
                     >
                       <button
                         type="button"
+                        id={`nav-btn-${item.label}`}
+                        aria-controls={`nav-dropdown-${item.label}`}
                         onClick={() => handleToggle(item.label)}
                         aria-expanded={isOpen}
                         aria-haspopup="true"
-                        className={`inline-flex items-center gap-1.5 px-3 py-2 text-sm font-medium transition-colors tracking-normal rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-navy-900 ${
+                        className={`relative inline-flex items-center gap-1.5 px-3 py-2 text-[13.5px] font-medium transition-colors tracking-normal rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue-600 focus-visible:ring-offset-2 ${
                           isActive || isOpen
                             ? "text-brand-navy-900 font-semibold"
                             : "text-slate-600 hover:text-brand-navy-900"
@@ -174,18 +180,24 @@ export function Navbar() {
                         <span>{item.label}</span>
                         <ChevronDown
                           className={`w-3.5 h-3.5 text-slate-400 transition-transform duration-200 ${
-                            isOpen ? "rotate-180 text-brand-blue-700" : ""
+                            isOpen ? "rotate-180 text-brand-blue-600" : ""
                           }`}
                         />
                         {isActive && (
-                          <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-brand-navy-900 animate-fade-in" />
+                          <span
+                            className="absolute bottom-0 left-3 right-3 h-[2px] bg-brand-blue-600 rounded-full"
+                            aria-hidden="true"
+                          />
                         )}
                       </button>
 
                       {/* Dropdown Menu Container */}
                       {isOpen && (
                         <div
-                          className={`absolute top-full pt-2 z-50 animate-fade-in ${
+                          id={`nav-dropdown-${item.label}`}
+                          role="region"
+                          aria-labelledby={`nav-btn-${item.label}`}
+                          className={`absolute top-full pt-1.5 z-50 animate-fade-in ${
                             item.label === "Services"
                               ? "w-[660px] -left-16"
                               : item.label === "Industries"
@@ -199,7 +211,7 @@ export function Navbar() {
                         >
                           {/* 3. Services Dropdown (Structured 2-group layout) */}
                           {item.label === "Services" && (
-                            <div className="bg-white rounded-xl shadow-2xl border border-slate-200 p-5 grid grid-cols-12 gap-6">
+                            <div className="bg-white rounded-xl shadow-lg border border-slate-200/90 p-5 grid grid-cols-12 gap-6">
                               {/* Group A: MARKET RESEARCH */}
                               <div className="col-span-5 space-y-3 border-r border-slate-100 pr-5">
                                 <div className="pb-1 border-b border-slate-100">
@@ -295,7 +307,7 @@ export function Navbar() {
 
                           {/* 4. Industries Dropdown */}
                           {item.label === "Industries" && (
-                            <div className="bg-white rounded-xl shadow-2xl border border-slate-200 p-4 space-y-3">
+                            <div className="bg-white rounded-xl shadow-lg border border-slate-200/90 p-4 space-y-3">
                               <div className="pb-1.5 border-b border-slate-100 px-1">
                                 <span className="text-[11px] font-bold uppercase tracking-wider text-brand-blue-700 block">
                                   Sector Practices
@@ -343,7 +355,7 @@ export function Navbar() {
 
                           {/* 5. Insights Dropdown */}
                           {item.label === "Insights" && (
-                            <div className="bg-white rounded-xl shadow-2xl border border-slate-200 p-4 space-y-2.5">
+                            <div className="bg-white rounded-xl shadow-lg border border-slate-200/90 p-4 space-y-2.5">
                               <div className="pb-1.5 border-b border-slate-100 px-1 flex items-center justify-between">
                                 <div>
                                   <span className="text-[11px] font-bold uppercase tracking-wider text-brand-blue-700 block">
@@ -394,44 +406,48 @@ export function Navbar() {
                 }
 
                 return (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    onClick={() => setOpenDropdown(null)}
-                    className={`relative px-3 py-2 text-sm font-medium transition-colors tracking-normal rounded hover:text-brand-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-navy-900 ${
-                      isActive
-                        ? "text-brand-navy-900 font-semibold"
-                        : "text-slate-600 hover:text-brand-navy-900"
-                    }`}
-                  >
-                    {item.label}
-                    {isActive && (
-                      <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-brand-navy-900 animate-fade-in" />
-                    )}
-                  </Link>
+                  <div key={item.label} className="relative h-full flex items-center">
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      onClick={() => setOpenDropdown(null)}
+                      className={`relative inline-flex items-center px-3 py-2 text-[13.5px] font-medium transition-colors tracking-normal rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue-600 focus-visible:ring-offset-2 ${
+                        isActive
+                          ? "text-brand-navy-900 font-semibold"
+                          : "text-slate-600 hover:text-brand-navy-900"
+                      }`}
+                    >
+                      <span>{item.label}</span>
+                      {isActive && (
+                        <span
+                          className="absolute bottom-0 left-3 right-3 h-[2px] bg-brand-blue-600 rounded-full"
+                          aria-hidden="true"
+                        />
+                      )}
+                    </Link>
+                  </div>
                 );
               })}
             </nav>
 
             {/* Action Buttons & Mobile Menu Trigger */}
-            <div className="flex items-center gap-3">
-              <Button
+            <div className="flex items-center gap-2.5 sm:gap-3">
+              <Link
                 href="/contact"
-                variant="primary"
-                size="md"
-                className="hidden sm:inline-flex shadow-sm"
-                icon={<ArrowRight className="w-3.5 h-3.5" />}
+                className="hidden sm:inline-flex items-center gap-2 px-4 py-2 sm:px-4.5 sm:py-2.5 bg-brand-blue-600 hover:bg-brand-blue-700 active:bg-brand-blue-800 text-white text-xs sm:text-[13px] font-semibold tracking-tight rounded-sm transition-all duration-150 hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue-600 focus-visible:ring-offset-2 group/cta shadow-none hover:shadow-subtle"
               >
-                Discuss a Project
-              </Button>
+                <span>Discuss a Project</span>
+                <ArrowRight className="w-3.5 h-3.5 text-white/90 group-hover/cta:translate-x-0.5 transition-transform duration-150 shrink-0" />
+              </Link>
 
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(true)}
-                className="lg:hidden p-2 text-slate-700 hover:text-slate-900 hover:bg-slate-100 rounded focus:outline-none focus:ring-2 focus:ring-brand-navy-900 transition-colors"
+                className="lg:hidden p-2 text-slate-700 hover:text-slate-900 hover:bg-slate-100 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue-600 focus-visible:ring-offset-2 transition-colors"
                 aria-label="Open Navigation Menu"
+                aria-expanded={mobileMenuOpen}
               >
-                <Menu className="w-6 h-6" />
+                <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
             </div>
           </div>

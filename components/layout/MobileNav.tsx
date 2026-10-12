@@ -2,14 +2,13 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { X, ArrowRight, Mail, ChevronDown } from "lucide-react";
+import { X, ArrowRight, ChevronDown } from "lucide-react";
 import {
   NAV_ITEMS,
   COMPANY_INFO,
   SERVICES_NAV_ITEMS,
   LANGUAGE_SOLUTIONS_NAV_ITEMS,
 } from "@/lib/constants";
-import { Button } from "@/components/ui/Button";
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -66,21 +65,21 @@ export function MobileNav({ isOpen, onClose, activePath }: MobileNavProps) {
       {/* Drawer */}
       <div className="fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-elevated flex flex-col z-10 overflow-y-auto animate-slide-in-right">
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-5 border-b border-slate-200">
+        <div className="flex items-center justify-between px-6 py-4.5 border-b border-slate-200">
           <Link
             href="/"
             onClick={onClose}
-            className="flex items-center gap-2.5 focus:outline-none"
+            className="flex items-center gap-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue-600 rounded-sm"
             aria-label="DORA Global Research Home"
           >
-            <div className="w-8 h-8 rounded-lg bg-brand-navy-900 flex items-center justify-center text-white font-bold text-base shadow-sm">
+            <div className="w-8 h-8 rounded-sm bg-brand-navy-900 flex items-center justify-center text-white font-bold text-base shadow-sm shrink-0">
               D
             </div>
-            <div>
-              <span className="block font-semibold text-sm tracking-tight text-brand-navy-900 leading-none">
+            <div className="flex flex-col">
+              <span className="block font-bold text-[15px] tracking-tight text-brand-navy-900 leading-none">
                 DORA
               </span>
-              <span className="block text-[10px] uppercase tracking-widest text-slate-500 font-medium mt-0.5">
+              <span className="block text-[9px] uppercase tracking-[0.16em] text-slate-500 font-semibold mt-1 leading-none">
                 Global Research
               </span>
             </div>
@@ -88,7 +87,7 @@ export function MobileNav({ isOpen, onClose, activePath }: MobileNavProps) {
           <button
             type="button"
             onClick={onClose}
-            className="p-2 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition-colors focus:outline-none"
+            className="p-2 rounded-sm text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue-600"
             aria-label="Close navigation menu"
           >
             <X className="w-5 h-5" />
@@ -275,9 +274,9 @@ export function MobileNav({ isOpen, onClose, activePath }: MobileNavProps) {
                 key={item.label}
                 href={item.href}
                 onClick={onClose}
-                className={`flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+                className={`flex items-center justify-between px-3.5 py-2.5 rounded-sm text-sm font-medium transition-colors ${
                   isActive
-                    ? "bg-slate-100 text-brand-blue-700 font-semibold"
+                    ? "bg-brand-blue-50/70 text-brand-blue-700 font-semibold border-l-2 border-brand-blue-600"
                     : "text-slate-700 hover:bg-slate-50 hover:text-brand-navy-900"
                 }`}
               >
@@ -290,16 +289,14 @@ export function MobileNav({ isOpen, onClose, activePath }: MobileNavProps) {
 
         {/* CTA and Corporate details */}
         <div className="p-5 border-t border-slate-200 bg-slate-50/70 space-y-3">
-          <Button
+          <Link
             href="/contact"
-            variant="primary"
-            fullWidth
-            size="lg"
             onClick={onClose}
-            icon={<ArrowRight className="w-4 h-4" />}
+            className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 bg-brand-blue-600 hover:bg-brand-blue-700 active:bg-brand-blue-800 text-white text-sm font-semibold tracking-tight rounded-sm transition-all duration-150 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue-600 focus-visible:ring-offset-2"
           >
-            Discuss a Project
-          </Button>
+            <span>Discuss a Project</span>
+            <ArrowRight className="w-4 h-4 text-white/90" />
+          </Link>
 
           <div className="pt-1 text-xs text-slate-600 flex items-center justify-between px-1">
             <span className="text-[11px] text-slate-500 font-medium">Inquiries:</span>
