@@ -32,30 +32,31 @@ export function PageHeader({
   return (
     <div
       className={cn(
-        "relative pt-10 sm:pt-12 lg:pt-14 pb-8 sm:pb-9 lg:pb-10 bg-gradient-to-b from-slate-50/90 via-brand-surface-subtle/50 to-white overflow-hidden",
+        "relative pt-10 sm:pt-12 lg:pt-14 overflow-hidden bg-gradient-to-b from-slate-50/90 via-brand-surface-subtle/50 to-white",
+        visual ? "pb-10 sm:pb-12 lg:pb-14" : "pb-8 sm:pb-9 lg:pb-10",
         className
       )}
     >
-      {/* Optional signature periwinkle curve background */}
+      {/* Restrained, smooth, softly rounded periwinkle background shape */}
       {showCurve && (
         <div
-          className="absolute top-0 right-0 w-[55%] h-full pointer-events-none overflow-hidden z-0"
+          className="absolute top-0 right-0 w-[42%] max-w-xl h-full pointer-events-none overflow-hidden z-0 hidden sm:block"
           aria-hidden="true"
         >
           <svg
-            className="absolute top-0 right-0 h-[160%] w-full text-brand-blue-700/[0.08] -translate-y-[20%]"
-            viewBox="0 0 500 600"
+            className="absolute top-0 right-0 h-full w-full text-brand-blue-600/[0.045]"
+            viewBox="0 0 400 400"
             fill="currentColor"
             preserveAspectRatio="none"
           >
-            <path d="M 150 0 C -60 180 60 420 500 600 L 500 0 Z" />
+            <path d="M 400 0 L 160 0 C 80 140 120 280 400 400 Z" />
           </svg>
         </div>
       )}
 
       {/* Subtle ambient lighting accent */}
       <div
-        className="absolute top-0 right-0 w-96 h-64 bg-brand-blue-600/[0.04] rounded-full blur-3xl pointer-events-none -translate-y-12 translate-x-12"
+        className="absolute top-0 right-0 w-80 h-56 bg-brand-blue-600/[0.035] rounded-full blur-3xl pointer-events-none -translate-y-12 translate-x-12"
         aria-hidden="true"
       />
 
@@ -91,8 +92,8 @@ export function PageHeader({
           </span>
         </nav>
 
-        <div className={visual ? "grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center" : "max-w-3xl"}>
-          <div className={visual ? "lg:col-span-7" : undefined}>
+        <div className={visual ? "grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center" : "max-w-3xl"}>
+          <div className={visual ? "min-w-0" : undefined}>
             {badge && (
               <div className="mb-3 sm:mb-4">
                 <Badge variant="blue" size="md" dot>
@@ -105,13 +106,13 @@ export function PageHeader({
               {title}
             </h1>
 
-            <p className="mt-4 sm:mt-5 text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-2xl sm:max-w-3xl">
+            <p className="mt-4 sm:mt-5 text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-xl">
               {description}
             </p>
           </div>
 
           {visual && (
-            <div className="mt-6 lg:mt-0 lg:col-span-5 flex justify-center lg:justify-end w-full">
+            <div className="mt-8 lg:mt-0 min-w-0 flex justify-center lg:justify-end w-full">
               {visual}
             </div>
           )}

@@ -3,10 +3,10 @@ import Image from "next/image";
 
 export function AboutHeroVisual() {
   return (
-    <div className="relative group w-full max-w-lg">
+    <div className="relative group w-full max-w-[460px] mr-2 mb-2 sm:mr-2.5 sm:mb-2.5">
       {/* Architectural offset frame accent matching DORA hero design language */}
       <div
-        className="absolute -inset-2 bg-brand-navy-950/5 border border-brand-navy-900/10 pointer-events-none transform translate-x-2 translate-y-2 sm:translate-x-2.5 sm:translate-y-2.5 transition-transform duration-500 group-hover:translate-x-1.5 group-hover:translate-y-1.5"
+        className="absolute inset-0 bg-brand-navy-950/5 border border-brand-navy-900/10 pointer-events-none transform translate-x-2 translate-y-2 sm:translate-x-2.5 sm:translate-y-2.5 transition-transform duration-500 group-hover:translate-x-1.5 group-hover:translate-y-1.5"
         aria-hidden="true"
       />
 
@@ -18,7 +18,7 @@ export function AboutHeroVisual() {
           fill
           priority
           className="object-cover object-center group-hover:scale-[1.02] transition-transform duration-700"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 42vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 460px"
         />
 
         {/* Ambient top-left practice status indicator */}
@@ -32,7 +32,7 @@ export function AboutHeroVisual() {
         </div>
 
         {/* Editorial Overlay Caption */}
-        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-navy-950/95 via-brand-navy-950/65 to-transparent pt-12 pb-4 px-4 sm:px-5 text-white">
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-navy-950/95 via-brand-navy-950/65 to-transparent pt-12 pb-3.5 px-4 sm:px-4.5 text-white">
           <div className="flex items-end justify-between gap-3">
             <div className="space-y-0.5">
               <span className="text-[10px] font-mono uppercase tracking-widest text-brand-blue-300 block font-medium">
