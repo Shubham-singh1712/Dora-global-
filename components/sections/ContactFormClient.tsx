@@ -224,7 +224,7 @@ export function ContactFormClient() {
     <Card
       variant="default"
       padding="none"
-      className="bg-white border border-slate-200/90 rounded-lg shadow-card p-6 sm:p-7 lg:p-8"
+      className="bg-white border border-slate-200/90 rounded-xl shadow-card p-6 sm:p-7 lg:p-8"
     >
       {/* SUCCESS STATE */}
       {isSubmitted && confirmedEnquiry ? (
@@ -276,9 +276,12 @@ export function ContactFormClient() {
         </div>
       ) : (
         /* ACTIVE FORM - RENDERS IMMEDIATELY */
-        <form onSubmit={handleSubmit} noValidate className="space-y-4">
-          <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+        <form onSubmit={handleSubmit} noValidate className="space-y-4 sm:space-y-4.5">
+          <div className="flex items-center justify-between pb-3.5 border-b border-slate-100">
             <div>
+              <span className="text-[10px] font-mono uppercase tracking-widest text-slate-400 block font-semibold mb-0.5">
+                Practice Intake Form
+              </span>
               <h3 className="text-base sm:text-lg font-bold text-brand-navy-900">
                 Research Project Enquiry
               </h3>
@@ -356,14 +359,14 @@ export function ContactFormClient() {
               }}
             />
 
-            <div>
+              <div>
               <label htmlFor="service" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5">
                 Research Service <span className="text-red-500">*</span>
               </label>
               <select
                 id="service"
-                className={`w-full px-3.5 py-2.5 bg-white text-slate-900 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue-600 focus:border-brand-blue-600 transition-colors ${
-                  errors.service ? "border-red-500" : "border-slate-300"
+                className={`w-full px-3.5 py-2.5 bg-white text-slate-900 border rounded text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue-600 focus:border-brand-blue-600 transition-colors ${
+                  errors.service ? "border-red-500" : "border-slate-300 hover:border-slate-400"
                 }`}
                 value={formData.service}
                 onChange={(e) => {
@@ -411,7 +414,7 @@ export function ContactFormClient() {
               </label>
               <select
                 id="project_scope"
-                className="w-full px-3.5 py-2.5 bg-white text-slate-900 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue-600 focus:border-brand-blue-600 transition-colors"
+                className="w-full px-3.5 py-2.5 bg-white text-slate-900 border border-slate-300 hover:border-slate-400 rounded text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue-600 focus:border-brand-blue-600 transition-colors"
                 value={formData.project_scope}
                 onChange={(e) => {
                   setFormData({ ...formData, project_scope: e.target.value });

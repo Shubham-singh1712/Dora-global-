@@ -16,6 +16,8 @@ interface PageHeaderProps {
   description: string;
   breadcrumbs?: BreadcrumbItem[];
   className?: string;
+  visual?: React.ReactNode;
+  showCurve?: boolean;
 }
 
 export function PageHeader({
@@ -24,6 +26,8 @@ export function PageHeader({
   description,
   breadcrumbs = [{ label: "Home", href: "/" }],
   className,
+  visual,
+  showCurve = false,
 }: PageHeaderProps) {
   return (
     <div
@@ -32,6 +36,23 @@ export function PageHeader({
         className
       )}
     >
+      {/* Optional signature periwinkle curve background */}
+      {showCurve && (
+        <div
+          className="absolute top-0 right-0 w-[55%] h-full pointer-events-none overflow-hidden z-0"
+          aria-hidden="true"
+        >
+          <svg
+            className="absolute top-0 right-0 h-[160%] w-full text-brand-blue-700/[0.08] -translate-y-[20%]"
+            viewBox="0 0 500 600"
+            fill="currentColor"
+            preserveAspectRatio="none"
+          >
+            <path d="M 150 0 C -60 180 60 420 500 600 L 500 0 Z" />
+          </svg>
+        </div>
+      )}
+
       {/* Subtle ambient lighting accent */}
       <div
         className="absolute top-0 right-0 w-96 h-64 bg-brand-blue-600/[0.04] rounded-full blur-3xl pointer-events-none -translate-y-12 translate-x-12"
@@ -70,22 +91,30 @@ export function PageHeader({
           </span>
         </nav>
 
-        <div className="max-w-3xl">
-          {badge && (
-            <div className="mb-3 sm:mb-4">
-              <Badge variant="blue" size="md" dot>
-                {badge}
-              </Badge>
+        <div className={visual ? "grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center" : "max-w-3xl"}>
+          <div className={visual ? "lg:col-span-7" : undefined}>
+            {badge && (
+              <div className="mb-3 sm:mb-4">
+                <Badge variant="blue" size="md" dot>
+                  {badge}
+                </Badge>
+              </div>
+            )}
+
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-brand-navy-900 leading-[1.15]">
+              {title}
+            </h1>
+
+            <p className="mt-4 sm:mt-5 text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-2xl sm:max-w-3xl">
+              {description}
+            </p>
+          </div>
+
+          {visual && (
+            <div className="mt-6 lg:mt-0 lg:col-span-5 flex justify-center lg:justify-end w-full">
+              {visual}
             </div>
           )}
-
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-brand-navy-900 leading-[1.15]">
-            {title}
-          </h1>
-
-          <p className="mt-4 sm:mt-5 text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-2xl sm:max-w-3xl">
-            {description}
-          </p>
         </div>
       </Container>
     </div>
