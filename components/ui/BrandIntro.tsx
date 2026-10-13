@@ -81,20 +81,29 @@ export function BrandIntro() {
       id="dora-brand-intro"
       aria-label="DORA Global Research Brand Introduction"
       aria-hidden={stage === "fading" ? "true" : undefined}
-      className={`fixed inset-0 z-[9999] flex items-center justify-center bg-[#060C17] select-none transition-opacity duration-500 ease-out ${
+      className={`fixed inset-0 z-[9999] flex items-center justify-center bg-[radial-gradient(ellipse_at_top_left,#EBF3FF_0%,#F4F8FE_50%,#FFFFFF_100%)] select-none transition-opacity duration-500 ease-out overflow-hidden ${
         stage === "fading" ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"
       }`}
     >
-      {/* Subtle, restrained ambient radial depth */}
+      {/* Signature DORA Blue Extended Curved Background Pattern (matching Hero) */}
       <div
-        className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,rgba(30,58,138,0.18)_0%,rgba(6,12,23,0.95)_65%,#060C17_100%)]"
+        className="absolute top-0 right-0 w-full h-full pointer-events-none overflow-hidden z-0"
         aria-hidden="true"
-      />
+      >
+        <svg
+          className="absolute top-0 right-0 h-[130%] w-[75%] text-brand-blue-700/[0.18] -translate-y-[10%]"
+          viewBox="0 0 700 900"
+          fill="currentColor"
+          preserveAspectRatio="none"
+        >
+          <path d="M 180 0 C -80 280 80 620 700 900 L 700 0 Z" />
+        </svg>
+      </div>
 
       <div className="relative z-10 text-center px-6 max-w-xl mx-auto flex flex-col items-center">
         {/* Monogram Badge (Reused from brand identity) */}
         <div
-          className={`w-11 h-11 sm:w-12 sm:h-12 rounded bg-brand-navy-900 border border-brand-blue-500/30 flex items-center justify-center text-white font-bold text-lg sm:text-xl tracking-tight mb-5 shadow-[0_0_24px_rgba(30,58,138,0.35)] transition-all duration-700 ease-out ${
+          className={`w-11 h-11 sm:w-12 sm:h-12 rounded-sm bg-brand-navy-900 border border-brand-navy-800 flex items-center justify-center text-white font-bold text-lg sm:text-xl tracking-tight mb-5 shadow-sm transition-all duration-700 ease-out ${
             stage !== "init" ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-3 scale-95"
           }`}
         >
@@ -103,7 +112,7 @@ export function BrandIntro() {
 
         {/* Primary Wordmark: DORA */}
         <h1
-          className={`text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-none transition-all duration-700 ease-out ${
+          className={`text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-brand-navy-900 leading-none transition-all duration-700 ease-out ${
             stage !== "init" ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
@@ -112,7 +121,7 @@ export function BrandIntro() {
 
         {/* Restrained Brand Blue Hairline Divider */}
         <div
-          className={`w-12 h-[1.5px] bg-brand-blue-500/70 my-3.5 transition-all duration-700 delay-150 ease-out ${
+          className={`w-12 h-[2px] bg-brand-blue-600 my-3.5 transition-all duration-700 delay-150 ease-out ${
             stage === "full" || stage === "fading"
               ? "opacity-100 scale-x-100"
               : "opacity-0 scale-x-50"
@@ -122,7 +131,7 @@ export function BrandIntro() {
 
         {/* Practice Descriptor: GLOBAL RESEARCH */}
         <p
-          className={`text-xs sm:text-sm md:text-base font-semibold uppercase tracking-[0.28em] sm:tracking-[0.32em] text-slate-300 transition-all duration-700 ease-out ${
+          className={`text-xs sm:text-sm md:text-base font-semibold uppercase tracking-[0.28em] sm:tracking-[0.32em] text-slate-600 transition-all duration-700 ease-out ${
             stage === "full" || stage === "fading"
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-3"
