@@ -57,7 +57,7 @@ export function CTASection() {
                   Tailored Methodology
                 </h4>
                 <p className="text-xs text-slate-400 mt-1 leading-normal">
-                  Custom study architecture engineered precisely around your core strategic questions.
+                  Methodologies designed specifically around the commercial questions you need to answer.
                 </p>
               </div>
             </div>
@@ -81,7 +81,7 @@ export function CTASection() {
                   Cross-Market Coverage
                 </h4>
                 <p className="text-xs text-slate-400 mt-1 leading-normal">
-                  Coordinated qualitative and quantitative execution across key international commercial zones.
+                  Coordinated qualitative and quantitative execution across key regional markets.
                 </p>
               </div>
             </div>

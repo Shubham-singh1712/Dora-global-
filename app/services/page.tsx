@@ -37,7 +37,7 @@ export default function ServicesOverviewPage() {
             <div className="max-w-3xl space-y-3">
               <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-blue-700">
                 <Compass className="w-4 h-4" />
-                <span>PRACTICE AREA A &bull; MARKET RESEARCH</span>
+                <span>MARKET RESEARCH PRACTICES</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy-900">
                 Core Research Methodologies
@@ -63,13 +63,13 @@ export default function ServicesOverviewPage() {
             <div className="max-w-3xl space-y-3">
               <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-blue-700">
                 <Languages className="w-4 h-4" />
-                <span>PRACTICE AREA B &bull; LANGUAGE SOLUTIONS FOR RESEARCH</span>
+                <span>LANGUAGE SOLUTIONS FOR RESEARCH</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy-900">
                 Linguistic Solutions for International Studies
               </h2>
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
-                Specialized language solutions tailored specifically for market research workflows—enabling seamless multi-market surveys, focus group observation, and verbatim analysis.
+                Specialized language solutions tailored specifically for market research workflows—supporting coordinated multi-market surveys, focus group observation, and verbatim analysis.
               </p>
             </div>
             <Link

@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, Clock, Calendar, Sparkles } from "lucide-react";
+import { ArrowRight, Clock, Calendar } from "lucide-react";
 import { BlogArticle } from "@/lib/constants";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
@@ -22,10 +22,8 @@ export function BlogCard({ article }: BlogCardProps) {
             {article.category}
           </Badge>
 
-          {/* Transparent demo label as requested */}
-          <span className="inline-flex items-center gap-1 text-[10px] uppercase font-mono tracking-wider text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200/80">
-            <Sparkles className="w-3 h-3 text-amber-600" />
-            Seed Demo Article
+          <span className="text-[11px] font-mono text-slate-400">
+            {article.readTime}
           </span>
         </div>
 

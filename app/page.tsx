@@ -51,7 +51,7 @@ const SERVICE_ROWS = [
   {
     number: "03",
     title: "QUANTITATIVE RESEARCH",
-    description: "Statistically robust measurement, audience segmentation, and market sizing.",
+    description: "Representative measurement, audience segmentation, and market sizing.",
     href: "/services/quantitative-research",
   },
 ];
@@ -353,7 +353,7 @@ export default function HomePage() {
                 <div className="flex items-start gap-3">
                   <Search className="w-4 h-4 text-brand-blue-700 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="block text-brand-navy-900 text-sm">Custom Study Architecture</strong>
+                    <strong className="block text-brand-navy-900 text-sm">Tailored Study Design</strong>
                     Every project is designed around your unique hypotheses and commercial objectives.
                   </div>
                 </div>
@@ -369,7 +369,7 @@ export default function HomePage() {
                 <div className="flex items-start gap-3">
                   <BarChart3 className="w-4 h-4 text-brand-blue-700 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="block text-brand-navy-900 text-sm">Actionable Executive Synthesis</strong>
+                    <strong className="block text-brand-navy-900 text-sm">Clear Executive Synthesis</strong>
                     Distilling complex qualitative narratives and survey data into clear strategic takeaways.
                   </div>
                 </div>

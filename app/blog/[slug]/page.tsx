@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { CTASection } from "@/components/sections/CTASection";
 import { SEED_BLOG_ARTICLES } from "@/lib/constants";
-import { ArrowLeft, Calendar, Clock, Sparkles, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, CheckCircle2 } from "lucide-react";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -62,14 +62,6 @@ export default async function BlogPostPage({ params }: Props) {
 
       <section className="pt-8 sm:pt-9 lg:pt-10 pb-16 sm:pb-20 bg-white">
         <Container size="md">
-          {/* Demo disclaimer */}
-          <div className="mb-8 p-3 rounded-lg bg-amber-50 border border-amber-200 flex items-center gap-2 text-xs text-amber-800 shadow-subtle">
-            <Sparkles className="w-4 h-4 text-amber-600 shrink-0" />
-            <span>
-              This is a demonstration seed briefing illustrating corporate editorial layout and typography.
-            </span>
-          </div>
-
           <div className="flex items-center gap-4 text-xs text-slate-500 font-medium pb-6 border-b border-slate-100 mb-8">
             <span className="flex items-center gap-1.5">
               <Calendar className="w-3.5 h-3.5 text-slate-400" />

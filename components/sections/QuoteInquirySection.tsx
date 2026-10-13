@@ -133,10 +133,10 @@ export function QuoteInquirySection() {
                 </span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-brand-navy-900 leading-[1.2]">
-                Initiate Project Scoping
+                Discuss Your Research Project
               </h2>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal mt-3 max-w-xl">
-                Connect with our research team to evaluate methodology fit, sample feasibility, and multi-market delivery timelines.
+                Connect with our research team to discuss methodology fit, target audience feasibility, and project timelines.
               </p>
             </div>
 

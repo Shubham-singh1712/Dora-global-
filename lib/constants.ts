@@ -28,7 +28,7 @@ export const SERVICES_NAV_ITEMS: SubNavItem[] = [
   {
     label: "Quantitative Research",
     href: "/services/quantitative-research",
-    description: "Statistically robust surveys, market sizing, and data analytics.",
+    description: "Representative surveys, market sizing models, and data analytics.",
     section: "market-research",
   },
 ];
@@ -194,7 +194,7 @@ export const FEATURED_SERVICES: ServiceItem[] = [
     title: "Primary Research",
     category: "Market Intelligence",
     description: "Original data collection gathered directly from target audiences, decision-makers, and industry participants to answer specific strategic questions.",
-    deliverables: ["Direct stakeholder feedback", "Custom study architecture", "Actionable executive synthesis"],
+    deliverables: ["Direct stakeholder feedback", "Custom study design", "Clear executive synthesis"],
     href: "/services/primary-research",
   },
   {
@@ -209,7 +209,7 @@ export const FEATURED_SERVICES: ServiceItem[] = [
     id: "quantitative-research",
     title: "Quantitative Research",
     category: "Data & Scale",
-    description: "Statistically robust measurement and data analysis to quantify market demand, validate hypotheses, and benchmark performance.",
+    description: "Representative measurement and structured data analysis to quantify market demand, test hypotheses, and benchmark performance.",
     deliverables: ["Survey design & execution", "Audience segmentation", "Market sizing & trend analysis"],
     href: "/services/quantitative-research",
   },
@@ -372,7 +372,7 @@ export const GLOBAL_CAPABILITY_LOCATIONS = GLOBAL_RESEARCH_COVERAGE.map((c) => (
 }));
 
 // ==========================================
-// BLOG SEED ARTICLES (MARKED AS DEMO / SEED)
+// PRACTICE BRIEFINGS & METHODOLOGY PAPERS
 // ==========================================
 export interface BlogArticle {
   id: string;
@@ -382,49 +382,45 @@ export interface BlogArticle {
   category: string;
   readTime: string;
   date: string;
-  isDemo: true;
+  isDemo?: boolean;
 }
 
 export const SEED_BLOG_ARTICLES: BlogArticle[] = [
   {
-    id: "demo-art-1",
+    id: "briefing-1",
     slug: "evaluating-regulatory-translation-protocols",
     title: "Designing Multi-Market Qualitative Research Programs",
     summary: "A practical framework examining moderation guidelines, cross-cultural nuance, and synthesis models for international qualitative studies.",
-    category: "Methodology Briefing",
+    category: "Qualitative Practice",
     readTime: "5 min read",
-    date: "October 2026",
-    isDemo: true,
+    date: "Practice Note",
   },
   {
-    id: "demo-art-2",
+    id: "briefing-2",
     slug: "remote-simultaneous-interpretation-standards",
     title: "Ensuring Sample Integrity in Cross-Border Quantitative Studies",
-    summary: "Exploring multi-step screening methods and survey design structures that safeguard statistical validity in international research.",
-    category: "Technical Report",
+    summary: "Exploring multi-step screening methods and survey design structures that safeguard validity in international research.",
+    category: "Quantitative Practice",
     readTime: "5 min read",
-    date: "September 2026",
-    isDemo: true,
+    date: "Methodology Briefing",
   },
   {
-    id: "demo-art-3",
+    id: "briefing-3",
     slug: "in-language-coding-vs-translated-verbatims",
     title: "In-Language Qualitative Coding vs. Direct Translation in Survey Analysis",
     summary: "Why analyzing qualitative verbatims directly in source idioms prevents nuanced sentiment distortion in emerging market respondent samples.",
-    category: "Research Practice",
+    category: "Linguistic Research",
     readTime: "6 min read",
-    date: "September 2026",
-    isDemo: true,
+    date: "Practice Note",
   },
   {
-    id: "demo-art-4",
+    id: "briefing-4",
     slug: "sign-language-accessibility-compliance-corporate",
     title: "Capturing Emerging Consumer Preferences in Fast-Moving Sectors",
-    summary: "How agile research methodologies help organizations track rapid shifts in buyer behavior, sustainability expectations, and digital engagement.",
+    summary: "How structured research methodologies help organizations track rapid shifts in buyer behavior, sustainability expectations, and category choices.",
     category: "Sector Insights",
     readTime: "4 min read",
-    date: "August 2026",
-    isDemo: true,
+    date: "Executive Briefing",
   },
 ];
 

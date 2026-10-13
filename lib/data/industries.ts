@@ -68,16 +68,16 @@ export const INDUSTRIES_DATA: Record<string, IndustryDetail> = {
     ],
     benefits: [
       {
-        title: "Targeted Audience Sampling",
-        description: "Access verified vehicle owners, EV prospective buyers, fleet managers, and automotive enthusiasts.",
+        title: "Buyer & Owner Segmentation",
+        description: "Screen verified vehicle owners, EV prospective buyers, fleet operators, and brand considerers.",
       },
       {
-        title: "Actionable Product Roadmaps",
-        description: "Translate research findings directly into feature prioritization and marketing positioning.",
+        title: "Feature & Tech Prioritization",
+        description: "Evaluate which safety, charging, and connectivity features directly motivate vehicle purchase choices.",
       },
       {
-        title: "Global Market Reach",
-        description: "Execute research across key automotive markets with localized consumer context.",
+        title: "Cross-Market Automotive Studies",
+        description: "Execute qualitative and quantitative studies across key automotive consumer territories.",
       },
     ],
     ctaTitle: "Discuss Automotive Research",
@@ -273,12 +273,12 @@ export const INDUSTRIES_DATA: Record<string, IndustryDetail> = {
         description: "Access primary household grocery buyers, Gen Z trends, and specialized health-focused consumer panels.",
       },
       {
-        title: "Rapid Concept Evaluation",
-        description: "Evaluate product ideas, packaging prototypes, and price points quickly before full retail rollout.",
+        title: "Concept & Prototype Evaluation",
+        description: "Evaluate product formulations, packaging prototypes, and price points before full retail rollout.",
       },
       {
-        title: "Actionable Sensory & Concept Feedback",
-        description: "Translate consumer reactions into clear product development and branding guidance.",
+        title: "Sensory & Shelf Feedback",
+        description: "Translate consumer taste tests and packaging reactions into clear product development guidance.",
       },
     ],
     ctaTitle: "Discuss Food & Beverage Research",
@@ -340,12 +340,12 @@ export const INDUSTRIES_DATA: Record<string, IndustryDetail> = {
         description: "Reach frequent commuters, business travelers, leisure tourists, and freight decision-makers.",
       },
       {
-        title: "Geographic Coverage",
-        description: "Gather regional transportation insights across metropolitan corridors and international routes.",
+        title: "Metropolitan & Route Coverage",
+        description: "Gather regional transportation insights across commuter corridors and international transit routes.",
       },
       {
-        title: "Service Benchmark Clarity",
-        description: "Gain actionable metrics to improve customer satisfaction and booking conversions.",
+        title: "Service Experience Benchmarking",
+        description: "Benchmark customer satisfaction, punctuality perception, and digital booking friction.",
       },
     ],
     ctaTitle: "Discuss Transportation Research",
@@ -403,16 +403,16 @@ export const INDUSTRIES_DATA: Record<string, IndustryDetail> = {
     ],
     benefits: [
       {
-        title: "Engaged Audience Panels",
-        description: "Access diverse demographic groups, avid gamers, binge streamers, and niche podcast listeners.",
+        title: "Targeted Audience Sampling",
+        description: "Access diverse demographic groups, digital gamers, subscription streaming viewers, and podcast listeners.",
       },
       {
-        title: "Rapid Concept Testing",
-        description: "Test show concepts, trailers, title options, and artwork prior to public release.",
+        title: "Concept & Creative Testing",
+        description: "Test entertainment concepts, trailers, title options, and campaign artwork prior to release.",
       },
       {
-        title: "Nuanced Demographic Insights",
-        description: "Uncover generational differences in media habits between Gen Z, Millennials, and older cohorts.",
+        title: "Generational Habit Analysis",
+        description: "Unpack behavioral differences in content consumption between Gen Z, Millennials, and mature audiences.",
       },
     ],
     ctaTitle: "Discuss Media Sector Research",

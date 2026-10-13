@@ -8,7 +8,6 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { CTASection } from "@/components/sections/CTASection";
 import { SEED_BLOG_ARTICLES } from "@/lib/constants";
-import { Sparkles } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Methodologies & Research Insights",
@@ -36,18 +35,7 @@ export default function BlogPage() {
 
       <section className="pt-8 sm:pt-9 lg:pt-10 pb-16 sm:pb-20 lg:pb-24 bg-white">
         <Container>
-          {/* Demonstration Notice */}
-          <div className="mb-10 sm:mb-12 p-4 rounded-lg bg-amber-50/70 border border-amber-200/80 flex items-start gap-3 text-xs text-amber-900 shadow-subtle">
-            <Sparkles className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
-            <div>
-              <strong className="font-semibold block mb-0.5">
-                Editorial Demonstration Notice
-              </strong>
-              The articles displayed below illustrate publication hierarchy and topical coverage across qualitative and quantitative research methodologies.
-            </div>
-          </div>
-
-          {/* Featured Seed Insight Banner */}
+          {/* Featured Insight Banner */}
           <div className="mb-14">
             <Card
               variant="default"
@@ -59,8 +47,8 @@ export default function BlogPage() {
                   <Badge variant="blue" size="sm">
                     Featured Briefing
                   </Badge>
-                  <span className="text-[10px] uppercase font-mono tracking-wider text-amber-400 bg-amber-950/60 px-2 py-0.5 rounded border border-amber-800/80">
-                    Methodology
+                  <span className="text-[10px] uppercase font-mono tracking-wider text-brand-blue-300 bg-brand-navy-900 px-2 py-0.5 rounded border border-brand-navy-800">
+                    Methodology Framework
                   </span>
                 </div>
 
@@ -73,11 +61,11 @@ export default function BlogPage() {
                 </p>
 
                 <div className="pt-2 flex items-center gap-4 text-xs text-slate-400 font-mono">
-                  <span>October 2026</span>
+                  <span>Qualitative Practice</span>
                   <span>•</span>
                   <span>6 min read</span>
                   <span>•</span>
-                  <span>Qualitative Practice</span>
+                  <span>Practice Note</span>
                 </div>
               </div>
             </Card>

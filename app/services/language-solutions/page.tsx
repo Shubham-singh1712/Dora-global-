@@ -289,7 +289,7 @@ export default function LanguageSolutionsPage() {
 
       <ServiceCTA
         title="Discuss Language Solutions for Your Next Global Study"
-        description="Partner with our research leads to integrate translation, interpretation, transcription, or in-language coding seamlessly into your upcoming international fieldwork."
+        description="Partner with our research leads to integrate translation, interpretation, transcription, or in-language coding directly into your upcoming international fieldwork."
         buttonText="Discuss Your Project"
         buttonHref="/contact?service=Language%20Solutions"
       />

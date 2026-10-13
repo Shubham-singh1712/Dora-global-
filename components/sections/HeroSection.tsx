@@ -30,18 +30,17 @@ export function HeroSection() {
           <div className="lg:col-span-7 space-y-5">
             {/* Small Eyebrow */}
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-blue-50 border border-brand-blue-200/60 rounded-none text-brand-blue-700 text-xs font-semibold uppercase tracking-wider">
-              Global Market Research
+              Independent Market Research &amp; Intelligence
             </div>
 
             {/* Headline */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight text-brand-navy-900 leading-[1.12]">
-              Research That Moves <br className="hidden sm:inline" />
-              Decisions Forward.
+              Market Research Grounded in Evidence, Not Assumptions
             </h1>
 
             {/* Supporting Copy */}
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-2xl">
-              DORA Global Research delivers market intelligence, qualitative and quantitative research, and localized expertise to help organizations make confident decisions across markets.
+              DORA Global Research helps brands, strategists, and business leaders answer critical commercial questions. We design and deliver primary research, qualitative moderation, and quantitative studies tailored to your sector.
             </p>
 
             {/* CTAs */}
@@ -52,7 +51,7 @@ export function HeroSection() {
                 size="lg"
                 icon={<ArrowRight className="w-4 h-4" />}
               >
-                Explore Research
+                Explore Research Services
               </Button>
               <Button
                 href="/contact"
@@ -89,7 +88,7 @@ export function HeroSection() {
                     Primary &bull; Qualitative &bull; Quantitative
                   </span>
                   <span className="text-[10px] font-semibold text-slate-300">
-                    Global Practice
+                    Multi-Market Practice
                   </span>
                 </div>
               </div>

@@ -86,10 +86,10 @@ export const SERVICES_DATA: Record<string, ServiceDetail> = {
       },
       {
         title: "Cross-Market Execution",
-        description: "Seamless fieldwork execution across international markets with localized understanding.",
+        description: "Coordinated fieldwork execution across international markets with localized understanding.",
       },
       {
-        title: "Actionable Strategic Output",
+        title: "Clear Strategic Output",
         description: "Synthesis of primary findings into clear executive briefings focused on practical commercial decisions.",
       },
     ],
@@ -375,7 +375,7 @@ export const SERVICES_DATA: Record<string, ServiceDetail> = {
       "On-site interpretation delivers live, in-person spoken language facilitation for qualitative research environments such as viewing facilities, central location tests (CLT), in-facility focus groups, and in-depth interviews.",
       "Client observers behind two-way mirrors or in backroom suites hear real-time simultaneous interpretation through dedicated wireless headsets, allowing immediate comprehension of respondent discussions, reactions, and non-verbal cues.",
     ],
-    understandTitle: "How On-Site Interpretation Empowers Research Teams",
+    understandTitle: "How On-Site Interpretation Supports Research Teams",
     understandPoints: [
       {
         title: "Real-Time Client Backroom Access",
@@ -395,7 +395,7 @@ export const SERVICES_DATA: Record<string, ServiceDetail> = {
       },
       {
         title: "Facility Audio & Technical Alignment",
-        description: "Seamless synchronization with facility wireless receiver headsets, observer audio channels, and master recording equipment.",
+        description: "Direct synchronization with facility wireless receiver headsets, observer audio channels, and master recording equipment.",
       },
     ],
     methodsTitle: "Interpretation Formats & Approaches",
@@ -495,7 +495,7 @@ export const SERVICES_DATA: Record<string, ServiceDetail> = {
     methods: [
       {
         name: "Platform-Native Channel Integration",
-        description: "Seamless configuration of language channels within Zoom, Teams, Google Meet, and enterprise collaboration suites.",
+        description: "Direct configuration of language channels within Zoom, Teams, Google Meet, and enterprise collaboration suites.",
       },
       {
         name: "Specialized Research Suite Support",
@@ -726,7 +726,7 @@ export const SERVICES_DATA: Record<string, ServiceDetail> = {
       },
       {
         title: "Cross-Market Harmonization",
-        description: "Supervised alignment ensuring that codeframes applied in Tokyo, São Paulo, and Frankfurt remain analytically equivalent.",
+        description: "Supervised alignment ensuring that codeframes applied across international language markets remain analytically equivalent.",
       },
       {
         title: "Software-Ready Datasets",
@@ -823,7 +823,7 @@ export const SERVICES_DATA: Record<string, ServiceDetail> = {
       },
       {
         title: "Defensible Cross-Market Comparability",
-        description: "Empowering research teams to benchmark findings across international markets with statistical confidence.",
+        description: "Enabling research teams to benchmark findings across international markets with statistical confidence.",
       },
     ],
     ctaTitle: "Ensure Cross-Market Validity in Your Next Survey",

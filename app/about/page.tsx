@@ -130,9 +130,9 @@ export default function AboutPage() {
       title: "Quantitative Research",
       tag: "Statistical Rigor",
       description:
-        "Statistically robust survey design, audience segmentation, market sizing models, and longitudinal tracking to validate market opportunities.",
+        "Representative survey design, audience segmentation, market sizing models, and longitudinal tracking to validate market opportunities.",
       deliverables: [
-        "Statistically Robust Samples",
+        "Representative Sample Frameworks",
         "Cross-Tabulation Analysis",
         "Market Sizing Models",
       ],
@@ -325,7 +325,7 @@ export default function AboutPage() {
               How We Approach Research Engagements
             </h2>
             <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-              From initial scoping to final deliverable, our structured methodology ensures seamless execution, transparent milestones, and defensible results.
+              From initial scoping to final deliverable, our structured methodology ensures disciplined execution, transparent milestones, and defensible results.
             </p>
           </div>
 
