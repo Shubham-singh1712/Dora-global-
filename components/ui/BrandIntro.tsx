@@ -4,21 +4,22 @@ import React, { useEffect, useState } from "react";
 
 /**
  * BrandIntro
- * Polished, full-screen brand opening for DORA Global Research.
- * Plays once per browser session before the homepage appears.
- * Total duration: ~2.3 seconds with smooth fade out.
+ * Polished, full-screen brand introduction for DORA Global Research.
+ * 
+ * Opening Sequence:
+ * 1. Deep navy canvas appears immediately on initial paint.
+ * 2. DORA wordmark fades in smoothly with a subtle upward movement.
+ * 3. GLOBAL RESEARCH appears just below it with a gentle fade.
+ * 4. Complete brand mark holds briefly so visitors can read it.
+ * 5. Intro screen fades away smoothly revealing the homepage (~2.2-2.4s total).
+ * 
+ * Plays once per browser session via sessionStorage. Respects prefers-reduced-motion.
  */
 export function BrandIntro() {
-  // Stages:
-  // "init"    -> Mounted, deep navy canvas, content hidden
-  // "dora"    -> DORA wordmark and monogram glide in smoothly
-  // "full"    -> GLOBAL RESEARCH descriptor and accent line appear
-  // "fading"  -> Overlay gently fades out to reveal the homepage
-  // "hidden"  -> Unmounted from the DOM, body scroll restored
   const [stage, setStage] = useState<"init" | "dora" | "full" | "fading" | "hidden">("init");
 
   useEffect(() => {
-    // 1. Session check and accessibility check
+    // 1. Session and motion preference check
     try {
       const alreadySeen = sessionStorage.getItem("dora_intro_seen");
       const prefersReducedMotion =
@@ -30,30 +31,30 @@ export function BrandIntro() {
         return;
       }
     } catch {
-      // If sessionStorage is blocked by browser security, proceed safely
+      // Proceed safely if storage is blocked
     }
 
-    // 2. Lock body scroll during animation sequence
+    // 2. Lock body scroll during intro sequence
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
-    // 3. Animation Sequence Timeline
-    // 0ms: Initial canvas visible
-    // 90ms: DORA wordmark appears
-    // 550ms: GLOBAL RESEARCH descriptor appears
-    // 1800ms: Begin smooth fade out
-    // 2350ms: Unmount and record session completion
+    // 3. Animation Sequence Timeline (total ~2.3 seconds)
+    // 0ms: Deep navy canvas visible immediately
+    // 90ms: DORA wordmark fades in smoothly with upward glide
+    // 520ms: GLOBAL RESEARCH appears just below it
+    // 1750ms: Begin smooth fade out
+    // 2350ms: Complete transition, restore scroll, record session
     const t1 = setTimeout(() => {
       setStage("dora");
     }, 90);
 
     const t2 = setTimeout(() => {
       setStage("full");
-    }, 550);
+    }, 520);
 
     const t3 = setTimeout(() => {
       setStage("fading");
-    }, 1800);
+    }, 1750);
 
     const t4 = setTimeout(() => {
       setStage("hidden");
@@ -81,47 +82,32 @@ export function BrandIntro() {
       id="dora-brand-intro"
       aria-label="DORA Global Research Brand Introduction"
       aria-hidden={stage === "fading" ? "true" : undefined}
-      className={`fixed inset-0 z-[9999] flex items-center justify-center bg-[radial-gradient(ellipse_at_top_left,#EBF3FF_0%,#F4F8FE_50%,#FFFFFF_100%)] select-none transition-opacity duration-500 ease-out overflow-hidden ${
+      className={`fixed inset-0 z-[9999] flex items-center justify-center bg-[#070E1C] select-none transition-opacity duration-600 ease-out overflow-hidden ${
         stage === "fading" ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"
       }`}
     >
-      {/* Signature DORA Blue Extended Curved Background Pattern (matching Hero) */}
+      {/* Deep, restrained ambient radial depth */}
       <div
-        className="absolute top-0 right-0 w-full h-full pointer-events-none overflow-hidden z-0"
+        className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,rgba(29,78,216,0.14)_0%,rgba(7,14,28,0.92)_65%,#070E1C_100%)]"
         aria-hidden="true"
-      >
-        <svg
-          className="absolute top-0 right-0 h-[130%] w-[75%] text-brand-blue-700/[0.18] -translate-y-[10%]"
-          viewBox="0 0 700 900"
-          fill="currentColor"
-          preserveAspectRatio="none"
-        >
-          <path d="M 180 0 C -80 280 80 620 700 900 L 700 0 Z" />
-        </svg>
-      </div>
+      />
 
+      {/* Brand Mark Focus */}
       <div className="relative z-10 text-center px-6 max-w-xl mx-auto flex flex-col items-center">
-        {/* Monogram Badge (Reused from brand identity) */}
-        <div
-          className={`w-11 h-11 sm:w-12 sm:h-12 rounded-sm bg-brand-navy-900 border border-brand-navy-800 flex items-center justify-center text-white font-bold text-lg sm:text-xl tracking-tight mb-5 shadow-sm transition-all duration-700 ease-out ${
-            stage !== "init" ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-3 scale-95"
-          }`}
-        >
-          <span>D</span>
-        </div>
-
-        {/* Primary Wordmark: DORA */}
+        {/* Step 1: DORA Wordmark */}
         <h1
-          className={`text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-brand-navy-900 leading-none transition-all duration-700 ease-out ${
-            stage !== "init" ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          className={`text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-none transition-all duration-700 ease-out ${
+            stage !== "init"
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-4"
           }`}
         >
           DORA
         </h1>
 
-        {/* Restrained Brand Blue Hairline Divider */}
+        {/* Restrained Brand Blue Accent Hairline */}
         <div
-          className={`w-12 h-[2px] bg-brand-blue-600 my-3.5 transition-all duration-700 delay-150 ease-out ${
+          className={`w-12 sm:w-16 h-[2px] bg-brand-blue-500 my-4 sm:my-5 transition-all duration-700 delay-100 ease-out ${
             stage === "full" || stage === "fading"
               ? "opacity-100 scale-x-100"
               : "opacity-0 scale-x-50"
@@ -129,9 +115,9 @@ export function BrandIntro() {
           aria-hidden="true"
         />
 
-        {/* Practice Descriptor: GLOBAL RESEARCH */}
+        {/* Step 2: GLOBAL RESEARCH */}
         <p
-          className={`text-xs sm:text-sm md:text-base font-semibold uppercase tracking-[0.28em] sm:tracking-[0.32em] text-slate-600 transition-all duration-700 ease-out ${
+          className={`text-xs sm:text-sm md:text-base font-semibold uppercase tracking-[0.3em] sm:tracking-[0.36em] text-slate-300 leading-none transition-all duration-700 ease-out ${
             stage === "full" || stage === "fading"
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-3"
