@@ -2,23 +2,17 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { cormorantGaramond, inter } from "@/lib/fonts";
 
 /**
  * BrandIntro
  * Cinematic full-screen brand introduction for DORA Global Research.
  *
- * Visuals:
- * - Deep cinematic space with curved Earth horizon across the lower half
- * - Luminous blue atmospheric limb glow and sunrise corona
- * - Glowing orbital trajectory arcs with illuminated connection nodes
- * - Classical serif "DORA" wordmark centered in the upper space
- * - "GLOBAL RESEARCH" and "PEOPLE | MARKETS | PERSPECTIVES" taglines
- *
- * Behavior:
- * - Plays once per browser session via sessionStorage.
- * - Respects prefers-reduced-motion.
- * - Responsive across mobile (390×844) and desktop (1440×900).
- * - Total duration ~2.4 seconds with smooth fade into homepage.
+ * Typography:
+ * - DORA: Cormorant Garamond, weight 500, uppercase, large elegant high-contrast serif, tracking-[0.16em]
+ * - GLOBAL RESEARCH: Inter, weight 400, uppercase, generous letter spacing tracking-[0.42em]
+ * - PEOPLE | MARKETS | PERSPECTIVES: Inter, weight 400, uppercase, smaller size, moderate tracking-[0.24em]
+ * - Subtle thin blue divider and soft silver/white palette
  */
 export function BrandIntro() {
   const [stage, setStage] = useState<"init" | "dora" | "full" | "fading" | "hidden">("init");
@@ -26,13 +20,21 @@ export function BrandIntro() {
   useEffect(() => {
     // 1. Session and motion preference check
     try {
+      const urlParams = typeof window !== "undefined" ? new URLSearchParams(window.location.search) : null;
+      const forceIntro = urlParams?.has("intro") || urlParams?.has("preview");
+      const pauseIntro = urlParams?.has("pause");
       const alreadySeen = sessionStorage.getItem("dora_intro_seen");
       const prefersReducedMotion =
         typeof window !== "undefined" &&
         window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-      if (alreadySeen || prefersReducedMotion) {
+      if (!forceIntro && (alreadySeen || prefersReducedMotion)) {
         setStage("hidden");
+        return;
+      }
+
+      if (pauseIntro) {
+        setStage("full");
         return;
       }
     } catch {
@@ -120,31 +122,33 @@ export function BrandIntro() {
 
       {/* 2. Centered Brand Identity Container */}
       <div className="relative z-10 text-center px-6 max-w-2xl mx-auto flex flex-col items-center pt-8 sm:pt-0">
-        {/* Step 1: DORA Wordmark in Classical Serif Typography */}
+        {/* Step 1: DORA Wordmark — Cormorant Garamond, Weight 500, Uppercase */}
         <h1
-          className={`font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[5.25rem] font-medium tracking-[0.08em] text-white leading-none transition-all duration-700 ease-out drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] ${
+          className={`${cormorantGaramond.className} text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-medium tracking-[0.16em] sm:tracking-[0.18em] text-white leading-none transition-all duration-700 ease-out drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] ${
             stage !== "init"
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-4"
           }`}
+          style={{ fontFamily: `${cormorantGaramond.style.fontFamily}, 'Cormorant Garamond', Georgia, serif` }}
         >
           DORA
         </h1>
 
-        {/* Step 2: GLOBAL RESEARCH Subtitle */}
+        {/* Step 2: GLOBAL RESEARCH Subtitle — Inter, Weight 400, Uppercase, Generous Spacing */}
         <p
-          className={`text-xs sm:text-sm md:text-base font-semibold uppercase tracking-[0.32em] sm:tracking-[0.4em] text-slate-200 mt-2.5 sm:mt-3 leading-none transition-all duration-700 delay-100 ease-out drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)] ${
+          className={`${inter.className} text-xs sm:text-sm md:text-base font-normal uppercase tracking-[0.38em] sm:tracking-[0.44em] text-[#D8E1ED] mt-3 sm:mt-3.5 leading-none transition-all duration-700 delay-100 ease-out drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)] ${
             stage === "full" || stage === "fading"
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-3"
           }`}
+          style={{ fontFamily: `${inter.style.fontFamily}, 'Inter', sans-serif` }}
         >
           Global Research
         </p>
 
-        {/* Restrained Brand Blue Hairline Divider */}
+        {/* Restrained Thin Blue Divider */}
         <div
-          className={`w-14 sm:w-20 h-[2px] bg-brand-blue-400/90 my-3.5 sm:my-4 transition-all duration-700 delay-200 ease-out shadow-[0_0_8px_rgba(96,165,250,0.6)] ${
+          className={`w-14 sm:w-20 h-[1.5px] bg-brand-blue-400/90 my-3.5 sm:my-4 transition-all duration-700 delay-200 ease-out shadow-[0_0_8px_rgba(96,165,250,0.6)] ${
             stage === "full" || stage === "fading"
               ? "opacity-100 scale-x-100"
               : "opacity-0 scale-x-50"
@@ -152,13 +156,14 @@ export function BrandIntro() {
           aria-hidden="true"
         />
 
-        {/* Step 3: Practice Tagline: PEOPLE | MARKETS | PERSPECTIVES */}
+        {/* Step 3: Practice Tagline — Inter, Weight 400, Uppercase, Smaller Size, Moderate Spacing */}
         <p
-          className={`text-[9.5px] sm:text-[11px] md:text-xs font-medium uppercase tracking-[0.24em] sm:tracking-[0.3em] text-slate-300/90 transition-all duration-700 delay-250 ease-out drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] ${
+          className={`${inter.className} text-[9px] sm:text-[10px] md:text-[11px] font-normal uppercase tracking-[0.24em] sm:tracking-[0.28em] text-slate-300/90 transition-all duration-700 delay-250 ease-out drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] ${
             stage === "full" || stage === "fading"
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-2"
           }`}
+          style={{ fontFamily: `${inter.style.fontFamily}, 'Inter', sans-serif` }}
         >
           People <span className="text-brand-blue-400 mx-1">|</span> Markets{" "}
           <span className="text-brand-blue-400 mx-1">|</span> Perspectives
