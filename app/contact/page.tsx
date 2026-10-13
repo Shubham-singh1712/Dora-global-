@@ -112,7 +112,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <span className="block text-[11px] font-medium text-slate-500 uppercase tracking-wider">
-                        Direct Inquiries
+                        Official Email
                       </span>
                       <a
                         href={`mailto:${COMPANY_INFO.contacts.email}`}
@@ -129,7 +129,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <span className="block text-[11px] font-medium text-slate-500 uppercase tracking-wider">
-                        Global Footprint
+                        Location
                       </span>
                       <span className="font-semibold text-brand-navy-900">
                         {COMPANY_INFO.contacts.headquarters}

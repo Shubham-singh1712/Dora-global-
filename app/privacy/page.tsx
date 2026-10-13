@@ -112,8 +112,8 @@ export default function PrivacyPage() {
               </p>
               <p className="text-slate-600 mt-2">
                 <strong>DORA Global Research</strong><br />
-                Email: <strong>[PRIVACY CONTACT EMAIL — TO BE CONFIRMED]</strong><br />
-                Address: <strong>[REGISTERED ADDRESS — TO BE CONFIRMED]</strong>
+                Email: <a href="mailto:doraglobal23@gmail.com" className="text-brand-blue-700 underline">doraglobal23@gmail.com</a><br />
+                Location: Chandigarh, India
               </p>
             </div>
 

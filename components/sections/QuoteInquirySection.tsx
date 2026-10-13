@@ -225,7 +225,7 @@ export function QuoteInquirySection() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                     <Input
                       label="Full Name"
-                      placeholder="e.g. Eleanor Vance"
+                      placeholder="Your full name"
                       required
                       value={formData.fullName}
                       error={errors.name}
@@ -237,7 +237,7 @@ export function QuoteInquirySection() {
                     <Input
                       label="Corporate Email"
                       type="email"
-                      placeholder="e.vance@company.com"
+                      placeholder="name@company.com"
                       required
                       value={formData.workEmail}
                       error={errors.email}
@@ -251,7 +251,7 @@ export function QuoteInquirySection() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                     <Input
                       label="Organization"
-                      placeholder="e.g. Apex Global Strategy"
+                      placeholder="Your organization name"
                       value={formData.organization}
                       onChange={(e) =>
                         setFormData({ ...formData, organization: e.target.value })

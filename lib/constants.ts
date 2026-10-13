@@ -484,9 +484,13 @@ export const COMPANY_INFO = {
   description:
     "DORA Global Research delivers primary research, qualitative moderation, and quantitative intelligence across key global sectors to guide strategic decision-making.",
   contacts: {
-    email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@doraglobalresearch.com",
-    headquarters: "Global Research Coverage",
+    email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "doraglobal23@gmail.com",
+    headquarters: "Chandigarh, India",
     support: "Online Inquiry & Consultations",
+  },
+  leadership: {
+    founderAndCeo: "Vishal",
+    display: "Vishal — Founder & CEO",
   },
 };
 

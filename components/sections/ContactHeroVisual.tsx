@@ -85,14 +85,14 @@ export function ContactHeroVisual() {
       <div className="mt-3.5 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 relative z-10">
         <div className="flex items-center gap-1.5 font-medium text-slate-600 text-[11px]">
           <Clock className="w-3 h-3 text-brand-blue-600 shrink-0" />
-          <span>Response within 24 business hours</span>
+          <span>Direct consultation response</span>
         </div>
         <a
-          href="mailto:info@doraglobalresearch.com"
+          href="mailto:doraglobal23@gmail.com"
           className="inline-flex items-center gap-1 text-brand-blue-700 hover:text-brand-blue-800 font-semibold text-[11px] transition-colors"
         >
           <Mail className="w-2.5 h-2.5" />
-          <span>info@doraglobalresearch.com</span>
+          <span>doraglobal23@gmail.com</span>
         </a>
       </div>
     </div>

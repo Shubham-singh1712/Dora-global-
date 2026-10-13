@@ -322,7 +322,7 @@ export function ContactFormClient() {
             <Input
               id="full_name"
               label="Full Name"
-              placeholder="e.g. Eleanor Vance"
+              placeholder="Your full name"
               required
               value={formData.full_name}
               error={errors.full_name}
@@ -336,7 +336,7 @@ export function ContactFormClient() {
               id="email"
               label="Corporate Email"
               type="email"
-              placeholder="e.vance@company.com"
+              placeholder="name@company.com"
               required
               value={formData.email}
               error={errors.email}
@@ -352,7 +352,7 @@ export function ContactFormClient() {
             <Input
               id="organization"
               label="Organization"
-              placeholder="e.g. Apex Global Strategy"
+              placeholder="Your organization name"
               value={formData.organization}
               onChange={(e) => {
                 setFormData({ ...formData, organization: e.target.value });

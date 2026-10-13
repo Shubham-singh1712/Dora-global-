@@ -514,6 +514,47 @@ export default function AboutPage() {
         </Container>
       </section>
 
+      {/* 6. Practice Leadership */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+        <Container className="max-w-6xl">
+          <div className="max-w-3xl mb-10 sm:mb-12">
+            <span className="text-xs font-semibold uppercase tracking-widest text-brand-blue-700 block mb-2">
+              Leadership
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-semibold text-brand-navy-900 tracking-tight">
+              Practice Leadership
+            </h2>
+            <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+              Executive direction grounded in research rigor, methodological integrity, and defensible intelligence.
+            </p>
+          </div>
+
+          <div className="max-w-2xl bg-white rounded-xl border border-slate-200/90 p-6 sm:p-8 shadow-subtle flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            {/* Neutral Executive Visual */}
+            <div className="w-16 h-16 rounded-xl bg-brand-navy-950 text-white font-bold text-2xl flex items-center justify-center shrink-0 tracking-tight shadow-card border border-brand-navy-800">
+              V
+            </div>
+
+            <div className="space-y-1.5 flex-1">
+              <div className="inline-flex items-center gap-2">
+                <span className="font-mono text-[10px] uppercase tracking-wider text-brand-blue-700 font-bold bg-brand-blue-50 border border-brand-blue-200/60 px-2 py-0.5 rounded">
+                  Executive Practice Lead
+                </span>
+                <span className="text-[11px] text-slate-400 font-medium">
+                  Chandigarh, India
+                </span>
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold text-brand-navy-900 tracking-tight">
+                Vishal — Founder &amp; CEO
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal pt-1">
+                Directs practice strategy and methodology standards across primary, qualitative, and quantitative research engagements, ensuring evidence-based clarity for enterprise client decisions.
+              </p>
+            </div>
+          </div>
+        </Container>
+      </section>
+
       {/* Page CTA */}
       <CTASection />
     </>
