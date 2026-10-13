@@ -184,43 +184,6 @@ export default function AboutPage() {
                   DORA Practice Standard &bull; Grounded Intelligence
                 </footer>
               </blockquote>
-
-              {/* Three Structural Pillars with Fine Hairline Borders */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 border-t border-b border-slate-200 divide-y sm:divide-y-0 sm:divide-x divide-slate-200 py-2">
-                <div className="py-3.5 sm:px-4 sm:first:pl-0 sm:last:pr-0 space-y-1">
-                  <span className="font-mono text-[10px] text-brand-blue-700 uppercase tracking-widest font-semibold block">
-                    01 / Rigor
-                  </span>
-                  <h4 className="text-xs font-bold text-brand-navy-900">
-                    Empirical Rigor
-                  </h4>
-                  <p className="text-[11.5px] text-slate-600 leading-relaxed font-normal">
-                    Structured screening criteria and verified respondent recruitment protocols.
-                  </p>
-                </div>
-                <div className="py-3.5 sm:px-4 sm:first:pl-0 sm:last:pr-0 space-y-1">
-                  <span className="font-mono text-[10px] text-brand-blue-700 uppercase tracking-widest font-semibold block">
-                    02 / Nuance
-                  </span>
-                  <h4 className="text-xs font-bold text-brand-navy-900">
-                    Cultural Nuance
-                  </h4>
-                  <p className="text-[11.5px] text-slate-600 leading-relaxed font-normal">
-                    Native in-language moderation and contextual depth across target territories.
-                  </p>
-                </div>
-                <div className="py-3.5 sm:px-4 sm:first:pl-0 sm:last:pr-0 space-y-1">
-                  <span className="font-mono text-[10px] text-brand-blue-700 uppercase tracking-widest font-semibold block">
-                    03 / Synthesis
-                  </span>
-                  <h4 className="text-xs font-bold text-brand-navy-900">
-                    Practical Insights
-                  </h4>
-                  <p className="text-[11.5px] text-slate-600 leading-relaxed font-normal">
-                    Clear summaries and practical insights that help teams make informed commercial decisions.
-                  </p>
-                </div>
-              </div>
             </div>
 
             {/* Right Column: Practice Architecture Dossier Panel */}

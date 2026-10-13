@@ -5,7 +5,7 @@ import { PageHeader } from "@/components/sections/PageHeader";
 import { ContactHeroVisual } from "@/components/sections/ContactHeroVisual";
 import { ContactFormClient } from "@/components/sections/ContactFormClient";
 import { COMPANY_INFO } from "@/lib/constants";
-import { Mail, Globe, CheckCircle2, ShieldCheck, ArrowRight } from "lucide-react";
+import { Mail, Globe, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact & Research Inquiries",
@@ -151,27 +151,6 @@ export default function ContactPage() {
                     </div>
                   </div>
                 </div>
-              </div>
-
-              {/* Scoping Standards & Confidentiality */}
-              <div className="p-4 sm:p-5 bg-slate-50/90 border border-slate-200/80 rounded-xl space-y-2.5">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 block">
-                  Engagement Protocol &amp; Standards
-                </span>
-                <ul className="space-y-2 text-xs text-slate-600">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-brand-blue-700 shrink-0" />
-                    <span>Rigorous methodology selection (Qual, Quant &amp; Multilingual)</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-brand-blue-700 shrink-0" />
-                    <span>Audience recruitment feasibility and timeline assessment</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <ShieldCheck className="w-3.5 h-3.5 text-brand-blue-700 shrink-0" />
-                    <span>Strict commercial confidentiality and mutual NDA adherence</span>
-                  </li>
-                </ul>
               </div>
             </div>
 
