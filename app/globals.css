@@ -184,3 +184,17 @@
 .reveal-stagger.revealed > *:nth-child(6) { transition-delay: 350ms; opacity: 1; transform: translateY(0); }
 .reveal-stagger.revealed > *:nth-child(7) { transition-delay: 420ms; opacity: 1; transform: translateY(0); }
 .reveal-stagger.revealed > *:nth-child(8) { transition-delay: 490ms; opacity: 1; transform: translateY(0); }
+
+/* ─────────────────────────────────────────────────────────
+   Brand Intro Overlay Skip & Accessibility
+   ───────────────────────────────────────────────────────── */
+.dora-intro-skip #dora-brand-intro {
+  display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #dora-brand-intro {
+    display: none !important;
+  }
+}
+

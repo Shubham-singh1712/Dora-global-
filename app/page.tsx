@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { HeroSection } from "@/components/sections/HeroSection";
+import { BrandIntro } from "@/components/ui/BrandIntro";
 import { CTASection } from "@/components/sections/CTASection";
 import { QuoteInquirySection } from "@/components/sections/QuoteInquirySection";
 import {
@@ -98,6 +99,9 @@ const INDUSTRY_LIST = [
 export default function HomePage() {
   return (
     <>
+      {/* 0. BRAND INTRO SEQUENCE */}
+      <BrandIntro />
+
       {/* 1. HERO EXPERIENCE */}
       <HeroSection />
 

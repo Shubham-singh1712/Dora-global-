@@ -72,6 +72,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{if(sessionStorage.getItem('dora_intro_seen')||window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('dora-intro-skip');}}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body className="min-h-screen flex flex-col font-sans antialiased text-slate-900 bg-white selection:bg-brand-navy-900 selection:text-white">
         <Navbar />
         <main className="flex-1 w-full">{children}</main>
