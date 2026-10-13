@@ -1,19 +1,24 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 /**
  * BrandIntro
- * Polished, full-screen brand introduction for DORA Global Research.
- * 
- * Opening Sequence:
- * 1. Deep navy canvas appears immediately on initial paint.
- * 2. DORA wordmark fades in smoothly with a subtle upward movement.
- * 3. GLOBAL RESEARCH appears just below it with a gentle fade.
- * 4. Complete brand mark holds briefly so visitors can read it.
- * 5. Intro screen fades away smoothly revealing the homepage (~2.2-2.4s total).
- * 
- * Plays once per browser session via sessionStorage. Respects prefers-reduced-motion.
+ * Cinematic full-screen brand introduction for DORA Global Research.
+ *
+ * Visuals:
+ * - Deep cinematic space with curved Earth horizon across the lower half
+ * - Luminous blue atmospheric limb glow and sunrise corona
+ * - Glowing orbital trajectory arcs with illuminated connection nodes
+ * - Classical serif "DORA" wordmark centered in the upper space
+ * - "GLOBAL RESEARCH" and "PEOPLE | MARKETS | PERSPECTIVES" taglines
+ *
+ * Behavior:
+ * - Plays once per browser session via sessionStorage.
+ * - Respects prefers-reduced-motion.
+ * - Responsive across mobile (390×844) and desktop (1440×900).
+ * - Total duration ~2.4 seconds with smooth fade into homepage.
  */
 export function BrandIntro() {
   const [stage, setStage] = useState<"init" | "dora" | "full" | "fading" | "hidden">("init");
@@ -38,12 +43,12 @@ export function BrandIntro() {
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
-    // 3. Animation Sequence Timeline (total ~2.3 seconds)
-    // 0ms: Deep navy canvas visible immediately
-    // 90ms: DORA wordmark fades in smoothly with upward glide
-    // 520ms: GLOBAL RESEARCH appears just below it
-    // 1750ms: Begin smooth fade out
-    // 2350ms: Complete transition, restore scroll, record session
+    // 3. Animation Sequence Timeline (total ~2.4 seconds)
+    // 0ms: Initial cinematic canvas ready
+    // 90ms: DORA wordmark glides in smoothly
+    // 520ms: GLOBAL RESEARCH & tagline fade in
+    // 1850ms: Begin smooth fade out
+    // 2450ms: Unmount overlay, restore body scroll, record session
     const t1 = setTimeout(() => {
       setStage("dora");
     }, 90);
@@ -54,7 +59,7 @@ export function BrandIntro() {
 
     const t3 = setTimeout(() => {
       setStage("fading");
-    }, 1750);
+    }, 1850);
 
     const t4 = setTimeout(() => {
       setStage("hidden");
@@ -62,7 +67,7 @@ export function BrandIntro() {
       try {
         sessionStorage.setItem("dora_intro_seen", "true");
       } catch {}
-    }, 2350);
+    }, 2450);
 
     return () => {
       clearTimeout(t1);
@@ -82,21 +87,42 @@ export function BrandIntro() {
       id="dora-brand-intro"
       aria-label="DORA Global Research Brand Introduction"
       aria-hidden={stage === "fading" ? "true" : undefined}
-      className={`fixed inset-0 z-[9999] flex items-center justify-center bg-[#070E1C] select-none transition-opacity duration-600 ease-out overflow-hidden ${
+      className={`fixed inset-0 z-[9999] flex flex-col justify-between bg-[#040812] select-none transition-opacity duration-600 ease-out overflow-hidden ${
         stage === "fading" ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"
       }`}
     >
-      {/* Deep, restrained ambient radial depth */}
-      <div
-        className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,rgba(29,78,216,0.14)_0%,rgba(7,14,28,0.92)_65%,#070E1C_100%)]"
-        aria-hidden="true"
-      />
+      {/* 1. Cinematic Earth Horizon Background Layer */}
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+        <Image
+          src="/images/earth-intro.jpg"
+          alt="DORA Global Research Earth Horizon"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-bottom md:object-[center_60%] lg:object-bottom scale-[1.02]"
+        />
 
-      {/* Brand Mark Focus */}
-      <div className="relative z-10 text-center px-6 max-w-xl mx-auto flex flex-col items-center">
-        {/* Step 1: DORA Wordmark */}
+        {/* Ambient Dark Vignette & Upper Sky Contrast Gradient */}
+        <div
+          className="absolute inset-0 bg-gradient-to-b from-[#040812]/85 via-[#040812]/35 to-transparent pointer-events-none"
+          aria-hidden="true"
+        />
+
+        {/* Subtle Bottom Vignette */}
+        <div
+          className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#040812]/90 via-[#040812]/40 to-transparent pointer-events-none"
+          aria-hidden="true"
+        />
+      </div>
+
+      {/* Top spacer to balance vertical layout */}
+      <div className="w-full h-8 sm:h-12 pointer-events-none z-10" />
+
+      {/* 2. Centered Brand Identity Container */}
+      <div className="relative z-10 text-center px-6 max-w-2xl mx-auto flex flex-col items-center pt-8 sm:pt-0">
+        {/* Step 1: DORA Wordmark in Classical Serif Typography */}
         <h1
-          className={`text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-none transition-all duration-700 ease-out ${
+          className={`font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[5.25rem] font-medium tracking-[0.08em] text-white leading-none transition-all duration-700 ease-out drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] ${
             stage !== "init"
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-4"
@@ -105,19 +131,9 @@ export function BrandIntro() {
           DORA
         </h1>
 
-        {/* Restrained Brand Blue Accent Hairline */}
-        <div
-          className={`w-12 sm:w-16 h-[2px] bg-brand-blue-500 my-4 sm:my-5 transition-all duration-700 delay-100 ease-out ${
-            stage === "full" || stage === "fading"
-              ? "opacity-100 scale-x-100"
-              : "opacity-0 scale-x-50"
-          }`}
-          aria-hidden="true"
-        />
-
-        {/* Step 2: GLOBAL RESEARCH */}
+        {/* Step 2: GLOBAL RESEARCH Subtitle */}
         <p
-          className={`text-xs sm:text-sm md:text-base font-semibold uppercase tracking-[0.3em] sm:tracking-[0.36em] text-slate-300 leading-none transition-all duration-700 ease-out ${
+          className={`text-xs sm:text-sm md:text-base font-semibold uppercase tracking-[0.32em] sm:tracking-[0.4em] text-slate-200 mt-2.5 sm:mt-3 leading-none transition-all duration-700 delay-100 ease-out drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)] ${
             stage === "full" || stage === "fading"
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-3"
@@ -125,6 +141,40 @@ export function BrandIntro() {
         >
           Global Research
         </p>
+
+        {/* Restrained Brand Blue Hairline Divider */}
+        <div
+          className={`w-14 sm:w-20 h-[2px] bg-brand-blue-400/90 my-3.5 sm:my-4 transition-all duration-700 delay-200 ease-out shadow-[0_0_8px_rgba(96,165,250,0.6)] ${
+            stage === "full" || stage === "fading"
+              ? "opacity-100 scale-x-100"
+              : "opacity-0 scale-x-50"
+          }`}
+          aria-hidden="true"
+        />
+
+        {/* Step 3: Practice Tagline: PEOPLE | MARKETS | PERSPECTIVES */}
+        <p
+          className={`text-[9.5px] sm:text-[11px] md:text-xs font-medium uppercase tracking-[0.24em] sm:tracking-[0.3em] text-slate-300/90 transition-all duration-700 delay-250 ease-out drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] ${
+            stage === "full" || stage === "fading"
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-2"
+          }`}
+        >
+          People <span className="text-brand-blue-400 mx-1">|</span> Markets{" "}
+          <span className="text-brand-blue-400 mx-1">|</span> Perspectives
+        </p>
+      </div>
+
+      {/* 3. Subtle Dual-Pill Indicator at Bottom */}
+      <div className="relative z-10 pb-6 sm:pb-8 flex justify-center items-center pointer-events-none">
+        <div
+          className={`flex items-center gap-1.5 transition-opacity duration-700 delay-300 ${
+            stage === "full" || stage === "fading" ? "opacity-75" : "opacity-0"
+          }`}
+        >
+          <span className="w-6 h-[2px] rounded-full bg-brand-blue-500 shadow-[0_0_6px_rgba(59,130,246,0.8)]" />
+          <span className="w-6 h-[2px] rounded-full bg-slate-600/80" />
+        </div>
       </div>
     </aside>
   );
