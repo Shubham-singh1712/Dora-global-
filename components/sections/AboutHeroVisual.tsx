@@ -39,7 +39,7 @@ export function AboutHeroVisual() {
                 Primary &bull; Qualitative &bull; Quantitative
               </span>
               <p className="text-xs sm:text-[13px] font-semibold text-slate-100 leading-snug">
-                Empirical Intelligence &amp; Defensible Direction
+                Reliable Evidence &amp; Clear Direction
               </p>
             </div>
             <span className="text-[11px] text-slate-300 px-2 py-0.5 bg-brand-navy-900/80 border border-slate-700/80 rounded shrink-0 hidden sm:inline-block">

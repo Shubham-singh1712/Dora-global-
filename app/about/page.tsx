@@ -37,31 +37,31 @@ export default function AboutPage() {
   const researchPhilosophy = [
     {
       step: "01",
-      title: "Methodological Integrity",
+      title: "Rigorous by Design",
       description:
-        "Every study is built upon sound research architecture—from robust questionnaire design and screening criteria to structured moderation and statistically valid sample frames.",
-      focus: "Sound Research Architecture",
+        "Every study starts with a clear research question. We build the right methodology, screen participants carefully, and structure data collection to produce reliable findings.",
+      focus: "Research Rigor",
     },
     {
       step: "02",
-      title: "Contextual Depth",
+      title: "Context Matters",
       description:
-        "We believe market intelligence requires understanding the cultural, commercial, and operational nuance behind consumer and stakeholder decisions.",
-      focus: "Cultural & Operational Nuance",
+        "Consumer decisions are shaped by culture, market conditions, and everyday realities. We look beyond the numbers to understand what drives people's choices.",
+      focus: "Local Understanding",
     },
     {
       step: "03",
-      title: "Actionable Synthesis",
+      title: "From Findings to Action",
       description:
-        "We focus on turning raw qualitative dialogue and complex survey datasets into clear, defensible executive insights that directly inform strategic decisions.",
-      focus: "Defensible Strategic Direction",
+        "We turn interviews, survey results, and market evidence into clear insights that help businesses evaluate opportunities and make informed decisions.",
+      focus: "Business Impact",
     },
     {
       step: "04",
-      title: "Collaborative Engagement",
+      title: "Built Around Your Questions",
       description:
-        "We work closely with client stakeholders from initial scoping through final presentation, ensuring research parameters precisely align with core business questions.",
-      focus: "Close Stakeholder Alignment",
+        "We work with clients from the initial brief to the final presentation, keeping the research focused on the questions their business needs to answer.",
+      focus: "Client Partnership",
     },
   ];
 
@@ -214,10 +214,10 @@ export default function AboutPage() {
                     03 / Synthesis
                   </span>
                   <h4 className="text-xs font-bold text-brand-navy-900">
-                    Actionable Output
+                    Practical Insights
                   </h4>
                   <p className="text-[11.5px] text-slate-600 leading-relaxed font-normal">
-                    Defensible executive synthesis to directly guide commercial roadmaps.
+                    Clear summaries and practical insights that help teams make informed commercial decisions.
                   </p>
                 </div>
               </div>
@@ -484,7 +484,7 @@ export default function AboutPage() {
               Our Research Philosophy
             </h2>
             <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-              Our work is guided by fundamental commitments to quality, analytical clarity, and actionable business relevance.
+              Our work is guided by four core commitments: asking the right questions, respecting local context, delivering useful insights, and working closely with our clients.
             </p>
           </div>
 
