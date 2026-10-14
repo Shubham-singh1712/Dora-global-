@@ -13,7 +13,7 @@ export function ContactHeroVisual() {
       {/* Header bar */}
       <div className="relative z-10 pb-3 mb-3 border-b border-slate-100">
         <div className="flex items-center justify-between gap-2">
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-brand-blue-50 border border-brand-blue-200/70 text-brand-blue-700 text-xs font-semibold">
+          <span className="inline-flex items-center gap-1.5 text-brand-blue-700 text-xs font-semibold">
             <Users className="w-3.5 h-3.5" />
             <span>Direct Client Advisory</span>
           </span>

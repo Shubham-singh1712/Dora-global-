@@ -34,9 +34,6 @@ export function IndustryHero({
         />
 
         <div className="max-w-3xl">
-          <Badge variant="blue" size="md" className="mb-3 sm:mb-4">
-            {badge}
-          </Badge>
           <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-normal text-brand-navy-900 leading-[1.15]">
             {title}
           </h1>

@@ -27,11 +27,7 @@ export function HeroSection() {
       <Container className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* LEFT: 55-60% (7 cols out of 12) */}
-          <div className="lg:col-span-7 space-y-5">
-            {/* Small Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-blue-50 border border-brand-blue-200/60 rounded-none text-brand-blue-700 text-xs font-semibold uppercase tracking-wider">
-              Independent Market Research &amp; Intelligence
-            </div>
+          <div className="lg:col-span-7 space-y-6">
 
             {/* Headline — Cormorant Garamond 500 Editorial Display Serif */}
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.35rem] font-medium tracking-normal text-brand-navy-900 leading-[1.15] sm:leading-[1.12]">

@@ -25,11 +25,7 @@ export function ServiceCTA({
       />
 
       <Container className="relative z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-blue-900/60 border border-brand-blue-700/50 text-brand-blue-300 text-xs font-semibold uppercase tracking-wider">
-            <MessageSquare className="w-3.5 h-3.5" />
-            <span>Consultation & Scoping</span>
-          </div>
+        <div className="max-w-4xl mx-auto text-center space-y-6">
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-white leading-snug">
             {title}

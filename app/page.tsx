@@ -394,9 +394,6 @@ export default function HomePage() {
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5 space-y-6">
-              <Badge variant="blue" size="sm">
-                Cross-Market Capability
-              </Badge>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-white leading-snug">
                 Global Research Coverage
               </h2>

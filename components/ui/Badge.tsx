@@ -16,11 +16,11 @@ export function Badge({
   ...props
 }: BadgeProps) {
   const variantStyles = {
-    neutral: "bg-transparent text-slate-800 border-slate-300",
-    blue: "bg-transparent text-brand-blue-700 border-brand-blue-700",
-    gold: "bg-transparent text-amber-700 border-amber-700",
-    dark: "bg-brand-navy-900 text-white border-brand-navy-900",
-    outline: "bg-transparent text-slate-900 border-slate-900",
+    neutral: "bg-slate-100 text-slate-700 border-transparent",
+    blue: "bg-brand-blue-50 text-brand-blue-700 border-transparent",
+    gold: "bg-amber-50 text-amber-800 border-transparent",
+    dark: "bg-brand-navy-900 text-white border-transparent",
+    outline: "bg-transparent text-slate-700 border-slate-200",
   };
 
   const sizeStyles = {
@@ -39,7 +39,7 @@ export function Badge({
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 border rounded-none font-medium leading-none whitespace-nowrap",
+        "inline-flex items-center gap-1.5 border rounded-sm font-medium leading-none whitespace-nowrap",
         variantStyles[variant],
         sizeStyles[size],
         className

@@ -94,13 +94,7 @@ export function PageHeader({
 
         <div className={visual ? "grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center" : "max-w-3xl"}>
           <div className={visual ? "min-w-0" : undefined}>
-            {badge && (
-              <div className="mb-3 sm:mb-4">
-                <Badge variant="blue" size="md" dot>
-                  {badge}
-                </Badge>
-              </div>
-            )}
+
 
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-normal text-brand-navy-900 leading-[1.15] sm:leading-[1.12]">
               {title}

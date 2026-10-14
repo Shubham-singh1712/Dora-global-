@@ -14,12 +14,6 @@ export function CTASection() {
 
       <Container className="relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-transparent border border-slate-500 mb-6">
-            <span className="w-1.5 h-1.5 rounded-none bg-brand-blue-400" />
-            <span className="text-xs uppercase tracking-widest text-slate-300 font-semibold">
-              Research Consultation &amp; Scoping
-            </span>
-          </div>
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight leading-snug text-balance">
             Design a Custom Research Program for Your Strategic Priorities
