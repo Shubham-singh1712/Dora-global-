@@ -29,9 +29,9 @@ export function HeroSection() {
           {/* LEFT: 55-60% (7 cols out of 12) */}
           <div className="lg:col-span-7 space-y-6">
 
-            {/* Headline — Cormorant Garamond 500 Editorial Display Serif */}
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.35rem] font-medium tracking-normal text-brand-navy-900 leading-[1.15] sm:leading-[1.12]">
-              Market Research Grounded in Evidence, Not Assumptions
+            {/* Headline — Cormorant Garamond Bold Editorial Display Serif */}
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-bold tracking-normal text-brand-navy-900 leading-[1.1] sm:leading-[1.08]">
+              Market Clarity.
             </h1>
 
             {/* Supporting Copy */}
