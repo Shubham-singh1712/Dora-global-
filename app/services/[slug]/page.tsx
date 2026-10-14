@@ -59,6 +59,8 @@ export default async function ServiceDetailPage({ params }: Props) {
         badge={service.heroBadge}
         description={service.heroDescription}
         slug={service.slug}
+        category={service.category}
+        practiceHighlights={service.practiceHighlights}
       />
 
       <ServiceOverview service={service} />
