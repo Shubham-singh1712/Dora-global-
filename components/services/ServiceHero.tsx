@@ -45,7 +45,7 @@ export function ServiceHero({
           <Badge variant="blue" size="md" className="mb-3 sm:mb-4">
             {badge}
           </Badge>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-brand-navy-900 leading-[1.15]">
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-normal text-brand-navy-900 leading-[1.15]">
             {title}
           </h1>
           <p className="mt-4 sm:mt-5 text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-2xl sm:max-w-3xl">

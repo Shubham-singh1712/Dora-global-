@@ -109,10 +109,10 @@ export default function HomePage() {
       <section id="what-we-do" className="pt-10 sm:pt-12 lg:pt-14 pb-16 sm:pb-20 lg:pb-24 bg-white">
         <Container>
           <div className="max-w-3xl mb-12 sm:mb-14 space-y-4">
-            <span className="text-xs font-bold uppercase tracking-widest text-brand-blue-700">
+            <span className="text-xs font-semibold uppercase tracking-widest text-brand-blue-700">
               WHAT WE DO
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-brand-navy-900 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-brand-navy-900 leading-snug">
               Insight begins with the right question.
             </h2>
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
@@ -133,7 +133,7 @@ export default function HomePage() {
                     {row.number}
                   </span>
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-brand-navy-900 group-hover:text-brand-blue-700 transition-colors tracking-tight">
+                    <h3 className="text-xl sm:text-2xl font-semibold text-brand-navy-900 group-hover:text-brand-blue-700 transition-colors tracking-tight">
                       {row.title}
                     </h3>
                     <p className="text-sm text-slate-600 mt-1 font-normal">
@@ -157,10 +157,10 @@ export default function HomePage() {
         <Container>
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
             <div className="max-w-2xl space-y-3">
-              <span className="text-xs font-bold uppercase tracking-widest text-brand-blue-700">
+              <span className="text-xs font-semibold uppercase tracking-widest text-brand-blue-700">
                 LINGUISTIC CAPABILITIES
               </span>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-brand-navy-900">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-brand-navy-900 leading-snug">
                 Language Solutions for Global Studies
               </h2>
               <p className="text-base text-slate-600 leading-relaxed font-normal">
@@ -234,7 +234,7 @@ export default function HomePage() {
                     </span>
                     <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-brand-blue-700 group-hover:translate-x-1 transition-all" />
                   </div>
-                  <h3 className="text-base font-bold text-brand-navy-900 group-hover:text-brand-blue-700 transition-colors">
+                  <h3 className="text-base font-semibold text-brand-navy-900 group-hover:text-brand-blue-700 transition-colors">
                     {sol.title}
                   </h3>
                   <p className="text-xs text-slate-600 mt-2 leading-relaxed">
@@ -255,10 +255,10 @@ export default function HomePage() {
         <Container>
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div className="max-w-2xl space-y-3">
-              <span className="text-xs font-bold uppercase tracking-widest text-brand-blue-700">
+              <span className="text-xs font-semibold uppercase tracking-widest text-brand-blue-700">
                 SECTOR DEPTH
               </span>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-brand-navy-900">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-brand-navy-900 leading-snug">
                 RESEARCH ACROSS INDUSTRIES
               </h2>
               <p className="text-base text-slate-600 leading-relaxed font-normal">
@@ -287,7 +287,7 @@ export default function HomePage() {
                     {ind.number}
                   </span>
                   <div>
-                    <h3 className="text-lg sm:text-xl font-bold text-brand-navy-900 group-hover:text-brand-blue-700 transition-colors tracking-tight">
+                    <h3 className="text-lg sm:text-xl font-semibold text-brand-navy-900 group-hover:text-brand-blue-700 transition-colors tracking-tight">
                       {ind.title}
                     </h3>
                     <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
@@ -311,10 +311,10 @@ export default function HomePage() {
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <span className="text-xs font-bold uppercase tracking-widest text-brand-blue-700">
+              <span className="text-xs font-semibold uppercase tracking-widest text-brand-blue-700">
                 RESEARCH RIGOR
               </span>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy-900">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-brand-navy-900 leading-snug">
                 Disciplined Methodologies Built for Defensible Decisions
               </h2>
               <p className="text-base text-slate-600 leading-relaxed font-normal">
@@ -397,10 +397,10 @@ export default function HomePage() {
               <Badge variant="blue" size="sm">
                 Cross-Market Capability
               </Badge>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-white leading-snug">
                 Global Research Coverage
               </h2>
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-light">
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
                 Coordinated qualitative and quantitative execution across major international regions with localized language and cultural understanding.
               </p>
 

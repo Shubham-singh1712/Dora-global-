@@ -237,7 +237,7 @@ export function ContactFormClient() {
             <Badge variant="blue" size="sm">
               Enquiry Registered
             </Badge>
-            <h3 className="text-xl sm:text-2xl font-bold text-brand-navy-900">
+            <h3 className="text-xl sm:text-2xl font-semibold text-brand-navy-900">
               Thank You, {confirmedEnquiry.name}
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
@@ -360,7 +360,7 @@ export function ContactFormClient() {
             />
 
               <div>
-              <label htmlFor="service" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5">
+              <label htmlFor="service" className="block text-xs font-medium uppercase tracking-wider text-slate-700 mb-1.5">
                 Research Service <span className="text-red-500">*</span>
               </label>
               <select
@@ -409,7 +409,7 @@ export function ContactFormClient() {
             />
 
             <div>
-              <label htmlFor="project_scope" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5">
+              <label htmlFor="project_scope" className="block text-xs font-medium uppercase tracking-wider text-slate-700 mb-1.5">
                 Project Scope
               </label>
               <select

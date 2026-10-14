@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { inter, cormorantGaramond } from "@/lib/fonts";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -71,7 +72,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className={`${inter.variable} ${cormorantGaramond.variable} scroll-smooth`}>
       <head>
         <script
           dangerouslySetInnerHTML={{

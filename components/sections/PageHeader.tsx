@@ -102,7 +102,7 @@ export function PageHeader({
               </div>
             )}
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-brand-navy-900 leading-[1.12]">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-normal text-brand-navy-900 leading-[1.15] sm:leading-[1.12]">
               {title}
             </h1>
 

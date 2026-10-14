@@ -132,7 +132,7 @@ export function QuoteInquirySection() {
                   Research Inquiry
                 </span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-brand-navy-900 leading-[1.2]">
+              <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-brand-navy-900 leading-[1.2]">
                 Discuss Your Research Project
               </h2>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal mt-3 max-w-xl">

@@ -33,8 +33,8 @@ export function HeroSection() {
               Independent Market Research &amp; Intelligence
             </div>
 
-            {/* Headline */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight text-brand-navy-900 leading-[1.12]">
+            {/* Headline — Cormorant Garamond 500 Editorial Display Serif */}
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.35rem] font-medium tracking-normal text-brand-navy-900 leading-[1.15] sm:leading-[1.12]">
               Market Research Grounded in Evidence, Not Assumptions
             </h1>
 
