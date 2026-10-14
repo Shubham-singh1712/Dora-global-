@@ -443,7 +443,7 @@ export function Navbar() {
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(true)}
-                className="lg:hidden p-2 text-brand-navy-900 hover:text-brand-blue-700 hover:bg-slate-100 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue-600 focus-visible:ring-offset-2 transition-colors"
+                className="lg:hidden min-w-[44px] min-h-[44px] flex items-center justify-center p-2 text-brand-navy-900 hover:text-brand-blue-700 hover:bg-slate-100 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue-600 focus-visible:ring-offset-2 transition-colors"
                 aria-label="Open Navigation Menu"
                 aria-expanded={mobileMenuOpen}
               >
